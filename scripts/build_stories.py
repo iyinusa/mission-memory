@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 import ingest
 
 SRC = ingest.ROOT / "scripts" / "stories.json"
+IMAGES = ingest.ROOT / "web" / "public" / "data" / "images.json"  # written by scripts/images.py
 OUT = ingest.ROOT / "web" / "public" / "data" / "stories.json"
 REVIEW = ingest.ROOT / "review" / "STORIES-REVIEW.md"
 
@@ -50,6 +51,7 @@ def main() -> int:
     named = manifest["sources"]
     artifacts = {a["id"]: a for a in json.loads((ingest.OUT).read_text())["artifacts"]}
     src = json.loads(SRC.read_text())
+    images = json.loads(IMAGES.read_text()) if IMAGES.exists() else {}
 
     published, review_md, manual = {}, [], []
     grades = {lvl: [] for lvl in LEVELS}
@@ -76,11 +78,20 @@ def main() -> int:
                 sources.append({"label": ingest.label_for(url, named), "url": url, "quote": ingest.norm(c["quote"])})
             for lvl in LEVELS:
                 grades[lvl].append(fk_grade(beat[lvl]))
-            beats.append({"key": beat["key"], "title": TITLES[beat["key"]], "text": {lvl: beat[lvl] for lvl in LEVELS}, "sources": sources})
+            image = images.get(sid, {}).get(beat["key"])
+            published_beat = {"key": beat["key"], "title": TITLES[beat["key"]], "text": {lvl: beat[lvl] for lvl in LEVELS}, "sources": sources}
+            if image:
+                published_beat["image"] = {k: image[k] for k in ("src", "alt", "caption", "credit", "illustration", "url")}
+            beats.append(published_beat)
 
             review_md.append(f"### {TITLES[beat['key']]}\n")
             for lvl, label in LEVELS.items():
                 review_md.append(f"- **{label}:** {beat[lvl]}")
+            if image:
+                review_md.append(
+                    f"- [ ] **Image** [{image['nasaId']}]({image['url']}): our caption \"{image['caption']}\" matches NASA's title "
+                    f"\"{image['nasaTitle']}\"{' (illustration)' if image['illustration'] else ''}. NASA description: {image['nasaDescription'][:300]}"
+                )
             review_md.append("\n  NASA says:")
             for s in sources:
                 review_md.append(f"  - [ ] \"{s['quote']}\" ([{s['label']}]({s['url']}))")

@@ -366,7 +366,7 @@ main {
 
 .dial {
   margin-top: 16px;
-  padding: 16px 20px 8px;
+  padding: 16px 20px 32px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: linear-gradient(#0d1224, #090d1b);
@@ -479,8 +479,62 @@ main {
   transition: left 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
   pointer-events: none;
 }
-.dial-track.dragging .dial-needle {
+.dial-track.dragging .dial-needle,
+.dial-track.scanning .dial-needle {
   transition: none;
+}
+.globe {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.globe:active {
+  cursor: grabbing;
+}
+.beyond-map {
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+.world-hint {
+  position: absolute;
+  left: 12px;
+  bottom: 8px;
+  margin: 0;
+  color: var(--ink-dim);
+  font-size: 0.75rem;
+  pointer-events: none;
+}
+.panel-static h2 {
+  color: var(--ink-dim);
+}
+.scan-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.caret {
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: var(--signal);
+  animation: blink 0.8s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 .dial-needle::before {
   content: "";
@@ -522,6 +576,15 @@ main {
 }
 .beyond-ghost {
   cursor: pointer;
+  transition: opacity 0.6s;
+}
+.beyond-ghost.unlaunched {
+  opacity: 0;
+}
+.beyond-year {
+  fill: #ffffff14;
+  font: 700 52px var(--font-display);
+  font-variant-numeric: tabular-nums;
 }
 .beyond-name {
   fill: var(--ink);
@@ -622,6 +685,36 @@ main {
   line-height: 1.65;
   max-width: 62ch;
 }
+.beat-figure {
+  margin: 20px 0 0;
+}
+.beat-figure img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain; /* never crop: panoramas and labelled orbital images must be seen whole */
+  border-radius: 10px;
+  background: #000;
+}
+.beat-figure figcaption {
+  margin-top: 8px;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+}
+.beat-figure .credit {
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+.tag {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--dormant);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 .narration {
   margin-top: 20px;
 }
@@ -675,6 +768,96 @@ main {
 }
 .facts dd {
   margin: 0;
+}
+
+/* ---------- Hands-on moments ---------- */
+
+.lab {
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid #7cf2c855;
+  background: #05070f;
+}
+.lab-title {
+  margin: 0 0 12px;
+  color: var(--signal);
+  font: 700 0.85rem var(--font-body);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.lab-svg,
+.lab-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.lab-svg {
+  background: radial-gradient(ellipse at 50% 50%, #0d1430, #03050b);
+}
+.lab-label {
+  fill: var(--ink-dim);
+  font: 12px var(--font-body);
+  text-anchor: middle;
+}
+.lab-pulse {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+.lab-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+.lab-clock {
+  min-width: 5.5ch;
+  color: var(--signal);
+  font: 700 1.6rem var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.lab-result p {
+  margin: 12px 0 0;
+  font-size: 1.05rem;
+}
+.lab-foot {
+  margin: 12px 0 0;
+  color: var(--ink-dim);
+  font-size: 0.78rem;
+}
+.lab-stats {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 2px 20px;
+  margin: 14px 0 0;
+}
+.lab-stats dt {
+  color: var(--ink-dim);
+  font-size: 0.8rem;
+}
+.lab-stats dd {
+  margin: 0;
+  color: var(--signal);
+  font: 700 1.4rem var(--font-display);
+  font-variant-numeric: tabular-nums;
+  grid-row: 2;
+}
+.ion .ion-plume {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ion.on .ion-plume {
+  opacity: 1;
+  animation: flicker 0.18s infinite alternate;
+}
+@keyframes flicker {
+  from {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ---------- Postcard ---------- */

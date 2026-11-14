@@ -13,7 +13,46 @@ insignia or mission patches.
 
 _NSSDCA record IDs and per-fact sources are listed on each explorer in `web/public/data/artifacts.json` and shown in the app._
 
-<!-- Add imagery, textures and 3D models here as they are added (NASA Image Library PIA IDs, SVS, USGS, LROC, HiRISE, NASA 3D Resources). -->
+| Globe texture: Moon | LRO camera (LROC) colour map from the NASA SVS CGI Moon Kit | https://svs.gsfc.nasa.gov/4720 |
+| Globe texture: Mars | Mars colour map from NASA 3D Resources | https://science.nasa.gov/3d-resources/mars/ |
+| NASA GISS Mars24: Mars Landers | Cross-check of Mars landing coordinates | https://www.giss.nasa.gov/tools/mars24/help/landers.html |
+
+## NASA images
+
+From the [NASA Image and Video Library](https://images.nasa.gov/), with each image's own credit line.
+
+<!-- images:start -->
+
+| Used in | NASA Image Library ID | Credit |
+|---|---|---|
+| apollo-retroreflectors / why | [as11-40-5948](https://images.nasa.gov/details/as11-40-5948) | NASA |
+| apollo-retroreflectors / how | [as14-67-09386](https://images.nasa.gov/details/as14-67-09386) | NASA |
+| apollo-retroreflectors / now | [PIA13037](https://images.nasa.gov/details/PIA13037) | NASA/GSFC/Arizona State University |
+| apollo11-eagle / why | [as11-40-5902](https://images.nasa.gov/details/as11-40-5902) | NASA |
+| apollo11-eagle / now | [as11-40-5899](https://images.nasa.gov/details/as11-40-5899) | NASA |
+| apollo15-lrv / why | [as15-86-11603](https://images.nasa.gov/details/as15-86-11603) | NASA |
+| apollo15-lrv / now | [PIA13037](https://images.nasa.gov/details/PIA13037) | NASA/GSFC/Arizona State University |
+| spirit / why | [PIA04413](https://images.nasa.gov/details/PIA04413) | NASA/JPL/Cornell University |
+| spirit / discovered | [PIA11758](https://images.nasa.gov/details/PIA11758) | NASA/JPL-Caltech/Cornell |
+| spirit / lastDay | [PIA12102](https://images.nasa.gov/details/PIA12102) | NASA/JPL/USGS |
+| spirit / now | [PIA12203](https://images.nasa.gov/details/PIA12203) | NASA/JPL-Caltech/Cornell University |
+| viking-1 / discovered | [PIA00381](https://images.nasa.gov/details/PIA00381) | NASA/JPL |
+| viking-1 / lastDay | [PIA00567](https://images.nasa.gov/details/PIA00567) | NASA/JPL |
+| viking-1 / now | [PIA00563](https://images.nasa.gov/details/PIA00563) | NASA/JPL |
+| ingenuity / why | [PIA23882](https://images.nasa.gov/details/PIA23882) | NASA/JPL-Caltech |
+| ingenuity / discovered | [PIA24550](https://images.nasa.gov/details/PIA24550) | NASA/JPL-Caltech/ASU/MSSS |
+| ingenuity / lastDay | [PIA26243](https://images.nasa.gov/details/PIA26243) | NASA/JPL-Caltech |
+| ingenuity / now | [PIA26237](https://images.nasa.gov/details/PIA26237) | NASA/JPL-Caltech/ASU/MSSS |
+| dawn / how | [PIA18922](https://images.nasa.gov/details/PIA18922) | NASA/JPL-Caltech |
+| dawn / discovered | [PIA14778](https://images.nasa.gov/details/PIA14778) | NASA/JPL-Caltech/UCLA/MPS/DLR/IDA |
+| dawn / now | [PIA20350](https://images.nasa.gov/details/PIA20350) | NASA/JPL-Caltech/UCLA/MPS/DLR/IDA/PSI |
+| near-shoemaker / why | [PIA18177](https://images.nasa.gov/details/PIA18177) | NASA |
+| near-shoemaker / now | [PIA02900](https://images.nasa.gov/details/PIA02900) | NASA/JPL/JHUAPL |
+| pioneer-10 / why | [ARC-1972-AC72-2135](https://images.nasa.gov/details/ARC-1972-AC72-2135) | NASA |
+| pioneer-10 / how | [ARC-1972-A72-2137](https://images.nasa.gov/details/ARC-1972-A72-2137) | NASA / TRW |
+| pioneer-10 / discovered | [ARC-1973-AC73-9253](https://images.nasa.gov/details/ARC-1973-AC73-9253) | NASA |
+
+<!-- images:end -->
 
 ## Software
 

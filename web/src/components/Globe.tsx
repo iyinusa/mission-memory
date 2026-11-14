@@ -69,7 +69,12 @@ function GhostPin({ pin, selected, onSelect, planet }: { pin: Pin; selected: boo
 
   return (
     <group position={pos}>
-      <mesh onClick={(e) => (e.stopPropagation(), onSelect(pin.id))}>
+      <mesh
+        onClick={(e) => {
+          e.stopPropagation();
+          if (e.delta < 6) onSelect(pin.id); // a drag that ends on a pin is still a drag
+        }}
+      >
         <sphereGeometry args={[strong ? 0.016 : 0.011, 16, 16]} />
         <meshBasicMaterial color={color} />
       </mesh>
@@ -86,26 +91,22 @@ function GhostPin({ pin, selected, onSelect, planet }: { pin: Pin; selected: boo
   );
 }
 
-function Planet({ world, ghosts, selectedId, onSelect, reduceMotion }: GlobeProps & { reduceMotion: boolean }) {
+function Planet({ world, ghosts, needle, lockedId, onSelect, reduceMotion }: GlobeProps & { reduceMotion: boolean }) {
   const map = useTexture(TEXTURES[world]);
   map.colorSpace = THREE.SRGBColorSpace;
   map.anisotropy = 8;
   const group = useRef<THREE.Group>(null);
   const planet = useRef<THREE.Mesh>(null);
   const pins = useMemo(() => pinsFor(ghosts), [ghosts]);
-  const target = useMemo(() => {
-    const g = ghosts.find((a) => a.id === selectedId);
-    return g && g.lat != null && g.lon != null ? facing(g.lat, g.lon) : null;
-  }, [ghosts, selectedId]);
+  const selectedId = lockedId;
+  // The tuner's needle is the longitude facing you; tilt toward the locked explorer's latitude.
+  const lockedLat = ghosts.find((g) => g.id === lockedId)?.lat ?? 0;
+  const target = useMemo(() => facing(lockedLat, needle), [lockedLat, needle]);
 
   useFrame((_, dt) => {
     if (!group.current) return;
-    if (target) {
-      if (reduceMotion) group.current.quaternion.copy(target);
-      else group.current.quaternion.slerp(target, 1 - Math.exp(-dt * 3.2));
-    } else if (!reduceMotion) {
-      group.current.rotation.y += dt * 0.05;
-    }
+    if (reduceMotion) group.current.quaternion.copy(target);
+    else group.current.quaternion.slerp(target, 1 - Math.exp(-dt * 6));
   });
 
   return (
@@ -124,22 +125,51 @@ function Planet({ world, ghosts, selectedId, onSelect, reduceMotion }: GlobeProp
 export interface GlobeProps {
   world: "moon" | "mars";
   ghosts: Artifact[];
-  selectedId: string | null;
+  /** Longitude (deg E) currently tuned; faces the camera. */
+  needle: number;
+  lockedId: string | null;
   onSelect: (id: string) => void;
+  onTune: (lon: number) => void;
+  onRelease: (lon: number) => void;
 }
+
+const wrapLon = (v: number) => ((((v + 180) % 360) + 360) % 360) - 180;
 
 export default function Globe(props: GlobeProps) {
   const reduceMotion = useMemo(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches, []);
+  const drag = useRef<{ x: number; from: number; moved: boolean } | null>(null);
+  const lonAt = (e: React.PointerEvent<HTMLDivElement>) => {
+    const d = drag.current!;
+    // Dragging right brings western longitudes into view, like spinning a real globe.
+    return wrapLon(d.from - ((e.clientX - d.x) * 180) / e.currentTarget.clientWidth);
+  };
+
   return (
-    <Canvas camera={{ position: [0, 0, 3.1], fov: 40 }} dpr={[1, 2]} aria-hidden="true">
-      <color attach="background" args={["#05070f"]} />
-      <Stars radius={60} depth={30} count={2500} factor={3} fade speed={reduceMotion ? 0 : 0.6} />
-      <ambientLight intensity={0.55} />
-      <directionalLight position={[-3, 2, 4]} intensity={2.4} />
-      {/* Keep the starfield on screen while the NASA texture loads. */}
-      <Suspense fallback={null}>
-        <Planet {...props} reduceMotion={reduceMotion} />
-      </Suspense>
-    </Canvas>
+    <div
+      className="globe"
+      onPointerDown={(e) => (drag.current = { x: e.clientX, from: props.needle, moved: false })}
+      onPointerMove={(e) => {
+        const d = drag.current;
+        if (!d || (!d.moved && Math.abs(e.clientX - d.x) < 6)) return;
+        d.moved = true;
+        props.onTune(lonAt(e));
+      }}
+      onPointerUp={(e) => {
+        if (drag.current?.moved) props.onRelease(lonAt(e));
+        drag.current = null;
+      }}
+      onPointerLeave={() => (drag.current = null)}
+    >
+      <Canvas camera={{ position: [0, 0, 3.1], fov: 40 }} dpr={[1, 2]} aria-hidden="true">
+        <color attach="background" args={["#05070f"]} />
+        <Stars radius={60} depth={30} count={2500} factor={3} fade speed={reduceMotion ? 0 : 0.6} />
+        <ambientLight intensity={0.55} />
+        <directionalLight position={[-3, 2, 4]} intensity={2.4} />
+        {/* Keep the starfield on screen while the NASA texture loads. */}
+        <Suspense fallback={null}>
+          <Planet {...props} reduceMotion={reduceMotion} />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 }

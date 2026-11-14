@@ -1,0 +1,47 @@
+{
+  "_comment": "One NASA Image and Video Library image per chosen story beat. Captions are ours and must agree with NASA's title/description (shown in the review checklist). illustration=true marks artist's concepts.",
+  "apollo-retroreflectors": {
+    "why": { "nasaId": "as11-40-5948", "caption": "Buzz Aldrin after setting up Apollo 11's science experiments on the Moon, 20 July 1969." },
+    "how": { "nasaId": "as14-67-09386", "caption": "Close-up of the laser ranging retroreflector left on the Moon by the Apollo 14 astronauts, February 1971." },
+    "now": { "nasaId": "PIA13037", "caption": "The Apollo 15 laser ranging retroreflector site, seen from orbit by NASA's Lunar Reconnaissance Orbiter." }
+  },
+  "apollo11-eagle": {
+    "why": { "nasaId": "as11-40-5902", "caption": "Buzz Aldrin walks beside one of Eagle's landing legs, 20 July 1969. Photo by Neil Armstrong." },
+    "now": { "nasaId": "as11-40-5899", "caption": "The plaque the Apollo 11 astronauts left on the Moon." }
+  },
+  "apollo15-lrv": {
+    "why": { "nasaId": "as15-86-11603", "caption": "James Irwin works at the Lunar Roving Vehicle during the first Apollo 15 moonwalk, 31 July 1971." },
+    "now": { "nasaId": "PIA13037", "caption": "The Apollo 15 site seen from orbit by NASA's Lunar Reconnaissance Orbiter. The rover (LRV) and Falcon's descent stage are labelled." }
+  },
+  "spirit": {
+    "why": { "nasaId": "PIA04413", "caption": "A Mars Exploration Rover like Spirit on the surface of Mars.", "illustration": true },
+    "discovered": { "nasaId": "PIA11758", "caption": "Bright soil churned up by Spirit's dragging wheel near Home Plate, May 2007." },
+    "lastDay": { "nasaId": "PIA12102", "caption": "Stuck in soft soil at a place called Troy, Spirit photographed its own underside in June 2009 to help engineers plan its escape." },
+    "now": { "nasaId": "PIA12203", "caption": "Spirit's view from Troy, where it came to rest." }
+  },
+  "viking-1": {
+    "discovered": { "nasaId": "PIA00381", "caption": "The first photograph ever taken on the surface of Mars, by Viking 1 minutes after landing on 20 July 1976." },
+    "lastDay": { "nasaId": "PIA00567", "caption": "Sunset at the Viking Lander 1 site." },
+    "now": { "nasaId": "PIA00563", "caption": "The first colour image from Viking Lander 1." }
+  },
+  "ingenuity": {
+    "why": { "nasaId": "PIA23882", "caption": "The flight model of NASA's Ingenuity Mars Helicopter." },
+    "discovered": { "nasaId": "PIA24550", "caption": "Ingenuity after its first flight, seen by Perseverance's Mastcam-Z cameras." },
+    "lastDay": { "nasaId": "PIA26243", "caption": "After its 72nd flight, Ingenuity photographed the shadow of its damaged rotor blade." },
+    "now": { "nasaId": "PIA26237", "caption": "Ingenuity at \"Valinor Hills\", seen by Perseverance in February 2024." }
+  },
+  "dawn": {
+    "how": { "nasaId": "PIA18922", "caption": "Dawn's ion engine glowing blue as it arrives at Ceres.", "illustration": true },
+    "discovered": { "nasaId": "PIA14778", "caption": "Asteroid Vesta, photographed by Dawn's framing camera on 24 July 2011." },
+    "now": { "nasaId": "PIA20350", "caption": "Occator Crater, home of the brightest spots on Ceres, seen by Dawn." }
+  },
+  "near-shoemaker": {
+    "why": { "nasaId": "PIA18177", "caption": "NEAR meeting asteroid Eros.", "illustration": true },
+    "now": { "nasaId": "PIA02900", "caption": "The \"saddle\" region of Eros, where NEAR Shoemaker later touched down, imaged from 208 km away in March 2000." }
+  },
+  "pioneer-10": {
+    "why": { "nasaId": "ARC-1972-AC72-2135", "caption": "Pioneer 10 being readied for launch at Cape Kennedy in 1972." },
+    "how": { "nasaId": "ARC-1972-A72-2137", "caption": "The Pioneer 10 plaque positioned on the spacecraft." },
+    "discovered": { "nasaId": "ARC-1973-AC73-9253", "caption": "Jupiter photographed by Pioneer 10 from about 2.6 million km away, December 1973." }
+  }
+}

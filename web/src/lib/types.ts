@@ -65,11 +65,22 @@ export interface BeatSource extends Source {
   quote: string;
 }
 
+/** A photo or illustration from the NASA Image and Video Library (scripts/images.py). */
+export interface BeatImage {
+  src: string;
+  alt: string;
+  caption: string;
+  credit: string;
+  illustration: boolean;
+  url: string;
+}
+
 export interface Beat {
   key: BeatKey;
   title: string;
   text: Record<LevelId, string>;
   sources: BeatSource[];
+  image?: BeatImage;
 }
 
 export interface Story {

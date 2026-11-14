@@ -1,6 +1,6 @@
 # Story fact-check
 
-Generated 2026-11-14T11:58:50+00:00 by `scripts/build_stories.py`. Edit stories in `scripts/stories.json`, then re-run the script.
+Generated 2026-11-14T16:14:55+00:00 by `scripts/build_stories.py`. Edit stories in `scripts/stories.json`, then re-run the script.
 
 Every quote below has already been found word-for-word on its NASA page by the script.
 Your job is to check the **meaning**: does each sentence of the story say only what the quotes support?
@@ -23,6 +23,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm not one machine. I'm three! I'm a set of special mirrors that astronauts placed on the Moon during Apollo 11, Apollo 14 and Apollo 15. My job is to help scientists on Earth measure exactly how far away the Moon is.
 - **Ages 12–14:** I'm actually three explorers in one: laser ranging retroreflectors that astronauts set up at the Apollo 11, 14 and 15 landing sites. Spread far apart across the Moon, we form a network of targets. By bouncing laser beams off us, scientists on Earth can measure the distance between Earth and the Moon with great precision.
+- [ ] **Image** [as11-40-5948](https://images.nasa.gov/details/as11-40-5948): our caption "Buzz Aldrin after setting up Apollo 11's science experiments on the Moon, 20 July 1969." matches NASA's title "Astronaut Edwin Aldrin after deployment of EASEP on surface of moon". NASA description: AS11-40-5948 (20 July 1969) --- Astronaut Edwin E. Aldrin Jr., lunar module pilot, is photographed during the Apollo 11 extravehicular activity (EVA) on the moon. He has just deployed the Early Apollo Scientific Experiments Package (EASEP). This is a good view of the deployed equipment. In the foreg
 
   NASA says:
   - [ ] "Laser ranging beams from earth were reflected back to their point of origin for precise measurement of earth-moon distance" ([NSSDCA experiment 1969-059C-04](https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1969-059C-04))
@@ -33,6 +34,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm made of glass cubes with a clever shape. Light that hits a cube bounces straight back to where it came from. I don't even need power! The Moon is about 384,400 km away, so light takes about two and a half seconds to get there and back. Fire the laser and see!
 - **Ages 12–14:** Each of my arrays is a panel of fused-silica corner cubes: 100 at the Apollo 14 site and 300 at Apollo 15. A corner cube reflects light straight back the way it came, so a laser pulse fired from Earth returns to the very telescope that sent it. I need no power at all. The Moon is about 384,400 km away, so the round trip takes light roughly 2.5 seconds. Fire the laser and time it.
+- [ ] **Image** [as14-67-09386](https://images.nasa.gov/details/as14-67-09386): our caption "Close-up of the laser ranging retroreflector left on the Moon by the Apollo 14 astronauts, February 1971." matches NASA's title "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts". NASA description: AS14-67-9386 (5 Feb. 1971) --- A close-up view of the laser ranging retro reflector (LR3) which the Apollo 14 astronauts deployed on the moon during their lunar surface extravehicular activity (EVA). While astronauts Alan B. Shepard Jr., commander, and Edgar D. Mitchell, lunar module pilot, descende
 
   NASA says:
   - [ ] "The instrument was an array of 100 small fused-silica corner cubes, each 3.8 cm in diameter." ([NSSDCA experiment 1971-008C-09](https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1971-008C-09))
@@ -41,7 +43,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
   - [ ] "required no power" ([NSSDCA: Apollo 11 Lunar Module / EASEP (1969-059C)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C))
   - [ ] "The Moon is an average of 238,855 miles (384,400 kilometers) away." ([NASA Science mission page](https://science.nasa.gov/moon/facts/))
 
-  > **Check:** Derived: 2 x 384,400 km / 299,792 km/s = 2.56 s round trip.
+  > **Check:** Derived: 2 x 384,400 km / 299,792 km/s = 2.56 s round trip. Hands-on moment: distance = speed of light x time / 2.
 
 ### What I discovered
 
@@ -68,6 +70,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm still on the Moon, catching laser light from Earth. More than 50 years later, scientists still use my data. And new, better reflectors are heading to the Moon too!
 - **Ages 12–14:** I'm still at the Apollo 11, 14 and 15 sites, quietly bouncing light back to Earth. More than 50 years later, lunar research still uses data from Apollo-era retroreflectors like me. A new generation is following: NASA's next reflectors promise findings an order of magnitude more accurate than mine.
+- [ ] **Image** [PIA13037](https://images.nasa.gov/details/PIA13037): our caption "The Apollo 15 laser ranging retroreflector site, seen from orbit by NASA's Lunar Reconnaissance Orbiter." matches NASA's title "The Apollo 15 Lunar Laser Ranging Retroreflector - A Fundamental Point on the Moon". NASA description: The Apollo 15 Lunar Laser Ranging Retroreflector - A Fundamental Point on the Moon
 
   NASA says:
   - [ ] "lunar research still leverages data from those Apollo-era retroreflectors" ([https://www.nasa.gov/missions/artemis/clps/nasa-anticipates-lunar-findings-from-next-generation-retroreflector/](https://www.nasa.gov/missions/artemis/clps/nasa-anticipates-lunar-findings-from-next-generation-retroreflector/))
@@ -81,6 +84,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm the bottom half of Eagle, the Apollo 11 lunar module. In July 1969 I carried Neil Armstrong and Buzz Aldrin down to the Moon. We were the first spacecraft with people on board ever to land there!
 - **Ages 12–14:** I'm the descent stage of Eagle, the Apollo 11 lunar module: the bottom half of the first crewed vehicle to land on the Moon. My job was to carry astronauts Neil Armstrong and Edwin "Buzz" Aldrin down to the surface, along with the experiments and tools they would need.
+- [ ] **Image** [as11-40-5902](https://images.nasa.gov/details/as11-40-5902): our caption "Buzz Aldrin walks beside one of Eagle's landing legs, 20 July 1969. Photo by Neil Armstrong." matches NASA's title "Astronaut Edwin Aldrin walks on lunar surface near leg of Lunar Module". NASA description: AS11-40-5902 (20 July 1969) --- Astronaut Edwin E. Aldrin Jr., lunar module pilot, walks on the surface of the moon near a leg of the Lunar Module during the Apollo 11 extravehicular activity (EVA). Astronaut Neil A. Armstrong, Apollo 11 commander, took this photograph with a 70mm lunar surface came
 
   NASA says:
   - [ ] "was the first crewed vehicle to land on the Moon" ([NSSDCA: Apollo 11 Lunar Module / EASEP (1969-059C)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C))
@@ -129,6 +133,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm still standing at Tranquility Base. Behind my ladder is a plaque. It says: "Here men from the planet Earth first set foot on the Moon July 1969, A.D. We came in peace for all mankind."
 - **Ages 12–14:** I'm still standing at Tranquility Base, where the first footprints on the Moon were made. Behind my ladder is a plaque the astronauts read aloud before they left: "Here men from the planet Earth first set foot on the Moon July 1969, A.D. We came in peace for all mankind."
+- [ ] **Image** [as11-40-5899](https://images.nasa.gov/details/as11-40-5899): our caption "The plaque the Apollo 11 astronauts left on the Moon." matches NASA's title "View of plaque Apollo 11 astronauts left on moon". NASA description: AS11-40-5899 (20 July 1969) --- Close-up view of the plaque which the Apollo 11 astronauts left on the moon in commemoration of the historic lunar landing mission. The plaque was attached to the ladder on the landing gear strut on the descent stage of the Apollo 11 Lunar Module (LM). The plaque was 
 
   NASA says:
   - [ ] "The astronauts then unveiled the plaque mounted on a strut behind the ladder and read the inscription aloud" ([NSSDCA: Apollo 11 Lunar Module / EASEP (1969-059C)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C))
@@ -143,6 +148,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm the Lunar Roving Vehicle: a car built for the Moon! Apollo 15 brought me there in 1971. I helped astronauts Dave Scott and Jim Irwin explore much farther from their spacecraft. I was the first car of my kind ever used on the Moon.
 - **Ages 12–14:** I'm the Lunar Roving Vehicle, an electric car designed for the low gravity and airless vacuum of the Moon. I arrived with Apollo 15 in July 1971 so astronauts David Scott and James Irwin could extend the range of their moonwalks. I was the first vehicle of my kind ever used there.
+- [ ] **Image** [as15-86-11603](https://images.nasa.gov/details/as15-86-11603): our caption "James Irwin works at the Lunar Roving Vehicle during the first Apollo 15 moonwalk, 31 July 1971." matches NASA's title "Astronaut James Irwin works at Lunar Roving Vehicle during Apollo 15 EVA". NASA description: AS15-86-11603 (31 July 1971) --- Astronaut James B. Irwin, lunar module pilot, works at the Lunar Roving Vehicle during the first Apollo 15 lunar surface extravehicular activity (EVA) at the Hadley-Apennine landing site. The shadow of the Lunar Module "Falcon" is in the foreground. This view is look
 
   NASA says:
   - [ ] "The Lunar Roving Vehicle (LRV) was an electric vehicle designed to operate in the low-gravity vacuum of the Moon" ([https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html](https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html))
@@ -191,6 +197,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm still parked on the Moon at Hadley-Apennine. Nearby, the astronauts left a small plaque and figure to remember space explorers who had died.
 - **Ages 12–14:** I'm still parked at the foot of the Apennine mountains. Nearby, the astronauts left a plaque and a small figure in memory of fourteen American and Soviet space explorers who had died. Two more rovers like me followed, on Apollo 16 and 17.
+- [ ] **Image** [PIA13037](https://images.nasa.gov/details/PIA13037): our caption "The Apollo 15 site seen from orbit by NASA's Lunar Reconnaissance Orbiter. The rover (LRV) and Falcon's descent stage are labelled." matches NASA's title "The Apollo 15 Lunar Laser Ranging Retroreflector - A Fundamental Point on the Moon". NASA description: The Apollo 15 Lunar Laser Ranging Retroreflector - A Fundamental Point on the Moon
 
   NASA says:
   - [ ] "at the foot of the Apennine mountain range" ([NSSDCA: Apollo 15 Lunar Module /ALSEP (1971-063C)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C))
@@ -205,6 +212,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** Hi, I'm Spirit, a robot geologist with six wheels. In 2004 I landed in Gusev Crater on Mars. Scientists picked it because it looked like an old lake bed. My job was to look for clues that water once flowed on Mars.
 - **Ages 12–14:** I'm Spirit, one of NASA's twin Mars Exploration Rovers. I landed in Gusev Crater on 4 January 2004. From orbit, Gusev looked like a dried-up crater lake, and if water had once filled it, layers of sediment might still be waiting at the bottom. My mission, like my twin Opportunity's, was to search the rocks for the history of water on Mars.
+- [ ] **Image** [PIA04413](https://images.nasa.gov/details/PIA04413): our caption "A Mars Exploration Rover like Spirit on the surface of Mars." matches NASA's title "Artist Concept of Rover on Mars" (illustration). NASA description: An artist concept portrays a NASA Mars Exploration Rover on the surface of Mars. Two rovers were launched in 2003 and arrived at sites on Mars in January 2004.
 
   NASA says:
   - [ ] "NASA rover that landed Jan. 4, 2004" ([NASA GISS Mars24: Mars Landers](https://www.giss.nasa.gov/tools/mars24/help/landers.html))
@@ -224,10 +232,13 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
   - [ ] "although it lost the use of one of its six wheels" ([NSSDCA: Spirit (2003-027A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A))
   - [ ] "While dragging a wheel, Spirit churned up soil" ([NASA Science mission page](https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/))
 
+  > **Check:** Hands-on moment shows the broken wheel dragging and leaving a trench; the trench turns bright where it crosses a silica patch (illustrative, not to scale).
+
 ### What I discovered
 
 - **Ages 9–11:** Dragging my wheel scraped open a trench of bright white soil. It was about 90% pure silica! On Earth, soil like that forms in hot springs or steamy vents. So long ago, Mars had hot water: maybe a place where tiny life could have lived.
 - **Ages 12–14:** In March 2007 my dragging wheel churned up a trench of bright soil near a plateau called Home Plate. It turned out to be about 90% pure silica, with the composition of opal. On Earth, silica like this usually forms in hot springs or hot steam vents. It was strong evidence that ancient Mars had hot water, the kind of place where life as we know it thrives, and where ancient microbes might once have lived too.
+- [ ] **Image** [PIA11758](https://images.nasa.gov/details/PIA11758): our caption "Bright soil churned up by Spirit's dragging wheel near Home Plate, May 2007." matches NASA's title "Rover Wheel Churns Up Bright Martian Soil". NASA description: Rover Wheel Churns Up Bright Martian Soil
 
   NASA says:
   - [ ] "found a patch of bright-toned soil so rich in silica that scientists proposed water must have been involved in concentrating it" ([NASA Science mission page](https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/))
@@ -240,6 +251,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** In April 2009, I broke through a thin crust into soft sand and got stuck. Winter was coming. I couldn't tilt my solar panels toward the Sun to get enough power to last. My last message reached Earth on 22 March 2010.
 - **Ages 12–14:** On 23 April 2009 my wheels broke through a thin crust into a hidden pocket of sand, and I could barely move. As the Martian winter approached, I couldn't turn my solar panels toward the Sun to gather enough power to make it through. My last transmission reached Earth on 22 March 2010.
+- [ ] **Image** [PIA12102](https://images.nasa.gov/details/PIA12102): our caption "Stuck in soft soil at a place called Troy, Spirit photographed its own underside in June 2009 to help engineers plan its escape." matches NASA's title "Spirit Photographs Her Underbelly, SOL 1925". NASA description: This panorama of images from the Spirit rover, taken on Sol 1925 June 2,  2009, is helping engineers assess the rover current state and plan her  extraction from the soft soil in the region now called Troy.
 
   NASA says:
   - [ ] "On 23 April 2009, the rover broke through a thin crust into a pocket of sand that severely limited its mobility." ([NSSDCA: Spirit (2003-027A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A))
@@ -250,6 +262,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm still sitting in Gusev Crater. In 6 years and 2 months I drove 7.73 km. My twin Opportunity and I showed that, long ago, Mars had water on its surface for a long time.
 - **Ages 12–14:** I'm still parked in Gusev Crater, silent. Over 6 years and 2 months I travelled 7.73 km. Together, my twin Opportunity and I confirmed that water was long-standing on the surface of Mars in ancient times.
+- [ ] **Image** [PIA12203](https://images.nasa.gov/details/PIA12203): our caption "Spirit's view from Troy, where it came to rest." matches NASA's title "Calypso Panorama of Spirit View from Troy". NASA description: This full-circle,stereo view from the panoramic camera Pancam on NASA Mars Exploration Rover Spirit shows the terrain surrounding the location called Troy, where Spirit became embedded in soft soil during the spring of 2009.
 
   NASA says:
   - [ ] "The rover travelled a total of 7.73 km over a period of 6 years, 2 months." ([NSSDCA: Spirit (2003-027A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A))
@@ -286,6 +299,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I sent the first picture from the surface of Mars just 25 seconds after landing! My soil tests found lots of sulfur. Did I find life? My results were puzzling, and scientists are still working on that question.
 - **Ages 12–14:** Transmission of my first surface image began just 25 seconds after landing, and I took a 300-degree panorama of gently rolling plains. On 28 July 1976 my arm scooped up the first soil samples. The soil held an abundance of sulfur, unlike any known material on Earth or the Moon. My life-detection results were puzzling: some data could be read as a weak sign of life, but my main test for organic compounds did not support it.
+- [ ] **Image** [PIA00381](https://images.nasa.gov/details/PIA00381): our caption "The first photograph ever taken on the surface of Mars, by Viking 1 minutes after landing on 20 July 1976." matches NASA's title "First Photograph Taken On Mars Surface". NASA description: This is the first photograph ever taken on the surface of the planet Mars. It was obtained by Viking 1 just minutes after the spacecraft landed successfully early today [July 20, 1976]. The center of the image is about 1.4 meters (five feet) from Viking Lander camera #2. We see both rocks and finely
 
   NASA says:
   - [ ] "Transmission of the first surface image began 25 seconds after landing." ([NSSDCA: Viking 1 Lander (1975-075C)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C))
@@ -300,6 +314,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I worked on Mars for more than six years. In November 1982, I received a faulty command and stopped working. On 13 November 1982, contact with me was lost forever.
 - **Ages 12–14:** I kept working for more than six years. Along the way I was renamed the Thomas Mutch Memorial Station, after the leader of the Viking imaging team. In November 1982 I received a faulty command and stopped operating, and on 13 November 1982 contact with me was lost for good.
+- [ ] **Image** [PIA00567](https://images.nasa.gov/details/PIA00567): our caption "Sunset at the Viking Lander 1 site." matches NASA's title "Sunset at the Viking Lander 1 Site". NASA description: Sunset at the Viking Lander 1 Site
 
   NASA says:
   - [ ] "Lander stopped operating after getting a faulty command" ([NASA Science mission page](https://science.nasa.gov/mission/viking-1/))
@@ -313,6 +328,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm still sitting on the plains of Chryse Planitia. Every Mars mission since has carried on my question: was Mars ever a home for life?
 - **Ages 12–14:** I'm still resting in western Chryse Planitia. The two Viking orbiters returned 52,663 images and mapped about 97 percent of Mars. And every Mars mission since has carried on my question: was the once warm, wet Mars ever a place where life could live?
+- [ ] **Image** [PIA00563](https://images.nasa.gov/details/PIA00563): our caption "The first colour image from Viking Lander 1." matches NASA's title "First Color Image From Viking Lander 1". NASA description: First Color Image From Viking Lander 1
 
   NASA says:
   - [ ] "The Viking 1 Lander touched down in western Chryse Planitia" ([NSSDCA: Viking 1 Lander (1975-075C)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C))
@@ -327,6 +343,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm Ingenuity, a tiny helicopter. I rode to Mars under the belly of the Perseverance rover. My mission: try to fly on another planet for the very first time!
 - **Ages 12–14:** I'm Ingenuity, the Mars Helicopter. I rode to Mars strapped beneath the Perseverance rover as a technology test. My job was to prove that a machine could fly, under its own control, in the very thin air of Mars.
+- [ ] **Image** [PIA23882](https://images.nasa.gov/details/PIA23882): our caption "The flight model of NASA's Ingenuity Mars Helicopter." matches NASA's title "NASA's Ingenuity Mars Helicopter". NASA description: The flight model of NASA's Ingenuity Mars Helicopter.  https://photojournal.jpl.nasa.gov/catalog/PIA23882
 
   NASA says:
   - [ ] "After riding to Mars strapped beneath the Perseverance rover" ([NASA Science mission page](https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/))
@@ -348,6 +365,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** On 19 April 2021 I flew! I hovered 3 metres up for 30 seconds: the first powered flight on another planet. People called it a "Wright Brothers moment". I was meant to fly just 5 times, but I flew 72 times!
 - **Ages 12–14:** On 19 April 2021 I lifted off for 39.1 seconds, hovering 3 metres above Jezero Crater: the first powered, controlled flight on another planet, a feat called a "Wright Brothers moment". I was designed to make no more than five test flights in 30 days. Instead I made 72 flights across nearly three years, flying higher and faster than anyone had imagined, and spending more than 2 hours in the air.
+- [ ] **Image** [PIA24550](https://images.nasa.gov/details/PIA24550): our caption "Ingenuity after its first flight, seen by Perseverance's Mastcam-Z cameras." matches NASA's title "Ingenuity's First Flight Recorded by Mastcam-Z". NASA description: This image was taken after the first flight of NASA's Ingenuity Mars Helicopter — and the first powered, controlled flight on another planet. It was captured by Mastcam-Z, a pair of zoomable cameras aboard NASA's Perseverance Mars rover, on April 19, 2021.  Flying in a controlled manner on Mars is f
 
   NASA says:
   - [ ] "The first flight, on 19 April 2021, lasted 39.1 seconds, hovering at 3 meters altitude for 30 seconds." ([NSSDCA: MARS 2020 (2020-052A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-052A))
@@ -360,6 +378,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** On 18 January 2024, during my 72nd flight, contact was lost just before I landed. I dropped about 1 metre and damaged my rotor blades. I could never fly again.
 - **Ages 12–14:** On 18 January 2024, during my 72nd flight, contact was lost just before landing. I dropped about a metre and damaged my rotors, so I could no longer fly. My flying days were over, but I had already gone far beyond what my team first planned.
+- [ ] **Image** [PIA26243](https://images.nasa.gov/details/PIA26243): our caption "After its 72nd flight, Ingenuity photographed the shadow of its damaged rotor blade." matches NASA's title "Ingenuity Spots the Shadow of Its Damaged Rotor Blade". NASA description: After its 72nd flight on Jan. 18, 2024, NASA's Ingenuity Mars Helicopter captured this color image showing the shadow of a rotor blade damaged during a rough landing.  https://photojournal.jpl.nasa.gov/catalog/PIA26243
 
   NASA says:
   - [ ] "During a flight on January 18, 2024, contact was lost just before landing, the helicopter dropped about 1 meter and damaged its rotors so it was no longer capable of flight." ([NSSDCA: MARS 2020 (2020-052A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-052A))
@@ -371,6 +390,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm still standing in Jezero Crater on Mars. I proved that flying on Mars is possible!
 - **Ages 12–14:** I'm still standing in Jezero Crater, grounded for good. I was the first aircraft to achieve powered, controlled flight on another planet, and I showed that flying in the thin air of Mars is possible.
+- [ ] **Image** [PIA26237](https://images.nasa.gov/details/PIA26237): our caption "Ingenuity at "Valinor Hills", seen by Perseverance in February 2024." matches NASA's title "Ingenuity at 'Valinor Hills'". NASA description: This natural-color mosaic showing NASA's Ingenuity Mars Helicopter at "Valinor Hills" was acquired by the agency's Perseverance Mars rover on Feb. 21, 2024, the 1,068th Martian day, or sol, of the mission. The helicopter – the first aircraft to achieve powered, controlled flight on another world – s
 
   NASA says:
   - [ ] "Destination Jezero Crater, Mars" ([NASA Science mission page](https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/))
@@ -396,6 +416,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I didn't use a big, loud rocket to get around. I used ion engines! They give a very gentle push, about as strong as the weight of two sheets of paper. But a tiny push, kept up for a long time, adds up. Hold the button to thrust!
 - **Ages 12–14:** To travel between worlds I used ion engines. They turn xenon gas into charged particles and fire them out with electric fields, powered by solar wings 19.7 metres from tip to tip. My engines' maximum thrust was just 92 millinewtons, about the weight of two sheets of paper on Earth. But a gentle push, kept up for a long time, adds up: I reached Vesta in 2011, left it in 2012 and arrived at Ceres in 2015. Hold to thrust.
+- [ ] **Image** [PIA18922](https://images.nasa.gov/details/PIA18922): our caption "Dawn's ion engine glowing blue as it arrives at Ceres." matches NASA's title "Dawn Blue Glow Artist Concept" (illustration). NASA description: This artist concept shows NASA Dawn spacecraft arriving at the dwarf planet Ceres. Dawn travels through space using a technology called ion propulsion, with ions glowing with blue light are accelerated out of an engine, giving the spacecraft thrust.
 
   NASA says:
   - [ ] "using xenon which is ionized and accelerated by electrodes" ([NSSDCA: Dawn (2007-043A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A))
@@ -404,13 +425,15 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
   - [ ] "Dawn reached Vesta on 16 July 2011" ([NSSDCA: Dawn (2007-043A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A))
   - [ ] "Dawn departed Vesta on 5 September 2012" ([NSSDCA: Dawn (2007-043A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A))
   - [ ] "entered initial orbit around Ceres on 6 March 2015" ([NSSDCA: Dawn (2007-043A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A))
+  - [ ] "a fueled launch mass of 1217.7 kg" ([NSSDCA: Dawn (2007-043A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A))
 
-  > **Check:** Derived: 92 mN / 9.81 m/s^2 = 9.4 g, about two 80 gsm A4 sheets (5 g each).
+  > **Check:** Derived: 92 mN / 9.81 m/s^2 = 9.4 g, about two 80 gsm A4 sheets (5 g each). Hands-on moment: 0.092 N / 1217.7 kg = 7.55e-5 m/s^2, so one day of thrust adds about 6.5 m/s (23.5 km/h).
 
 ### What I discovered
 
 - **Ages 9–11:** At Vesta I saw a giant crater about 500 km wide. Some meteorites that fell to Earth seem to come from Vesta! At Ceres I found big salt deposits. Ceres might be up to one quarter water. That could be more water than Earth has!
 - **Ages 12–14:** At Vesta I mapped Rheasilvia, a crater about 500 km wide left by a massive collision. Vesta appears to be the source of a family of meteorites found on Earth, and my data helped scientists test that story. Then I made Ceres the first dwarf planet ever visited by a spacecraft. Its crust holds large salt deposits, and Ceres could be as much as 25 percent water. If so, it has more water than Earth.
+- [ ] **Image** [PIA14778](https://images.nasa.gov/details/PIA14778): our caption "Asteroid Vesta, photographed by Dawn's framing camera on 24 July 2011." matches NASA's title "A Full-Frame View of Vesta". NASA description: This full-frame view of asteroid Vesta was obtained by NASA Dawn spacecraft with its framing camera on July, 24 2011. This image was taken through the camera clear filter. The image has a resolution of about 485 meters per pixel.
 
   NASA says:
   - [ ] "a massive collision responsible for the Rheasilvia crater, which is about 310 miles (500 kilometers) wide" ([NASA Science mission page](https://science.nasa.gov/solar-system/asteroids/4-vesta/))
@@ -434,6 +457,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm still circling Ceres, silent. My orbit is steady, and it should last for several hundred years.
 - **Ages 12–14:** I'm still in orbit around Ceres, silent. My final orbit is stable and should last several hundred years. Along the way I visited two very different worlds: the giant asteroid Vesta and the dwarf planet Ceres.
+- [ ] **Image** [PIA20350](https://images.nasa.gov/details/PIA20350): our caption "Occator Crater, home of the brightest spots on Ceres, seen by Dawn." matches NASA's title "Occator Crater and Ceres Brightest Spots". NASA description: NASA Dawn spacecraft captured Occator Crater, containing the brightest area on Ceres; this closeup reveals a dome in a smooth-walled pit in the bright center of the crater.
 
   NASA says:
   - [ ] "After the end of the mission Dawn remained in orbit around Ceres" ([NSSDCA: Dawn (2007-043A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A))
@@ -448,6 +472,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm NEAR Shoemaker. My mission was to meet an asteroid called Eros and study it up close for a whole year. Eros is about 33 km long!
 - **Ages 12–14:** I'm NEAR Shoemaker, short for Near Earth Asteroid Rendezvous. I was sent to study asteroid 433 Eros from orbit for about a year: its makeup, shape, mass and magnetic field. Eros measures about 13 by 13 by 33 km, the second largest near-Earth asteroid. I was renamed in honour of the geologist Eugene Shoemaker.
+- [ ] **Image** [PIA18177](https://images.nasa.gov/details/PIA18177): our caption "NEAR meeting asteroid Eros." matches NASA's title "NASA NEAR Spacecraft Rendezvous with Asteroid Eros Artist Concept" (illustration). NASA description: Artist rendering of the the Near Earth Asteroid Rendezvous NEAR spacecraft rendezvous with the asteroid Eros.
 
   NASA says:
   - [ ] "The ultimate goal of the mission was to study the near Earth asteroid 433 Eros from orbit for approximately one year." ([NSSDCA: NEAR Shoemaker (1996-008A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A))
@@ -493,6 +518,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm still resting on asteroid Eros. In December 2002, scientists tried to call me one more time, but I didn't answer.
 - **Ages 12–14:** I'm still resting in the saddle of Eros. On 10 December 2002, scientists tried to contact me one last time, but there was no answer. I was the first spacecraft to orbit an asteroid, and the first to touch down on one.
+- [ ] **Image** [PIA02900](https://images.nasa.gov/details/PIA02900): our caption "The "saddle" region of Eros, where NEAR Shoemaker later touched down, imaged from 208 km away in March 2000." matches NASA's title "Back in the Saddle Again". NASA description: Again and again, NEAR Shoemaker's imager is being directed at the "saddle region" of Eros, to observe this feature under the widest variety of lighting conditions. This image of the saddle was taken March 22, 2000, from a range of 208 kilometers (129 miles). Generically speaking, a saddle is a low r
 
   NASA says:
   - [ ] "A later attempt to contact the spacecraft on 10 December 2002 was unsuccessful." ([NSSDCA: NEAR Shoemaker (1996-008A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A))
@@ -506,6 +532,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I'm Pioneer 10. In 1972 I became the first spacecraft sent to the outer solar system. My job was to be the first to visit the giant planet Jupiter.
 - **Ages 12–14:** I'm Pioneer 10, NASA's first mission to the outer planets. Launched on 3 March 1972, I was the first spacecraft sent to the outer solar system and the first to investigate the planet Jupiter.
+- [ ] **Image** [ARC-1972-AC72-2135](https://images.nasa.gov/details/ARC-1972-AC72-2135): our caption "Pioneer 10 being readied for launch at Cape Kennedy in 1972." matches NASA's title "ARC-1972-AC72-2135". NASA description: PIONEER F (PIONEER-10) SPACECRAFT AT CAPE KENNEDY BEING READIED FOR MISSION (SHOWS THE POSITION OF THE PIONEER INTERSTALLER PLAQUE)
 
   NASA says:
   - [ ] "This mission was the first to be sent to the outer solar system and the first to investigate the planet Jupiter" ([NSSDCA: Pioneer 10 (1972-012A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A))
@@ -516,6 +543,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** I made my electricity with four nuclear power generators. I crossed the whole asteroid belt! And I carry a picture plaque showing a man, a woman, and where our Sun and Earth are in the galaxy.
 - **Ages 12–14:** Four radioisotope generators, held out on long trusses, made my electricity: about 155 watts at launch. My magnetometer rode on a 6.6-metre boom, away from the rest of me. Between July 1972 and February 1973 I crossed the asteroid belt, a journey of about 435 million km. And on my body I carry a plaque with drawings of a man, a woman, and the location of the Sun and Earth in our galaxy.
+- [ ] **Image** [ARC-1972-A72-2137](https://images.nasa.gov/details/ARC-1972-A72-2137): our caption "The Pioneer 10 plaque positioned on the spacecraft." matches NASA's title "ARC-1972-A72-2137". NASA description: Pioneer-10 interstellar plaque positioned on spacecraft
 
   NASA says:
   - [ ] "Power for the spacecraft was obtained by four SNAP-19 radioisotope thermonuclear generators (RTG)" ([NSSDCA: Pioneer 10 (1972-012A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A))
@@ -528,6 +556,7 @@ Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **4.9**,
 
 - **Ages 9–11:** On 4 December 1973 I flew past Jupiter, about 200,000 km away. I took the first close-up pictures of Ganymede, one of Jupiter's moons. In 1983, I became the first human-made object to travel beyond the farthest planet!
 - **Ages 12–14:** On 4 December 1973 I made my closest approach to Jupiter, about 200,000 km away, and became the first spacecraft to take close-up images of its moon Ganymede. On 13 June 1983 I crossed the orbit of Neptune, then the outermost planet, becoming the first human-made object to go beyond the farthest planet.
+- [ ] **Image** [ARC-1973-AC73-9253](https://images.nasa.gov/details/ARC-1973-AC73-9253): our caption "Jupiter photographed by Pioneer 10 from about 2.6 million km away, December 1973." matches NASA's title "ARC-1973-AC73-9253". NASA description: Photograph by Pioneer 10   Jupiter at a range of 2584000km (ref: image number sequence A-51 (before) during the 4 days on either side of closest approach) moon seen on upper right on image.
 
   NASA says:
   - [ ] "The spacecraft achieved its closest approach to Jupiter on 04 December 1973, when it reached approximately 2.8 Jovian radii (about 200,000 km)." ([NSSDCA: Pioneer 10 (1972-012A)](https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A))

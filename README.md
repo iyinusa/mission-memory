@@ -29,7 +29,8 @@ https://missionmemory.kenaff.com   (one origin)
   `ui://` view inside MCP clients. It reads its content from the `web` container, so both always match.
 - `scripts/` — build-time data pipeline. `ingest.py` builds `artifacts.json` from NSSDCA and checks every quoted fact
   against its NASA page. `build_stories.py` does the same for every story beat in `stories.json`, then writes the
-  fact-check checklist to `review/STORIES-REVIEW.md`.
+  fact-check checklist to `review/STORIES-REVIEW.md`. `images.py` fetches the chosen NASA Image and Video Library photos
+  (`images.json`) with their official credits, and keeps the image table in `CREDITS.md` up to date.
 - `brand/` — `build.py` regenerates the logo, favicons and link-preview image into `web/public`.
 
 ## Run locally

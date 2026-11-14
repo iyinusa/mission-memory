@@ -1,26 +1,22 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { formatDial } from "../lib/data";
-import type { Status, WorldId } from "../lib/types";
-
-export interface Station {
-  id: string;
-  name: string;
-  value: number;
-  status: Status;
-  strong: boolean;
-}
+import type { Station } from "../lib/useTuner";
+import type { WorldId } from "../lib/types";
 
 interface Props {
   world: WorldId;
   stations: Station[];
   min: number;
   max: number;
-  selectedId: string | null;
+  needle: number;
+  strength: number;
+  lockedId: string | null;
+  scanning: boolean;
+  onTune: (v: number) => void;
+  onRelease: (v: number) => void;
   onSelect: (id: string) => void;
+  onStep: (dir: 1 | -1) => void;
 }
-
-/** How close (as a fraction of the dial) the needle must be for a station to come through. */
-const CAPTURE = 0.04;
 
 function useStatic(canvas: React.RefObject<HTMLCanvasElement | null>, amount: number) {
   const level = useRef(amount);
@@ -48,27 +44,14 @@ function useStatic(canvas: React.RefObject<HTMLCanvasElement | null>, amount: nu
   }, [canvas]);
 }
 
-export default function TuneDial({ world, stations, min, max, selectedId, onSelect }: Props) {
-  const sorted = useMemo(() => [...stations].sort((a, b) => a.value - b.value), [stations]);
-  const selected = sorted.find((s) => s.id === selectedId) ?? null;
-  const [needle, setNeedle] = useState(selected?.value ?? (min + max) / 2);
+/** The radio dial: a view of the shared tuner. Drag the needle, click a station, or use the arrow keys. */
+export default function TuneDial({ world, stations, min, max, needle, strength, lockedId, scanning, onTune, onRelease, onSelect, onStep }: Props) {
   const [dragging, setDragging] = useState(false);
   const track = useRef<HTMLDivElement>(null);
   const noise = useRef<HTMLCanvasElement>(null);
   const span = max - min;
   const pct = (v: number) => ((v - min) / span) * 100;
-
-  // Follow selections made elsewhere (e.g. clicking a pin on the globe).
-  useEffect(() => {
-    if (selected && !dragging) setNeedle(selected.value);
-  }, [selected, dragging]);
-
-  const nearest = useCallback(
-    (v: number) => sorted.reduce((best, s) => (Math.abs(s.value - v) < Math.abs(best.value - v) ? s : best), sorted[0]),
-    [sorted],
-  );
-  const near = sorted.length ? nearest(needle) : null;
-  const strength = near ? Math.max(0, 1 - Math.abs(near.value - needle) / (span * CAPTURE)) : 0;
+  const locked = stations.find((s) => s.id === lockedId) ?? null;
   useStatic(noise, 1 - strength);
 
   const valueAt = (clientX: number) => {
@@ -76,26 +59,11 @@ export default function TuneDial({ world, stations, min, max, selectedId, onSele
     return min + Math.min(1, Math.max(0, (clientX - r.left) / r.width)) * span;
   };
 
-  const release = (v: number) => {
-    setDragging(false);
-    const s = nearest(v);
-    if (Math.abs(s.value - v) <= span * CAPTURE) {
-      setNeedle(s.value);
-      onSelect(s.id);
-    }
-  };
-
-  const step = (dir: 1 | -1) => {
-    const i = selected ? sorted.indexOf(selected) : -1;
-    const next = sorted[(i + dir + sorted.length) % sorted.length];
-    onSelect(next.id);
-  };
-
   const onKey = (e: React.KeyboardEvent) => {
-    if (e.key === "ArrowRight" || e.key === "ArrowUp") step(1);
-    else if (e.key === "ArrowLeft" || e.key === "ArrowDown") step(-1);
-    else if (e.key === "Home") onSelect(sorted[0].id);
-    else if (e.key === "End") onSelect(sorted[sorted.length - 1].id);
+    if (e.key === "ArrowRight" || e.key === "ArrowUp") onStep(1);
+    else if (e.key === "ArrowLeft" || e.key === "ArrowDown") onStep(-1);
+    else if (e.key === "Home") onSelect(stations[0].id);
+    else if (e.key === "End") onSelect(stations[stations.length - 1].id);
     else return;
     e.preventDefault();
   };
@@ -109,8 +77,6 @@ export default function TuneDial({ world, stations, min, max, selectedId, onSele
     return out;
   }, [world, min, max]);
 
-  const locked = strength > 0.85 && near;
-
   return (
     <div className="dial">
       <div className="dial-readout" aria-hidden="true">
@@ -120,27 +86,30 @@ export default function TuneDial({ world, stations, min, max, selectedId, onSele
             <i key={t} className={strength >= t ? "on" : ""} />
           ))}
         </span>
-        <span className="dial-station">{locked ? near.name : "Searching…"}</span>
+        <span className="dial-station">{locked ? locked.name : scanning ? "Scanning…" : "Static"}</span>
       </div>
 
       <div
         ref={track}
-        className={`dial-track${dragging ? " dragging" : ""}`}
+        className={`dial-track${dragging ? " dragging" : ""}${scanning ? " scanning" : ""}`}
         role="slider"
         tabIndex={0}
         aria-label="Tune in to an explorer"
-        aria-valuemin={min}
-        aria-valuemax={max}
+        aria-valuemin={Math.round(min)}
+        aria-valuemax={Math.round(max)}
         aria-valuenow={Math.round(needle)}
-        aria-valuetext={locked ? `${near.name}, ${formatDial(world, near.value)}` : `Static, ${formatDial(world, needle)}`}
+        aria-valuetext={locked ? `${locked.name}, ${formatDial(world, locked.value)}` : `Static, ${formatDial(world, needle)}`}
         onKeyDown={onKey}
         onPointerDown={(e) => {
           e.currentTarget.setPointerCapture(e.pointerId);
           setDragging(true);
-          setNeedle(valueAt(e.clientX));
+          onTune(valueAt(e.clientX));
         }}
-        onPointerMove={(e) => dragging && setNeedle(valueAt(e.clientX))}
-        onPointerUp={(e) => release(valueAt(e.clientX))}
+        onPointerMove={(e) => dragging && onTune(valueAt(e.clientX))}
+        onPointerUp={(e) => {
+          setDragging(false);
+          onRelease(valueAt(e.clientX));
+        }}
         onPointerCancel={() => setDragging(false)}
       >
         <canvas ref={noise} className="dial-static" width={240} height={24} />
@@ -149,12 +118,12 @@ export default function TuneDial({ world, stations, min, max, selectedId, onSele
             {t.major && <em>{formatDial(world, t.v)}</em>}
           </span>
         ))}
-        {sorted.map((s) => (
+        {stations.map((s) => (
           <button
             key={s.id}
             type="button"
             tabIndex={-1}
-            className={`dial-station-mark status-${s.status}${s.strong ? " strong" : ""}${s.id === selectedId ? " current" : ""}`}
+            className={`dial-station-mark status-${s.status}${s.strong ? " strong" : ""}${s.id === lockedId ? " current" : ""}`}
             style={{ left: `${pct(s.value)}%` }}
             title={s.name}
             aria-hidden="true"
@@ -162,9 +131,8 @@ export default function TuneDial({ world, stations, min, max, selectedId, onSele
             onClick={() => onSelect(s.id)}
           />
         ))}
-        <span className={`dial-needle${locked ? " locked" : ""}`} style={{ left: `${pct(needle)}%` }} aria-hidden="true" />
+        <span className={`dial-needle${strength > 0.85 ? " locked" : ""}`} style={{ left: `${pct(needle)}%` }} aria-hidden="true" />
       </div>
-      <p className="dial-hint">Drag the needle, or use the arrow keys, to tune between explorers.</p>
     </div>
   );
 }

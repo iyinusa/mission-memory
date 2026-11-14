@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { formatDate } from "../lib/data";
 import type { Artifact, LevelId, Story } from "../lib/types";
+import Interaction from "./interactions/Interaction";
 import Postcard from "./Postcard";
 import StatusChip from "./StatusChip";
 
@@ -57,7 +58,9 @@ export default function StoryPlayer({ artifact, story, mediaBase = "" }: Props) 
         <h1>{artifact.name}</h1>
         <StatusChip status={artifact.status} note={artifact.statusNote} />
         <p className="player-dates">
-          {artifact.launched && <>Launched {formatDate(artifact.launched)}</>}
+          {/* One launch date would be wrong for a ghost spread over several missions (the retroreflectors). */}
+          {artifact.launched && !artifact.sites.length && <>Launched {formatDate(artifact.launched)}</>}
+          {artifact.sites.length > 0 && <>Placed at {artifact.sites.length} sites</>}
           {artifact.lastContact && <> · Last contact {formatDate(artifact.lastContact)}</>}
         </p>
         <div className="level-switch" role="radiogroup" aria-label="Reading level">
@@ -92,6 +95,18 @@ export default function StoryPlayer({ artifact, story, mediaBase = "" }: Props) 
             {beat.title}
           </h2>
           <p className="beat-text">{beat.text[level]}</p>
+          {beat.image && (
+            <figure className="beat-figure">
+              <img src={`${mediaBase}${beat.image.src}`} alt={beat.image.alt} loading="lazy" />
+              <figcaption>
+                {beat.image.illustration && <span className="tag">Illustration</span>} {beat.image.caption}{" "}
+                <a href={beat.image.url} target="_blank" rel="noreferrer" className="credit">
+                  {beat.image.credit}
+                </a>
+              </figcaption>
+            </figure>
+          )}
+          {beat.key === "how" && story.interaction && <Interaction kind={story.interaction} />}
 
           {hasAudio && (
             <div className="narration">
