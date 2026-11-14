@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { dialValue } from "../lib/data";
-import type { Artifact, Status } from "../lib/types";
+import type { Artifact, BeatImage, Status } from "../lib/types";
+import { useZoomBubble } from "./ZoomBubble";
 
 // A schematic, not-to-scale map of where the "Beyond" explorers rest.
 const SUN = { x: 300, y: 200 };
@@ -32,8 +33,8 @@ interface Props {
   span: number;
   /** While scanning, explorers appear as the dial passes their launch year. */
   scanning: boolean;
-  /** Thumbnail URL per explorer id. */
-  portraits?: Record<string, string>;
+  /** Hardware photo per explorer id. */
+  portraits?: Record<string, BeatImage>;
   onTune: (v: number) => void;
   onRelease: (v: number) => void;
 }
@@ -114,16 +115,7 @@ export default function BeyondMap({ ghosts, selectedId, onSelect, needle, min, s
             )}
             <circle cx={p.at.x} cy={p.at.y} r={sel ? 16 : 10} fill={color} opacity=".18" />
             <circle cx={p.at.x} cy={p.at.y} r={g.tier === "map" ? 3.5 : 5} fill={color} />
-            {sel && portraits?.[g.id] && (
-              // The explorer's photo, on the opposite side from its label.
-              <g transform={`translate(${p.at.x} ${p.at.y > 300 ? p.at.y + 40 : p.at.y - 40})`}>
-                <clipPath id={`face-${g.id}`}>
-                  <circle r="22" />
-                </clipPath>
-                <image href={portraits[g.id]} x="-22" y="-22" width="44" height="44" clipPath={`url(#face-${g.id})`} preserveAspectRatio="xMidYMid slice" />
-                <circle r="22" fill="none" stroke="var(--signal)" strokeWidth="2" />
-              </g>
-            )}
+            {sel && portraits?.[g.id] && <Avatar id={g.id} photo={portraits[g.id]} x={p.at.x} y={p.at.y > 300 ? p.at.y + 40 : p.at.y - 40} />}
             {sel && (
               // Near either edge, align the label inward so long names never run off the map.
               <text
@@ -142,5 +134,20 @@ export default function BeyondMap({ ghosts, selectedId, onSelect, needle, min, s
         );
       })}
     </svg>
+  );
+}
+
+/** The explorer's photo on the map (opposite its label); hover it for the bigger picture. */
+function Avatar({ id, photo, x, y }: { id: string; photo: BeatImage; x: number; y: number }) {
+  const { bind, bubble } = useZoomBubble(photo);
+  return (
+    <g transform={`translate(${x} ${y})`} className="map-avatar" {...bind}>
+      <clipPath id={`face-${id}`}>
+        <circle r="22" />
+      </clipPath>
+      <image href={photo.src} x="-22" y="-22" width="44" height="44" clipPath={`url(#face-${id})`} preserveAspectRatio="xMidYMid slice" />
+      <circle r="22" fill="none" stroke="var(--signal)" strokeWidth="2" />
+      {bubble}
+    </g>
   );
 }

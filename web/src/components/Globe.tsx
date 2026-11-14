@@ -2,7 +2,8 @@ import { Html, Stars, useTexture } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useMemo, useRef } from "react";
 import * as THREE from "three";
-import type { Artifact, Status } from "../lib/types";
+import type { Artifact, BeatImage, Status } from "../lib/types";
+import ZoomPhoto from "./ZoomBubble";
 
 const TEXTURES = { moon: "/media/textures/moon.jpg", mars: "/media/textures/mars.jpg" };
 const STATUS_COLOR: Record<Status, string> = { active: "#7cf2c8", dormant: "#ffd166", silent: "#c3c9dc" };
@@ -65,7 +66,7 @@ function GhostPin({
   onSelect: (id: string) => void;
   planet: React.RefObject<THREE.Mesh | null>;
   /** The explorer's hardware photo, shown in its label so learners can picture it. */
-  photo?: string;
+  photo?: BeatImage;
 }) {
   const sprite = useRef<THREE.Sprite>(null);
   const pos = useMemo(() => toVec(pin.lat, pin.lon, 1.005), [pin.lat, pin.lon]);
@@ -97,7 +98,8 @@ function GhostPin({
       {selected && (
         // Hide the label only when the planet itself is in the way (not the pin's own glow).
         <Html center occlude={[planet as React.RefObject<THREE.Object3D>]} position={labelAt} className="globe-label" zIndexRange={[10, 0]}>
-          {photo && <img src={photo} alt="" />}
+          {/* Hover the photo to see it bigger; the panel has the focusable version. */}
+          {photo && <ZoomPhoto photo={photo} label={false} />}
           {pin.label}
         </Html>
       )}
@@ -142,8 +144,8 @@ export interface GlobeProps {
   /** Longitude (deg E) currently tuned; faces the camera. */
   needle: number;
   lockedId: string | null;
-  /** Thumbnail URL per explorer id. */
-  portraits?: Record<string, string>;
+  /** Hardware photo per explorer id. */
+  portraits?: Record<string, BeatImage>;
   onSelect: (id: string) => void;
   onTune: (lon: number) => void;
   onRelease: (lon: number) => void;

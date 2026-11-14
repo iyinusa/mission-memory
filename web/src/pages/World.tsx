@@ -5,6 +5,7 @@ import Loading from "../components/Loading";
 import StatusChip from "../components/StatusChip";
 import TuneDial from "../components/TuneDial";
 import Typewriter from "../components/Typewriter";
+import ZoomPhoto from "../components/ZoomBubble";
 import { WORLDS, byWorld, dialValue } from "../lib/data";
 import { useArtifacts, useStories } from "../lib/useArtifacts";
 import { NARRATOR_CPS } from "../lib/sound";
@@ -48,7 +49,6 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
   // When a signal locks, the explorer speaks: its first story line, or NASA's summary for map-only explorers.
   const story = locked ? stories.stories[locked.id] : undefined;
   const portrait = locked ? stories.portraits?.[locked.id] : undefined;
-  const thumbs = useMemo(() => Object.fromEntries(Object.entries(stories.portraits ?? {}).map(([id, p]) => [id, p.src])), [stories]);
   const clip = !locked
     ? null
     : story?.audio?.includes("younger")
@@ -88,7 +88,7 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
               min={min}
               span={tuner.span}
               scanning={scanning}
-              portraits={thumbs}
+              portraits={stories.portraits}
               onTune={tuner.tune}
               onRelease={release}
             />
@@ -99,7 +99,7 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
                 ghosts={ghosts}
                 needle={tuner.needle}
                 lockedId={tuner.lockedId}
-                portraits={thumbs}
+                portraits={stories.portraits}
                 onSelect={select}
                 onTune={tuner.tune}
                 onRelease={release}
@@ -116,7 +116,7 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
             <>
               <p className="panel-kicker">Signal found · {locked.body}</p>
               <div className="panel-title">
-                {portrait && <img src={portrait.src} alt={portrait.alt} className="panel-photo" />}
+                {portrait && <ZoomPhoto photo={portrait} className="panel-photo" />}
                 <h2>{locked.name}</h2>
               </div>
               {portrait && (

@@ -102,6 +102,7 @@ def main() -> int:
             page = f"https://images.nasa.gov/details/{urllib.parse.quote(nid)}"
             out.setdefault(ghost, {})[beat] = {
                 "src": f"/media/images/{ghost}/{dest.name}",
+                "full": f"/media/images/{ghost}/{nid}.jpg",
                 "alt": m.get("title", "").strip(),
                 "caption": pick["caption"],
                 "credit": credit,

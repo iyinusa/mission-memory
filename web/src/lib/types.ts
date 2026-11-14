@@ -68,6 +68,8 @@ export interface BeatSource extends Source {
 /** A photo or illustration from the NASA Image and Video Library (scripts/images.py). */
 export interface BeatImage {
   src: string;
+  /** Full-size version, when `src` is a thumbnail (portraits). */
+  full?: string;
   alt: string;
   caption: string;
   credit: string;

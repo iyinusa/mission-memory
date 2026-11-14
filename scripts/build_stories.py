@@ -134,7 +134,7 @@ def main() -> int:
     ]
     # Each explorer's hardware photo, shown beside its name on the globe, the map and the panel.
     portraits = {
-        gid: {k: v["portrait"][k] for k in ("src", "alt", "caption", "credit", "illustration", "url")} for gid, v in images.items() if "portrait" in v
+        gid: {k: v["portrait"][k] for k in ("src", "full", "alt", "caption", "credit", "illustration", "url")} for gid, v in images.items() if "portrait" in v
     }
     OUT.write_text(
         json.dumps({"generatedAt": now, "levels": LEVELS, "stories": published, "summaryAudio": summary_audio, "portraits": portraits}, indent=2, ensure_ascii=False)
