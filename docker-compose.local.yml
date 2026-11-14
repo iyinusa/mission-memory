@@ -1,0 +1,6 @@
+# Local run of the production layout on http://localhost:8080
+#   PUBLIC_ORIGIN=http://localhost:8080 docker compose -f docker-compose.yml -f docker-compose.local.yml up --build
+services:
+  web:
+    ports:
+      - "8080:80"

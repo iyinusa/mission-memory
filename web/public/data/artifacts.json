@@ -1,0 +1,864 @@
+{
+  "generatedAt": "2026-11-14T09:37:52+00:00",
+  "artifacts": [
+    {
+      "id": "apollo-retroreflectors",
+      "name": "Apollo Laser Retroreflectors",
+      "world": "moon",
+      "body": "Moon",
+      "nssdcaId": "1971-008C",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-008C",
+      "missionUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C",
+      "lat": -3.64589,
+      "lon": -17.47194,
+      "launched": "1971-01-31",
+      "arrived": null,
+      "lastContact": null,
+      "status": "active",
+      "statusNote": "Still reflecting lasers fired from Earth",
+      "tier": "hero",
+      "summary": "The laser ranging retroreflector (LRRR), which was left on the lunar surface by the Apollo 11 crew, was a retroreflector array with a folding support structure for aiming and aligning the array toward earth. The array was built of cubes of fused silica.",
+      "sites": [
+        {
+          "label": "Apollo 11, Tranquility Base",
+          "lat": 0.6735,
+          "lon": 23.473
+        },
+        {
+          "label": "Apollo 14, Fra Mauro",
+          "lat": -3.64589,
+          "lon": -17.47194
+        },
+        {
+          "label": "Apollo 15, Hadley-Apennine",
+          "lat": 26.13239,
+          "lon": 3.6333
+        }
+      ],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "3.64589 S latitude, 17.47194 W",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-008C",
+          "label": "NSSDCA: Apollo 14 Lunar Module /ALSEP (1971-008C)"
+        },
+        {
+          "claim": "site: Apollo 11, Tranquility Base",
+          "quote": "0.6735 N latitude, 23.4730 E longitude",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C",
+          "label": "NSSDCA: Apollo 11 Lunar Module / EASEP (1969-059C)"
+        },
+        {
+          "claim": "site: Apollo 14, Fra Mauro",
+          "quote": "3.64589 S latitude, 17.47194 W",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-008C",
+          "label": "NSSDCA: Apollo 14 Lunar Module /ALSEP (1971-008C)"
+        },
+        {
+          "claim": "site: Apollo 15, Hadley-Apennine",
+          "quote": "26.13239 N latitude, 3.63330 E",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C",
+          "label": "NSSDCA: Apollo 15 Lunar Module /ALSEP (1971-063C)"
+        },
+        {
+          "claim": "status",
+          "quote": "The LRRR could be used indefinitely",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1971-063C-08",
+          "label": "NSSDCA experiment 1971-063C-08"
+        },
+        {
+          "claim": "purpose",
+          "quote": "Laser ranging beams from earth were reflected back to their point of origin for precise measurement of earth-moon distance",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1969-059C-04",
+          "label": "NSSDCA experiment 1969-059C-04"
+        },
+        {
+          "claim": "network",
+          "quote": "provided a network of stations (well-separated in longitude and latitude)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1971-008C-09",
+          "label": "NSSDCA experiment 1971-008C-09"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Apollo 14 Lunar Module /ALSEP (1971-008C)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-008C"
+        },
+        {
+          "label": "NSSDCA: Apollo 11 Lunar Module / EASEP (1969-059C)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"
+        },
+        {
+          "label": "NSSDCA: Apollo 15 Lunar Module /ALSEP (1971-063C)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+        },
+        {
+          "label": "NSSDCA: Apollo 12 Lunar Module / ALSEP (1969-099C)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C"
+        },
+        {
+          "label": "NSSDCA experiment 1971-063C-08",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1971-063C-08"
+        },
+        {
+          "label": "NSSDCA experiment 1969-059C-04",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1969-059C-04"
+        },
+        {
+          "label": "NSSDCA experiment 1971-008C-09",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/experiment/display.action?id=1971-008C-09"
+        }
+      ]
+    },
+    {
+      "id": "apollo11-eagle",
+      "name": "Eagle (Apollo 11 descent stage)",
+      "world": "moon",
+      "body": "Moon",
+      "nssdcaId": "1969-059C",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C",
+      "missionUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C",
+      "lat": 0.67416,
+      "lon": 23.47314,
+      "launched": "1969-07-16",
+      "arrived": null,
+      "lastContact": null,
+      "status": "dormant",
+      "statusNote": "Resting at Tranquility Base since 1969",
+      "tier": "story",
+      "summary": "The Apollo 11 Lunar Module (LM) \"Eagle\" was the first crewed vehicle to land on the Moon. It carried two astronauts, Commander Neil A. Armstrong and LM pilot Edwin E. \"Buzz\" Aldrin, Jr., the first men to walk on the Moon.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "0.67416 degrees N latitude, 23.47314",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C",
+          "label": "NSSDCA: Apollo 11 Lunar Module / EASEP (1969-059C)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Apollo 11 Lunar Module / EASEP (1969-059C)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C"
+        }
+      ]
+    },
+    {
+      "id": "apollo15-lrv",
+      "name": "Lunar Roving Vehicle (Apollo 15)",
+      "world": "moon",
+      "body": "Moon",
+      "nssdcaId": "1971-063C",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C",
+      "missionUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C",
+      "lat": 26.13239,
+      "lon": 3.6333,
+      "launched": "1971-07-26",
+      "arrived": null,
+      "lastContact": null,
+      "status": "dormant",
+      "statusNote": "Parked at Hadley-Apennine since 1971",
+      "tier": "story",
+      "summary": "The Apollo 15 lunar module (LM) \"Falcon\" was the fourth crewed vehicle to land on the Moon. It carried two astronauts, Commander David R. Scott and LM pilot James B. Irwin, the seventh and eighth men to walk on the Moon.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "26.13239 N latitude, 3.63330 E",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C",
+          "label": "NSSDCA: Apollo 15 Lunar Module /ALSEP (1971-063C)"
+        },
+        {
+          "claim": "first",
+          "quote": "This was the first time a vehicle of this type had been used",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C",
+          "label": "NSSDCA: Apollo 15 Lunar Module /ALSEP (1971-063C)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Apollo 15 Lunar Module /ALSEP (1971-063C)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C"
+        }
+      ]
+    },
+    {
+      "id": "surveyor-3",
+      "name": "Surveyor 3",
+      "world": "moon",
+      "body": "Moon",
+      "nssdcaId": "1967-035A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A",
+      "missionUrl": "https://science.nasa.gov/mission/surveyor-3/",
+      "lat": -3.0162,
+      "lon": -23.418,
+      "launched": "1967-04-17",
+      "arrived": null,
+      "lastContact": "1967-05-04",
+      "status": "silent",
+      "statusNote": "Last data on 4 May 1967",
+      "tier": "map",
+      "summary": "Surveyor 3 was the second spacecraft of the Surveyor series to achieve a lunar soft landing.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "3.0162 S, 336.582 E",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A",
+          "label": "NSSDCA: Surveyor 3 (1967-035A)"
+        },
+        {
+          "claim": "last contact",
+          "quote": "The last data were returned on 04 May 1967",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A",
+          "label": "NSSDCA: Surveyor 3 (1967-035A)"
+        },
+        {
+          "claim": "visited",
+          "quote": "Astronauts Pete Conrad and Alan Bean visited the spacecraft",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A",
+          "label": "NSSDCA: Surveyor 3 (1967-035A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Surveyor 3 (1967-035A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/surveyor-3/"
+        }
+      ]
+    },
+    {
+      "id": "spirit",
+      "name": "Spirit",
+      "world": "mars",
+      "body": "Mars",
+      "nssdcaId": "2003-027A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+      "missionUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
+      "lat": -14.572,
+      "lon": 175.478,
+      "launched": "2003-06-10",
+      "arrived": null,
+      "lastContact": "2010-03-22",
+      "status": "silent",
+      "statusNote": "Last signal on 22 March 2010",
+      "tier": "hero",
+      "summary": "The \"Spirit\" rover (Mars Exploration Rover A or MER-2) is one of two rovers launched to Mars in mid-2003. The rovers arrived at Mars in January of 2004 equipped with a battery of scientific instruments and will be able to traverse 100 meters a day.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "14.572 S, 175.478 E",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "label": "NSSDCA: Spirit (2003-027A)"
+        },
+        {
+          "claim": "location cross-check",
+          "quote": "175.48°E -14.57°N",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html",
+          "label": "NASA GISS Mars24: Mars Landers"
+        },
+        {
+          "claim": "last contact",
+          "quote": "The last transmission from Spirit occurred on 22 March 2010",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "label": "NSSDCA: Spirit (2003-027A)"
+        },
+        {
+          "claim": "distance",
+          "quote": "The rover travelled a total of 7.73 km over a period of 6 years, 2 months",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A",
+          "label": "NSSDCA: Spirit (2003-027A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Spirit (2003-027A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-027A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
+        },
+        {
+          "label": "NASA GISS Mars24: Mars Landers",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html"
+        }
+      ]
+    },
+    {
+      "id": "opportunity",
+      "name": "Opportunity",
+      "world": "mars",
+      "body": "Mars",
+      "nssdcaId": "2003-032A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-032A",
+      "missionUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
+      "lat": -1.946,
+      "lon": -5.527,
+      "launched": "2003-07-08",
+      "arrived": null,
+      "lastContact": "2018-06-10",
+      "status": "silent",
+      "statusNote": "Last signal on 10 June 2018",
+      "tier": "map",
+      "summary": "\"Opportunity\" (Mars Exploration Rover B or MER-1) is one of two rovers launched to Mars in mid-2003. The rovers arrived at Mars in January of 2004 equipped with a battery of scientific instruments and will be able to traverse 100 meters a day.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "1.946° S and 354.473° E",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-032A",
+          "label": "NSSDCA: Opportunity (2003-032A)"
+        },
+        {
+          "claim": "location cross-check",
+          "quote": "354.47°E -1.95°N",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html",
+          "label": "NASA GISS Mars24: Mars Landers"
+        },
+        {
+          "claim": "last contact",
+          "quote": "The final communication from the rover was received on 10 June 2018",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-032A",
+          "label": "NSSDCA: Opportunity (2003-032A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Opportunity (2003-032A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2003-032A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
+        },
+        {
+          "label": "NASA GISS Mars24: Mars Landers",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html"
+        }
+      ]
+    },
+    {
+      "id": "sojourner",
+      "name": "Sojourner",
+      "world": "mars",
+      "body": "Mars",
+      "nssdcaId": "MESURPR",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=MESURPR",
+      "missionUrl": "https://science.nasa.gov/mission/mars-pathfinder/",
+      "lat": 19.33,
+      "lon": -33.55,
+      "launched": "1996-12-04",
+      "arrived": null,
+      "lastContact": "1997-09-27",
+      "status": "silent",
+      "statusNote": "Contact lost on 27 September 1997",
+      "tier": "map",
+      "summary": "The Mars Pathfinder was the second of NASA's low-cost planetary Discovery missions to be launched. The mission consists of a stationary lander and a surface rover. The mission had the primary objective of demonstrating the feasibility of low-cost landings on and exploration of the Martian surface.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "The landing site in the Ares Vallis region of Mars is at 19.33 N, 33.55 W",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-068A",
+          "label": "NSSDCA: Mars Pathfinder (1996-068A)"
+        },
+        {
+          "claim": "location cross-check",
+          "quote": "326.75°E 19.47°N",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html",
+          "label": "NASA GISS Mars24: Mars Landers"
+        },
+        {
+          "claim": "last contact",
+          "quote": "until 27 September 1997 when communications were lost",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-068A",
+          "label": "NSSDCA: Mars Pathfinder (1996-068A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: MESURPR (MESURPR)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=MESURPR"
+        },
+        {
+          "label": "NSSDCA: Mars Pathfinder (1996-068A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-068A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/mars-pathfinder/"
+        },
+        {
+          "label": "NASA GISS Mars24: Mars Landers",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html"
+        }
+      ]
+    },
+    {
+      "id": "viking-1",
+      "name": "Viking 1 Lander",
+      "world": "mars",
+      "body": "Mars",
+      "nssdcaId": "1975-075C",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C",
+      "missionUrl": "https://science.nasa.gov/mission/viking-1/",
+      "lat": 22.27,
+      "lon": -47.95,
+      "launched": "1975-08-20",
+      "arrived": null,
+      "lastContact": "1982-11-13",
+      "status": "silent",
+      "statusNote": "Contact lost on 13 November 1982",
+      "tier": "story",
+      "summary": "The Viking project consisted of launches of two separate spacecraft to Mars, Viking 1, launched on 20 August 1975, and Viking 2, launched on 9 September 1975. Each spacecraft consisted of an orbiter and a lander.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "22.27 deg N latitude and 312.05 deg E",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C",
+          "label": "NSSDCA: Viking 1 Lander (1975-075C)"
+        },
+        {
+          "claim": "last contact",
+          "quote": "It operated until 13 November 1982 when contact was lost",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C",
+          "label": "NSSDCA: Viking 1 Lander (1975-075C)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Viking 1 Lander (1975-075C)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/viking-1/"
+        }
+      ]
+    },
+    {
+      "id": "viking-2",
+      "name": "Viking 2 Lander",
+      "world": "mars",
+      "body": "Mars",
+      "nssdcaId": "1975-083C",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-083C",
+      "missionUrl": "https://science.nasa.gov/mission/viking-1/",
+      "lat": 47.6673,
+      "lon": 134.2809,
+      "launched": "1975-09-09",
+      "arrived": null,
+      "lastContact": "1980-04-11",
+      "status": "silent",
+      "statusNote": "Switched off on 11 April 1980",
+      "tier": "map",
+      "summary": "The Viking project consisted of launches of two separate spacecraft to Mars, Viking 1, launched on 20 August 1975, and Viking 2, launched on 9 September 1975. Each spacecraft consisted of an orbiter and a lander.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "47.6673 deg N latitude and 134.2809 deg",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-083C",
+          "label": "NSSDCA: Viking 2 Lander (1975-083C)"
+        },
+        {
+          "claim": "last contact",
+          "quote": "was turned off on April 11, 1980 when its batteries failed",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-083C",
+          "label": "NSSDCA: Viking 2 Lander (1975-083C)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Viking 2 Lander (1975-083C)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-083C"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/viking-1/"
+        }
+      ]
+    },
+    {
+      "id": "phoenix",
+      "name": "Phoenix Mars Lander",
+      "world": "mars",
+      "body": "Mars",
+      "nssdcaId": "2007-034A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A",
+      "missionUrl": "https://science.nasa.gov/mission/insight/",
+      "lat": 68.15,
+      "lon": -125.9,
+      "launched": "2007-08-04",
+      "arrived": null,
+      "lastContact": "2008-11-02",
+      "status": "silent",
+      "statusNote": "Last signal on 2 November 2008",
+      "tier": "map",
+      "summary": "The Phoenix mission has officially ended, its last signal was received on 02 November 2008. The Phoenix Mars Lander is designed to study the surface and near-surface environment of a landing site in the high northern area of Mars.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "68.15 N, 125.9 W",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A",
+          "label": "NSSDCA: Phoenix Mars Lander (2007-034A)"
+        },
+        {
+          "claim": "location cross-check",
+          "quote": "234.25°E 68.22°N",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html",
+          "label": "NASA GISS Mars24: Mars Landers"
+        },
+        {
+          "claim": "last contact",
+          "quote": "its last signal was received on 02 November 2008",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A",
+          "label": "NSSDCA: Phoenix Mars Lander (2007-034A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Phoenix Mars Lander (2007-034A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-034A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/insight/"
+        },
+        {
+          "label": "NASA GISS Mars24: Mars Landers",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html"
+        }
+      ]
+    },
+    {
+      "id": "insight",
+      "name": "InSight",
+      "world": "mars",
+      "body": "Mars",
+      "nssdcaId": "2018-042A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-042A",
+      "missionUrl": "https://science.nasa.gov/mission/insight/",
+      "lat": 4.5,
+      "lon": 135.62,
+      "launched": "2018-05-05",
+      "arrived": null,
+      "lastContact": "2022-12-15",
+      "status": "silent",
+      "statusNote": "Last transmission on 15 December 2022",
+      "tier": "map",
+      "summary": "InSight (Interior Exploration using Seismic Investigations, Geodesy and Heat Transport) is a NASA Discovery mission which landed on Mars in November 2018 and conduct surface observations until December 2022.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "135.62°E 4.50°N",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html",
+          "label": "NASA GISS Mars24: Mars Landers"
+        },
+        {
+          "claim": "last contact",
+          "quote": "The last transmission from InSight was received on 15 December 2022",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-042A",
+          "label": "NSSDCA: InSight (2018-042A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: InSight (2018-042A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2018-042A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/insight/"
+        },
+        {
+          "label": "NASA GISS Mars24: Mars Landers",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html"
+        }
+      ]
+    },
+    {
+      "id": "ingenuity",
+      "name": "Ingenuity Mars Helicopter",
+      "world": "mars",
+      "body": "Mars",
+      "nssdcaId": "2020-052A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-052A",
+      "missionUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
+      "lat": 18.44,
+      "lon": 77.45,
+      "launched": "2020-07-30",
+      "arrived": null,
+      "lastContact": "2024-01-18",
+      "status": "dormant",
+      "statusNote": "Grounded after its 72nd flight on 18 January 2024",
+      "tier": "story",
+      "summary": "The Mars 2020 mission involves landing a large roving vehicle (Perserverance) on the surface of Mars to conduct mobile studies of the surface environment with particular emphasis on habitability, past life, and sample collection for future missions.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "location",
+          "quote": "Perseverance (and Ingenuity helicopter): NASA rover project that landed Feb. 18, 2021, in Jezero Crater, at 77.45°E 18.44°N",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html",
+          "label": "NASA GISS Mars24: Mars Landers"
+        },
+        {
+          "claim": "last contact",
+          "quote": "It flew for the last time on Jan. 18, 2024",
+          "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
+          "label": "NASA Science mission page"
+        },
+        {
+          "claim": "flights",
+          "quote": "the helicopter eventually completed 72 flights across nearly three years",
+          "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
+          "label": "NASA Science mission page"
+        },
+        {
+          "claim": "first flight",
+          "quote": "The first flight, on 19 April 2021, lasted 39.1 seconds, hovering at 3 meters altitude for 30 seconds",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-052A",
+          "label": "NSSDCA: MARS 2020 (2020-052A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: MARS 2020 (2020-052A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2020-052A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/"
+        },
+        {
+          "label": "NASA GISS Mars24: Mars Landers",
+          "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html"
+        }
+      ]
+    },
+    {
+      "id": "dawn",
+      "name": "Dawn",
+      "world": "beyond",
+      "body": "Orbiting Ceres",
+      "nssdcaId": "2007-043A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A",
+      "missionUrl": "https://science.nasa.gov/mission/dawn/",
+      "lat": null,
+      "lon": null,
+      "launched": "2007-09-27",
+      "arrived": null,
+      "lastContact": "2018-10-31",
+      "status": "silent",
+      "statusNote": "Contact ended on 31 October 2018, still orbiting Ceres",
+      "tier": "hero",
+      "summary": "Dawn is a mission designed to rendezvous and orbit the asteroids 4 Vesta and 1 Ceres. The scientific objectives of the mission are to characterize the asteroids' internal structure, density, shape, size, composition and mass and to return data on surface morphology, cratering, and magnetism.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "last contact",
+          "quote": "After the end of the mission Dawn remained in orbit around Ceres, communications ended on 31 October 2018",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A",
+          "label": "NSSDCA: Dawn (2007-043A)"
+        },
+        {
+          "claim": "xenon",
+          "quote": "The xenon tank held 425 kg of propellant at launch",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A",
+          "label": "NSSDCA: Dawn (2007-043A)"
+        },
+        {
+          "claim": "orbit lifetime",
+          "quote": "The final orbit will be stable with a lifetime of several hundred years",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A",
+          "label": "NSSDCA: Dawn (2007-043A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Dawn (2007-043A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/dawn/"
+        }
+      ]
+    },
+    {
+      "id": "near-shoemaker",
+      "name": "NEAR Shoemaker",
+      "world": "beyond",
+      "body": "Resting on asteroid 433 Eros",
+      "nssdcaId": "1996-008A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A",
+      "missionUrl": "https://science.nasa.gov/mission/near-shoemaker/",
+      "lat": null,
+      "lon": null,
+      "launched": "1996-02-17",
+      "arrived": null,
+      "lastContact": "2001-02-28",
+      "status": "silent",
+      "statusNote": "Final contact on 28 February 2001, resting on Eros",
+      "tier": "story",
+      "summary": "The Near Earth Asteroid Rendezvous - Shoemaker (NEAR Shoemaker), renamed in honor of Gene Shoemaker, was designed to study the near Earth asteroid Eros from close orbit over a period of a year. The mission was the first-ever to orbit an asteroid and to touch down on the surface of an asteroid.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "last contact",
+          "quote": "NEAR Shoemaker Phones Home for the Last Time - 28 February 2001",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A",
+          "label": "NSSDCA: NEAR Shoemaker (1996-008A)"
+        },
+        {
+          "claim": "first touchdown",
+          "quote": "This was the first spacecraft touchdown on an asteroid",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A",
+          "label": "NSSDCA: NEAR Shoemaker (1996-008A)"
+        },
+        {
+          "claim": "landing",
+          "quote": "The mission ended with a touchdown in the \"saddle\" region of Eros on 12 February 2001",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A",
+          "label": "NSSDCA: NEAR Shoemaker (1996-008A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: NEAR Shoemaker (1996-008A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/near-shoemaker/"
+        }
+      ]
+    },
+    {
+      "id": "pioneer-10",
+      "name": "Pioneer 10",
+      "world": "beyond",
+      "body": "Leaving the Solar System",
+      "nssdcaId": "1972-012A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A",
+      "missionUrl": "https://science.nasa.gov/mission/pioneer-10/",
+      "lat": null,
+      "lon": null,
+      "launched": "1972-03-03",
+      "arrived": null,
+      "lastContact": "2003-01-23",
+      "status": "silent",
+      "statusNote": "Last signal detected on 23 January 2003",
+      "tier": "story",
+      "summary": "This mission was the first to be sent to the outer solar system and the first to investigate the planet Jupiter, after which it followed an escape trajectory from the solar system.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "last contact",
+          "quote": "The spacecraft signal was last detected on 23 January 2003",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A",
+          "label": "NSSDCA: Pioneer 10 (1972-012A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Pioneer 10 (1972-012A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/pioneer-10/"
+        }
+      ]
+    },
+    {
+      "id": "pioneer-11",
+      "name": "Pioneer 11",
+      "world": "beyond",
+      "body": "Leaving the Solar System",
+      "nssdcaId": "1973-019A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-019A",
+      "missionUrl": "https://science.nasa.gov/mission/pioneer-10/",
+      "lat": null,
+      "lon": null,
+      "launched": "1973-04-06",
+      "arrived": null,
+      "lastContact": "1995-09-30",
+      "status": "silent",
+      "statusNote": "Science operations ended on 30 September 1995",
+      "tier": "map",
+      "summary": "Pioneer 11 was the second mission to investigate Jupiter and the outer solar system and the first to explore the planet Saturn and its main rings. Pioneer 11, like Pioneer 10, used Jupiter's gravitational field to alter its trajectory radically.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "last contact",
+          "quote": "Science operations and daily telemetry ceased on 30 September 1995",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-019A",
+          "label": "NSSDCA: Pioneer 11 (1973-019A)"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Pioneer 11 (1973-019A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1973-019A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/pioneer-10/"
+        }
+      ]
+    },
+    {
+      "id": "kepler",
+      "name": "Kepler Space Telescope",
+      "world": "beyond",
+      "body": "Orbiting the Sun",
+      "nssdcaId": "2009-011A",
+      "nssdcaUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2009-011A",
+      "missionUrl": "https://science.nasa.gov/mission/kepler/",
+      "lat": null,
+      "lon": null,
+      "launched": "2009-03-07",
+      "arrived": null,
+      "lastContact": "2018-10-30",
+      "status": "silent",
+      "statusNote": "Retired on 30 October 2018",
+      "tier": "map",
+      "summary": "Kepler was an American (NASA) astronomy probe launched by a Delta 2 rocket from Cape Canaveral at 03:50 UT on 07 March 2009. Kepler's mission was to search for Earth-sized planets around other stars by looking for brightness variations in over 100,000 stars in the Cygnus-Lyra region.",
+      "sites": [],
+      "evidence": [
+        {
+          "claim": "last contact",
+          "quote": "Before retiring the spacecraft on Oct. 30, 2018",
+          "url": "https://science.nasa.gov/mission/kepler/",
+          "label": "NASA Science mission page"
+        },
+        {
+          "claim": "discoveries",
+          "quote": "Kepler leaves a legacy of more than 2,600 planet discoveries",
+          "url": "https://science.nasa.gov/mission/kepler/",
+          "label": "NASA Science mission page"
+        }
+      ],
+      "sources": [
+        {
+          "label": "NSSDCA: Kepler (2009-011A)",
+          "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2009-011A"
+        },
+        {
+          "label": "NASA Science mission page",
+          "url": "https://science.nasa.gov/mission/kepler/"
+        }
+      ]
+    }
+  ]
+}

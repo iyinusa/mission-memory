@@ -1,0 +1,247 @@
+:root {
+  --bg: #05070f;
+  --bg-raised: #0d1224;
+  --ink: #eef1fb;
+  --ink-dim: #a7aec8;
+  --line: #222a47;
+  --signal: #7cf2c8;
+  --moon: #c9cfe0;
+  --mars: #ff8a5c;
+  --beyond: #9b8cff;
+  --active: #7cf2c8;
+  --dormant: #ffd166;
+  --silent: #8b93ad;
+  --radius: 14px;
+  --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-display: "Space Grotesk", var(--font-body);
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--signal);
+}
+
+:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+}
+.skip:focus {
+  left: 16px;
+  top: 16px;
+  background: var(--bg-raised);
+  padding: 8px 12px;
+  z-index: 10;
+}
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+main {
+  flex: 1;
+}
+
+.topbar {
+  padding: 20px 0;
+}
+.brand {
+  color: var(--ink);
+  text-decoration: none;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-word {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
+}
+.logo-word-dim {
+  color: var(--ink-dim);
+}
+/* The needle sweeps across the dial and locks on: the brand's "tune in" gesture. */
+.logo-needle {
+  transform-box: view-box;
+  transform-origin: 32px 56px;
+}
+.brand:hover .logo-needle,
+.tuning .logo-needle {
+  animation: tune 1.2s ease-out;
+}
+.tuning .logo-needle {
+  animation-iteration-count: infinite;
+}
+@keyframes tune {
+  0% {
+    transform: rotate(-28deg);
+  }
+  45% {
+    transform: rotate(16deg);
+  }
+  70% {
+    transform: rotate(-6deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 16px;
+  color: var(--ink-dim);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 16ch;
+  margin: 48px 0 16px;
+}
+.lede {
+  color: var(--ink-dim);
+  max-width: 60ch;
+  font-size: 1.1rem;
+}
+
+.worlds {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.world-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 28px 24px;
+  min-height: 180px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.world-card:hover {
+  transform: translateY(-2px);
+}
+.world-moon:hover {
+  border-color: var(--moon);
+}
+.world-mars:hover {
+  border-color: var(--mars);
+}
+.world-beyond:hover {
+  border-color: var(--beyond);
+}
+.world-name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.world-tag {
+  color: var(--ink-dim);
+}
+.world-count {
+  margin-top: auto;
+  color: var(--signal);
+  font-size: 0.9rem;
+}
+
+.ghost-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.ghost-list a {
+  display: block;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: var(--ink-dim);
+}
+.status::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 6px 1px 8px;
+}
+.status-active::before {
+  background: var(--active);
+}
+.status-dormant::before {
+  background: var(--dormant);
+}
+.status-silent::before {
+  background: var(--silent);
+}
+
+.ghost-card {
+  max-width: 70ch;
+}
+
+.embed {
+  padding: 16px;
+}
+
+.footer {
+  padding: 32px 0;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
