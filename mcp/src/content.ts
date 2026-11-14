@@ -2,7 +2,7 @@
 // from the web container, so the website and AI clients always show the same thing.
 
 export const PUBLIC_ORIGIN = process.env.PUBLIC_ORIGIN ?? "https://missionmemory.kenaff.com";
-const WEB_INTERNAL_URL = process.env.WEB_INTERNAL_URL ?? "http://web";
+const WEB_INTERNAL_URL = process.env.WEB_INTERNAL_URL ?? "http://missionmemory-web";
 const TTL_MS = 60_000;
 
 // Mirrors web/src/lib/types.ts (only the fields this server reads).

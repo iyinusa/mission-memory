@@ -1,5 +1,6 @@
-# Production (Dokploy): attach the domain missionmemory.kenaff.com to service `web`, port 80.
+# Production (Dokploy, Compose service): attach the domain missionmemory.kenaff.com to service `web`, port 80.
 # `mcp` gets no domain; it is reached only through web's /mcp proxy.
+# Unique network aliases keep internal hostnames from clashing with other projects on a shared Docker host.
 services:
   web:
     build: ./web
@@ -8,12 +9,20 @@ services:
       - "80"
     depends_on:
       - mcp
+    networks:
+      default:
+        aliases:
+          - missionmemory-web
 
   mcp:
     build: ./mcp
     restart: unless-stopped
     environment:
       PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://missionmemory.kenaff.com}
-      WEB_INTERNAL_URL: http://web
+      WEB_INTERNAL_URL: http://missionmemory-web
     expose:
       - "3001"
+    networks:
+      default:
+        aliases:
+          - missionmemory-mcp

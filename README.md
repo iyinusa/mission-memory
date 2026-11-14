@@ -44,8 +44,10 @@ For MCP work, use the Docker layout above. The MCP server reads the built `mcp-a
 
 ## Deploy (Dokploy)
 
-Create a Compose app from this repository, then attach the domain `missionmemory.kenaff.com` to service
-**`web`**, port **80**, with HTTPS. Don't give the `mcp` service a domain.
+1. Create a **Compose** service (type: Docker Compose) from this repository, with compose path `./docker-compose.yml`.
+2. Under **Domains**, attach `missionmemory.kenaff.com` to service **`web`**, container port **80**, path `/`, HTTPS
+   with Let's Encrypt. Don't give the `mcp` service a domain.
+3. Deploy. `PUBLIC_ORIGIN` defaults to `https://missionmemory.kenaff.com`.
 
 ## Data, credits and SI use
 
