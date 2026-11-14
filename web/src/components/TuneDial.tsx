@@ -16,6 +16,8 @@ interface Props {
   onRelease: (v: number) => void;
   onSelect: (id: string) => void;
   onStep: (dir: 1 | -1) => void;
+  /** Scan and sound buttons, shown in the readout row. */
+  controls?: React.ReactNode;
 }
 
 function useStatic(canvas: React.RefObject<HTMLCanvasElement | null>, amount: number) {
@@ -45,7 +47,7 @@ function useStatic(canvas: React.RefObject<HTMLCanvasElement | null>, amount: nu
 }
 
 /** The radio dial: a view of the shared tuner. Drag the needle, click a station, or use the arrow keys. */
-export default function TuneDial({ world, stations, min, max, needle, strength, lockedId, scanning, onTune, onRelease, onSelect, onStep }: Props) {
+export default function TuneDial({ world, stations, min, max, needle, strength, lockedId, scanning, onTune, onRelease, onSelect, onStep, controls }: Props) {
   const [dragging, setDragging] = useState(false);
   const track = useRef<HTMLDivElement>(null);
   const noise = useRef<HTMLCanvasElement>(null);
@@ -79,14 +81,17 @@ export default function TuneDial({ world, stations, min, max, needle, strength, 
 
   return (
     <div className="dial">
-      <div className="dial-readout" aria-hidden="true">
-        <span className="dial-freq">{formatDial(world, needle)}</span>
-        <span className="dial-bars">
-          {[0.2, 0.45, 0.7, 0.9].map((t) => (
-            <i key={t} className={strength >= t ? "on" : ""} />
-          ))}
-        </span>
-        <span className="dial-station">{locked ? locked.name : scanning ? "Scanning…" : "Static"}</span>
+      <div className="dial-top">
+        <div className="dial-readout" aria-hidden="true">
+          <span className="dial-freq">{formatDial(world, needle)}</span>
+          <span className="dial-bars">
+            {[0.2, 0.45, 0.7, 0.9].map((t) => (
+              <i key={t} className={strength >= t ? "on" : ""} />
+            ))}
+          </span>
+          <span className="dial-station">{locked ? locked.name : scanning ? "Scanning…" : "Static"}</span>
+        </div>
+        {controls && <div className="dial-controls">{controls}</div>}
       </div>
 
       <div

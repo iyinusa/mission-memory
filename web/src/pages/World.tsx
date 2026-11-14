@@ -72,10 +72,57 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
 
   return (
     <section className="world">
-      <header className="world-head">
-        <h1>{WORLDS[world].name}</h1>
-        <p className="lede">{WORLDS[world].tagline}</p>
-      </header>
+      {/* Title on the left, the tuner on the right (stacked on phones). */}
+      <div className="world-top">
+        <header className="world-head">
+          <h1>{WORLDS[world].name}</h1>
+          <p className="lede">{WORLDS[world].tagline}</p>
+        </header>
+        <div className="world-tuner">
+          {/* The tuner sits above the view, like a radio's display: what it finds appears below. */}
+          <TuneDial
+            world={world}
+            stations={tuner.sorted}
+            min={min}
+            max={max}
+            needle={tuner.needle}
+            strength={tuner.strength}
+            lockedId={tuner.lockedId}
+            scanning={scanning}
+            onTune={tuner.tune}
+            onRelease={release}
+            onSelect={select}
+            onStep={tuner.step}
+            controls={
+              <>
+                {scanning ? (
+                  <button type="button" className="button small" onClick={tuner.pause}>
+                    ❚❚ Pause
+                  </button>
+                ) : (
+                  <button type="button" className="button small" onClick={tuner.resume}>
+                    ▶ {tuner.mode === "done" ? "Scan again" : "Scan"}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className="button small"
+                  aria-pressed={sound.enabled}
+                  aria-label={sound.enabled ? "Sound on" : "Sound off"}
+                  title={sound.enabled ? "Sound on (effects are for fun: space itself is silent)" : "Sound off"}
+                  onClick={sound.toggle}
+                >
+                  {sound.enabled ? "🔊" : "🔈"}
+                </button>
+              </>
+            }
+          />
+          <p className="dial-legend">
+            {world === "beyond" ? "Each explorer sits at its launch year." : "Each explorer sits at its longitude."} Drag the needle or the{" "}
+            {world === "beyond" ? "map" : "globe"}, or use the arrow keys, to tune.{sound.enabled && " Sound effects are for fun: space itself is silent."}
+          </p>
+        </div>
+      </div>
 
       <div className="world-stage">
         <div className="world-view">
@@ -146,42 +193,9 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
               </p>
             </div>
           )}
-          <div className="scan-controls">
-            {scanning ? (
-              <button type="button" className="button" onClick={tuner.pause}>
-                ❚❚ Pause scan
-              </button>
-            ) : (
-              <button type="button" className="button" onClick={tuner.resume}>
-                ▶ {tuner.mode === "done" ? "Scan again" : "Resume scan"}
-              </button>
-            )}
-            <button type="button" className="button" aria-pressed={sound.enabled} onClick={sound.toggle}>
-              {sound.enabled ? "🔊 Sound on" : "🔈 Sound off"}
-            </button>
-          </div>
-          {sound.enabled && <p className="si-note">Sound effects are for fun: space itself is silent.</p>}
         </aside>
       </div>
 
-      <TuneDial
-        world={world}
-        stations={tuner.sorted}
-        min={min}
-        max={max}
-        needle={tuner.needle}
-        strength={tuner.strength}
-        lockedId={tuner.lockedId}
-        scanning={scanning}
-        onTune={tuner.tune}
-        onRelease={release}
-        onSelect={select}
-        onStep={tuner.step}
-      />
-      <p className="dial-legend">
-        {world === "beyond" ? "On this dial, each explorer sits at its launch year." : "On this dial, each explorer sits at its longitude on the map."} Drag the
-        needle, or use the arrow keys, to tune.
-      </p>
     </section>
   );
 }

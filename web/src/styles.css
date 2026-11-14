@@ -310,6 +310,30 @@ main {
 
 /* ---------- World: globe / map, panel, dial ---------- */
 
+.world-top {
+  display: grid;
+  /* The title takes only the room it needs; the tuner gets the rest. */
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  margin: 8px 0 16px;
+}
+.world-top .world-head {
+  max-width: 220px;
+}
+.world-top .dial {
+  margin-top: 0;
+}
+.world-top .dial-legend {
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .world-top {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 0;
+  }
+}
 .world-head h1 {
   margin: 8px 0 0;
   font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -539,17 +563,43 @@ main {
 }
 
 .dial {
-  margin-top: 16px;
-  padding: 16px 20px 32px;
+  margin-top: 4px;
+  padding: 14px 20px 32px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: linear-gradient(#0d1224, #090d1b);
+}
+.dial-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 .dial-readout {
   display: flex;
   align-items: center;
   gap: 16px;
+  min-width: 0;
   font-family: var(--font-display);
+}
+.dial-station {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dial-freq,
+.dial-bars {
+  flex: none;
+}
+.dial-controls {
+  display: flex;
+  flex: none;
+  gap: 8px;
+}
+.button.small {
+  min-height: 40px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
 }
 .dial-freq {
   min-width: 7ch;
@@ -682,12 +732,6 @@ main {
 .panel-static h2 {
   color: var(--ink-dim);
 }
-.scan-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
 .caret {
   display: inline-block;
   width: 0.5em;
@@ -724,14 +768,10 @@ main {
 .dial-needle.locked::before {
   box-shadow: 0 0 0 6px #7cf2c833, 0 0 18px var(--signal);
 }
-.dial-hint,
 .dial-legend {
-  margin: 28px 0 0;
+  margin: 8px 0 16px;
   color: var(--ink-dim);
   font-size: 0.8rem;
-}
-.dial-legend {
-  margin-top: 8px;
 }
 
 .beyond-map {
@@ -1193,6 +1233,35 @@ main {
   }
   .dial-tick.wide-only em {
     display: none;
+  }
+  /* Keep the tuner on the first screen: a compact title above it. */
+  .world-head h1 {
+    margin-top: 0;
+    font-size: 1.7rem;
+  }
+  .world-head .lede {
+    margin: 2px 0 10px;
+    font-size: 0.95rem;
+  }
+  .dial {
+    padding: 12px 14px 30px;
+  }
+  .dial-top {
+    align-items: flex-start;
+  }
+  /* Frequency and bars on one line, the explorer's name on the next. */
+  .dial-readout {
+    flex-wrap: wrap;
+    gap: 2px 10px;
+  }
+  .dial-freq {
+    min-width: 0;
+    font-size: 1.1rem;
+  }
+  .dial-station {
+    flex-basis: 100%;
+    font-size: 0.95rem;
+    white-space: normal;
   }
   /* On a phone already: offer Share instead of a code to scan. */
   .postcard-qr {
