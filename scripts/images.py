@@ -10,11 +10,13 @@ credits block in CREDITS.md.
 """
 
 import json
+import re
 import shutil
 import subprocess
 import sys
 import urllib.parse
 import urllib.request
+from pathlib import Path
 
 import ingest
 
@@ -49,10 +51,23 @@ def best_jpeg(nasa_id: str) -> str:
     raise LookupError(f"{nasa_id}: no JPEG rendition")
 
 
+THUMB = 240
+
+
+def square_thumb(src: Path, dest: Path) -> Path:
+    """Centre-cropped square thumbnail (for the globe labels, map and panel)."""
+    out = subprocess.run(["sips", "-g", "pixelWidth", "-g", "pixelHeight", str(src)], check=True, capture_output=True, text=True).stdout
+    w, h = (int(v) for v in re.findall(r"pixel(?:Width|Height): (\d+)", out))
+    fit = ["--resampleHeight", str(THUMB)] if w > h else ["--resampleWidth", str(THUMB)]
+    subprocess.run(["sips", *fit, "-s", "format", "jpeg", "-s", "formatOptions", "80", str(src), "--out", str(dest)], check=True, capture_output=True)
+    subprocess.run(["sips", "-c", str(THUMB), str(THUMB), str(dest)], check=True, capture_output=True)
+    return dest
+
+
 def credit_of(m: dict) -> str:
     if m.get("secondary_creator"):
         return m["secondary_creator"]
-    if m.get("photographer"):
+    if m.get("photographer") and "NASA" not in m["photographer"]:
         return f"NASA / {m['photographer']}"
     return "NASA"
 
@@ -81,10 +96,12 @@ def main() -> int:
             dest = MEDIA / ghost / f"{nid}.jpg"
             dest.parent.mkdir(parents=True, exist_ok=True)
             subprocess.run(["sips", "-Z", "1400", "-s", "format", "jpeg", "-s", "formatOptions", "78", str(cached), "--out", str(dest)], check=True, capture_output=True)
+            if beat == "portrait":
+                dest = square_thumb(cached, MEDIA / ghost / "portrait.jpg")
             credit = credit_of(m)
             page = f"https://images.nasa.gov/details/{urllib.parse.quote(nid)}"
             out.setdefault(ghost, {})[beat] = {
-                "src": f"/media/images/{ghost}/{nid}.jpg",
+                "src": f"/media/images/{ghost}/{dest.name}",
                 "alt": m.get("title", "").strip(),
                 "caption": pick["caption"],
                 "credit": credit,

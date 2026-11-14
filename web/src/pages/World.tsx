@@ -7,7 +7,9 @@ import TuneDial from "../components/TuneDial";
 import Typewriter from "../components/Typewriter";
 import { WORLDS, byWorld, dialValue } from "../lib/data";
 import { useArtifacts, useStories } from "../lib/useArtifacts";
-import { useRadioSound } from "../lib/useRadioSound";
+import { NARRATOR_CPS } from "../lib/sound";
+import { useNarrator } from "../lib/useNarrator";
+import { useRadioSound, useSoundSwitch } from "../lib/useRadioSound";
 import { useTuner, type Station } from "../lib/useTuner";
 import type { Artifact, StoryIndex, WorldId } from "../lib/types";
 import NotFound from "./NotFound";
@@ -43,7 +45,23 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
   const tuner = useTuner(stations, min, max, params.get("ghost"));
   const locked = ghosts.find((g) => g.id === tuner.lockedId) ?? null;
   const scanning = tuner.mode === "scan";
-  const sound = useRadioSound(tuner.strength, tuner.lockedId);
+  // When a signal locks, the explorer speaks: its first story line, or NASA's summary for map-only explorers.
+  const story = locked ? stories.stories[locked.id] : undefined;
+  const portrait = locked ? stories.portraits?.[locked.id] : undefined;
+  const thumbs = useMemo(() => Object.fromEntries(Object.entries(stories.portraits ?? {}).map(([id, p]) => [id, p.src])), [stories]);
+  const clip = !locked
+    ? null
+    : story?.audio?.includes("younger")
+      ? `/media/audio/${locked.id}/younger-why.mp3`
+      : stories.summaryAudio?.includes(locked.id)
+        ? `/media/audio/${locked.id}/summary.mp3`
+        : null;
+  const sound = useSoundSwitch();
+  const narrator = useNarrator(clip, sound.enabled, (seconds) => {
+    // Let the narrator finish before the scan moves on.
+    if (tuner.mode === "scan") tuner.hold(seconds * 1000 + 1200);
+  });
+  useRadioSound(sound.enabled, tuner.strength, tuner.lockedId, narrator.speaking);
 
   const select = (id: string) => {
     tuner.select(id);
@@ -70,12 +88,22 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
               min={min}
               span={tuner.span}
               scanning={scanning}
+              portraits={thumbs}
               onTune={tuner.tune}
               onRelease={release}
             />
           ) : (
             <Suspense fallback={<Loading label="Warming up the telescope…" />}>
-              <Globe world={world} ghosts={ghosts} needle={tuner.needle} lockedId={tuner.lockedId} onSelect={select} onTune={tuner.tune} onRelease={release} />
+              <Globe
+                world={world}
+                ghosts={ghosts}
+                needle={tuner.needle}
+                lockedId={tuner.lockedId}
+                portraits={thumbs}
+                onSelect={select}
+                onTune={tuner.tune}
+                onRelease={release}
+              />
             </Suspense>
           )}
           <p className="world-hint" aria-hidden="true">
@@ -87,10 +115,21 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
           {locked ? (
             <>
               <p className="panel-kicker">Signal found · {locked.body}</p>
-              <h2>{locked.name}</h2>
+              <div className="panel-title">
+                {portrait && <img src={portrait.src} alt={portrait.alt} className="panel-photo" />}
+                <h2>{locked.name}</h2>
+              </div>
+              {portrait && (
+                <p className="panel-credit">
+                  {portrait.illustration && <span className="tag">Illustration</span>} {portrait.caption}{" "}
+                  <a href={portrait.url} target="_blank" rel="noreferrer">
+                    {portrait.credit}
+                  </a>
+                </p>
+              )}
               <StatusChip status={locked.status} note={locked.statusNote} />
               <p className="panel-summary">
-                <Typewriter key={locked.id} text={intro} />
+                <Typewriter key={locked.id} text={intro} cps={narrator.speaking ? NARRATOR_CPS : 38} />
               </p>
               <Link className="button primary" to={`/ghost/${locked.id}`} onClick={() => setParams({ ghost: locked.id }, { replace: true })}>
                 {locked.tier === "map" ? "Read the NASA record" : "Tune in to its story"}

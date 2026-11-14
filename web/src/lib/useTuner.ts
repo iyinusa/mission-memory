@@ -124,5 +124,10 @@ export function useTuner(stations: Station[], min: number, max: number, startId:
     setMode("scan");
   };
 
-  return { sorted, needle, lockedId, strength, near, mode, tune, release, select, step, resume, pause: () => setMode("manual"), span };
+  /** Keep the scan on the current explorer for at least `ms` more (e.g. while the narrator speaks). */
+  const hold = (ms: number) => {
+    scan.current.dwellUntil = Math.max(scan.current.dwellUntil, performance.now() + ms);
+  };
+
+  return { sorted, needle, lockedId, strength, near, mode, tune, release, select, step, resume, hold, pause: () => setMode("manual"), span };
 }

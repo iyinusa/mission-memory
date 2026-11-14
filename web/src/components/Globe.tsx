@@ -53,7 +53,20 @@ function pinsFor(ghosts: Artifact[]): Pin[] {
   });
 }
 
-function GhostPin({ pin, selected, onSelect, planet }: { pin: Pin; selected: boolean; onSelect: (id: string) => void; planet: React.RefObject<THREE.Mesh | null> }) {
+function GhostPin({
+  pin,
+  selected,
+  onSelect,
+  planet,
+  photo,
+}: {
+  pin: Pin;
+  selected: boolean;
+  onSelect: (id: string) => void;
+  planet: React.RefObject<THREE.Mesh | null>;
+  /** The explorer's hardware photo, shown in its label so learners can picture it. */
+  photo?: string;
+}) {
   const sprite = useRef<THREE.Sprite>(null);
   const pos = useMemo(() => toVec(pin.lat, pin.lon, 1.005), [pin.lat, pin.lon]);
   // Lift the label straight out from the surface so it never sinks behind the planet's curve.
@@ -84,6 +97,7 @@ function GhostPin({ pin, selected, onSelect, planet }: { pin: Pin; selected: boo
       {selected && (
         // Hide the label only when the planet itself is in the way (not the pin's own glow).
         <Html center occlude={[planet as React.RefObject<THREE.Object3D>]} position={labelAt} className="globe-label" zIndexRange={[10, 0]}>
+          {photo && <img src={photo} alt="" />}
           {pin.label}
         </Html>
       )}
@@ -91,7 +105,7 @@ function GhostPin({ pin, selected, onSelect, planet }: { pin: Pin; selected: boo
   );
 }
 
-function Planet({ world, ghosts, needle, lockedId, onSelect, reduceMotion }: GlobeProps & { reduceMotion: boolean }) {
+function Planet({ world, ghosts, needle, lockedId, onSelect, portraits, reduceMotion }: GlobeProps & { reduceMotion: boolean }) {
   const map = useTexture(TEXTURES[world]);
   map.colorSpace = THREE.SRGBColorSpace;
   map.anisotropy = 8;
@@ -116,7 +130,7 @@ function Planet({ world, ghosts, needle, lockedId, onSelect, reduceMotion }: Glo
         <meshStandardMaterial map={map} roughness={1} metalness={0} />
       </mesh>
       {pins.map((p, i) => (
-        <GhostPin key={`${p.id}-${i}`} pin={p} selected={p.id === selectedId} onSelect={onSelect} planet={planet} />
+        <GhostPin key={`${p.id}-${i}`} pin={p} selected={p.id === selectedId} onSelect={onSelect} planet={planet} photo={portraits?.[p.id]} />
       ))}
     </group>
   );
@@ -128,6 +142,8 @@ export interface GlobeProps {
   /** Longitude (deg E) currently tuned; faces the camera. */
   needle: number;
   lockedId: string | null;
+  /** Thumbnail URL per explorer id. */
+  portraits?: Record<string, string>;
   onSelect: (id: string) => void;
   onTune: (lon: number) => void;
   onRelease: (lon: number) => void;

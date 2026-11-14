@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { formatDate } from "../lib/data";
+import { soundOn } from "../lib/sound";
 import type { Artifact, LevelId, Story } from "../lib/types";
 import Interaction from "./interactions/Interaction";
 import Postcard from "./Postcard";
@@ -32,6 +33,10 @@ export default function StoryPlayer({ artifact, story, mediaBase = "" }: Props) 
   const total = story.beats.length; // the postcard is step `total`
   const beat = story.beats[step];
   const hasAudio = story.audio?.includes(level) ?? false;
+  // "Play story": narrate each chapter and move on by itself, pausing at hands-on moments.
+  // With sound on, the story starts telling itself (the browser may still need a first tap).
+  const [listening, setListening] = useState(() => (story.audio?.includes(savedLevel()) ?? false) && soundOn());
+  const [yourTurn, setYourTurn] = useState(false);
 
   useEffect(() => {
     try {
@@ -41,10 +46,32 @@ export default function StoryPlayer({ artifact, story, mediaBase = "" }: Props) 
     }
   }, [level]);
 
+  useEffect(() => {
+    const a = audio.current;
+    if (!a) return;
+    if (!listening) return a.pause();
+    a.currentTime = 0;
+    a.play().catch(() => setListening(false)); // e.g. blocked by the browser
+  }, [listening, step, level]);
+
   const go = (n: number) => {
     audio.current?.pause();
+    setYourTurn(false);
     setStep(Math.max(0, Math.min(total, n)));
     requestAnimationFrame(() => heading.current?.focus());
+  };
+
+  const onEnded = () => {
+    if (!listening) return;
+    if (beat?.key === "how" && story.interaction) {
+      setListening(false);
+      setYourTurn(true);
+    } else if (step < total - 1) {
+      go(step + 1);
+    } else {
+      setListening(false);
+      go(total);
+    }
   };
 
   return (
@@ -70,6 +97,26 @@ export default function StoryPlayer({ artifact, story, mediaBase = "" }: Props) 
             </button>
           ))}
         </div>
+        {hasAudio && (
+          <button
+            type="button"
+            className={`button play-story${listening ? " on" : ""}`}
+            aria-pressed={listening}
+            onClick={() => {
+              if (yourTurn) {
+                // After a hands-on moment, carry on with the next chapter rather than replaying this one.
+                go(step + 1);
+                setListening(true);
+                return;
+              }
+              if (step === total) go(0);
+              setListening((v) => !v);
+            }}
+          >
+            {listening ? "❚❚ Pause story" : step === 0 ? "▶ Play story" : "▶ Keep listening"}
+          </button>
+        )}
+        {hasAudio && <p className="si-note">Told by a computer-generated voice.</p>}
       </header>
 
       <ol className="beat-steps" aria-label="Story chapters">
@@ -106,15 +153,22 @@ export default function StoryPlayer({ artifact, story, mediaBase = "" }: Props) 
               </figcaption>
             </figure>
           )}
+          {yourTurn && (
+            <p className="your-turn" role="status">
+              Your turn! Try it below, then press <strong>Keep listening</strong> or <strong>Next</strong>.
+            </p>
+          )}
           {beat.key === "how" && story.interaction && <Interaction kind={story.interaction} />}
 
+          {/* The narrator: no player on screen, driven by the Play story button. */}
           {hasAudio && (
-            <div className="narration">
-              <audio ref={audio} key={`${level}-${beat.key}`} controls preload="none" src={`${mediaBase}/media/audio/${artifact.id}/${level}-${beat.key}.mp3`}>
-                Your browser cannot play this narration; the story text above is the same.
-              </audio>
-              <p className="si-note">Narration voice is computer-generated.</p>
-            </div>
+            <audio
+              ref={audio}
+              key={`${level}-${beat.key}`}
+              preload="auto"
+              onEnded={onEnded}
+              src={`${mediaBase}/media/audio/${artifact.id}/${level}-${beat.key}.mp3`}
+            />
           )}
 
           <details className="sources">
@@ -132,7 +186,7 @@ export default function StoryPlayer({ artifact, story, mediaBase = "" }: Props) 
           </details>
         </section>
       ) : (
-        <Postcard artifact={artifact} message={story.postcard} />
+        <Postcard artifact={artifact} message={story.postcard} origin={mediaBase} />
       )}
 
       <nav className="player-nav" aria-label="Story navigation">

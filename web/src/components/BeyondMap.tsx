@@ -32,6 +32,8 @@ interface Props {
   span: number;
   /** While scanning, explorers appear as the dial passes their launch year. */
   scanning: boolean;
+  /** Thumbnail URL per explorer id. */
+  portraits?: Record<string, string>;
   onTune: (v: number) => void;
   onRelease: (v: number) => void;
 }
@@ -39,7 +41,7 @@ interface Props {
 // A wedge of the radar sweep, centred on the Sun.
 const SWEEP = `M${SUN.x} ${SUN.y}L${SUN.x + 320} ${SUN.y}A320 320 0 0 0 ${SUN.x + 320 * Math.cos(-0.5)} ${SUN.y + 320 * Math.sin(-0.5)}Z`;
 
-export default function BeyondMap({ ghosts, selectedId, onSelect, needle, min, span, scanning, onTune, onRelease }: Props) {
+export default function BeyondMap({ ghosts, selectedId, onSelect, needle, min, span, scanning, portraits, onTune, onRelease }: Props) {
   // Two turns of the sweep across the whole dial; it follows the needle whether scanning or dragged.
   const sweepDeg = ((needle - min) / span) * 720;
   const drag = useRef<{ x: number; from: number; moved: boolean } | null>(null);
@@ -112,6 +114,16 @@ export default function BeyondMap({ ghosts, selectedId, onSelect, needle, min, s
             )}
             <circle cx={p.at.x} cy={p.at.y} r={sel ? 16 : 10} fill={color} opacity=".18" />
             <circle cx={p.at.x} cy={p.at.y} r={g.tier === "map" ? 3.5 : 5} fill={color} />
+            {sel && portraits?.[g.id] && (
+              // The explorer's photo, on the opposite side from its label.
+              <g transform={`translate(${p.at.x} ${p.at.y > 300 ? p.at.y + 40 : p.at.y - 40})`}>
+                <clipPath id={`face-${g.id}`}>
+                  <circle r="22" />
+                </clipPath>
+                <image href={portraits[g.id]} x="-22" y="-22" width="44" height="44" clipPath={`url(#face-${g.id})`} preserveAspectRatio="xMidYMid slice" />
+                <circle r="22" fill="none" stroke="var(--signal)" strokeWidth="2" />
+              </g>
+            )}
             {sel && (
               // Near either edge, align the label inward so long names never run off the map.
               <text

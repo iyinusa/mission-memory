@@ -32,6 +32,17 @@
       "url": "https://images.nasa.gov/details/PIA13037",
       "nasaTitle": "The Apollo 15 Lunar Laser Ranging Retroreflector - A Fundamental Point on the Moon",
       "nasaDescription": "The Apollo 15 Lunar Laser Ranging Retroreflector - A Fundamental Point on the Moon"
+    },
+    "portrait": {
+      "src": "/media/images/apollo-retroreflectors/portrait.jpg",
+      "alt": "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts",
+      "caption": "The laser ranging retroreflector left by Apollo 14.",
+      "credit": "NASA",
+      "illustration": false,
+      "nasaId": "as14-67-09386",
+      "url": "https://images.nasa.gov/details/as14-67-09386",
+      "nasaTitle": "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts",
+      "nasaDescription": "AS14-67-9386 (5 Feb. 1971) --- A close-up view of the laser ranging retro reflector (LR3) which the Apollo 14 astronauts deployed on the moon during their lunar surface extravehicular activity (EVA). While astronauts Alan B. Shepard Jr., commander, and Edgar D. Mitchell, lunar module pilot, descended in the Lunar Module (LM) to explore the moon, astronaut Stuart A. Roosa, command module pilot, remained with the Command and Service Modules (CSM) in lunar orbit."
     }
   },
   "apollo11-eagle": {
@@ -56,6 +67,17 @@
       "url": "https://images.nasa.gov/details/as11-40-5899",
       "nasaTitle": "View of plaque Apollo 11 astronauts left on moon",
       "nasaDescription": "AS11-40-5899 (20 July 1969) --- Close-up view of the plaque which the Apollo 11 astronauts left on the moon in commemoration of the historic lunar landing mission. The plaque was attached to the ladder on the landing gear strut on the descent stage of the Apollo 11 Lunar Module (LM). The plaque was covered with a thin sheet of stainless steel during flight. Astronaut Michael Collins, command module pilot, remained with the Command and Service Modules (CSM) in lunar orbit while astronauts Neil A. Armstrong, commander, and Edwin E. Aldrin Jr., lunar module pilot, explored the moon."
+    },
+    "portrait": {
+      "src": "/media/images/apollo11-eagle/portrait.jpg",
+      "alt": "View Apollo 11 Lunar Module as it rested on lunar surface",
+      "caption": "The Apollo 11 lunar module resting on the Moon, 20 July 1969.",
+      "credit": "NASA",
+      "illustration": false,
+      "nasaId": "as11-40-5927",
+      "url": "https://images.nasa.gov/details/as11-40-5927",
+      "nasaTitle": "View Apollo 11 Lunar Module as it rested on lunar surface",
+      "nasaDescription": "AS11-40-5927 (20 July 1969) --- Astronaut Edwin E. Aldrin Jr., lunar module pilot, prepares to deploy the Early Apollo Scientific Experiments Package (EASEP) during the Apollo 11 lunar surface extravehicular activity (EVA). Astronaut Neil A. Armstrong, commander, took this picture with a 70mm lunar surface camera. During flight the EASEP is stowed in the Lunar Module's (LM) scientific equipment bay at the left year quadrant of the descent stage looking forward. Aldrin is removing the EASEP from its stowed position. Photo credit: NASA"
     }
   },
   "apollo15-lrv": {
@@ -80,6 +102,17 @@
       "url": "https://images.nasa.gov/details/PIA13037",
       "nasaTitle": "The Apollo 15 Lunar Laser Ranging Retroreflector - A Fundamental Point on the Moon",
       "nasaDescription": "The Apollo 15 Lunar Laser Ranging Retroreflector - A Fundamental Point on the Moon"
+    },
+    "portrait": {
+      "src": "/media/images/apollo15-lrv/portrait.jpg",
+      "alt": "Astronaut James Irwin works at Lunar Roving Vehicle during Apollo 15 EVA",
+      "caption": "The Lunar Roving Vehicle on the Moon during Apollo 15.",
+      "credit": "NASA",
+      "illustration": false,
+      "nasaId": "as15-86-11603",
+      "url": "https://images.nasa.gov/details/as15-86-11603",
+      "nasaTitle": "Astronaut James Irwin works at Lunar Roving Vehicle during Apollo 15 EVA",
+      "nasaDescription": "AS15-86-11603 (31 July 1971) --- Astronaut James B. Irwin, lunar module pilot, works at the Lunar Roving Vehicle during the first Apollo 15 lunar surface extravehicular activity (EVA) at the Hadley-Apennine landing site. The shadow of the Lunar Module \"Falcon\" is in the foreground. This view is looking northeast, with Mount Hadley in the background. This photograph was taken by astronaut David R. Scott, commander."
     }
   },
   "spirit": {
@@ -126,6 +159,17 @@
       "url": "https://images.nasa.gov/details/PIA12203",
       "nasaTitle": "Calypso Panorama of Spirit View from Troy",
       "nasaDescription": "This full-circle,stereo view from the panoramic camera Pancam on NASA Mars Exploration Rover Spirit shows the terrain surrounding the location called Troy, where Spirit became embedded in soft soil during the spring of 2009."
+    },
+    "portrait": {
+      "src": "/media/images/spirit/portrait.jpg",
+      "alt": "Artist Concept of Rover on Mars",
+      "caption": "A Mars Exploration Rover like Spirit.",
+      "credit": "NASA/JPL/Cornell University",
+      "illustration": true,
+      "nasaId": "PIA04413",
+      "url": "https://images.nasa.gov/details/PIA04413",
+      "nasaTitle": "Artist Concept of Rover on Mars",
+      "nasaDescription": "An artist concept portrays a NASA Mars Exploration Rover on the surface of Mars. Two rovers were launched in 2003 and arrived at sites on Mars in January 2004."
     }
   },
   "viking-1": {
@@ -161,6 +205,17 @@
       "url": "https://images.nasa.gov/details/PIA00563",
       "nasaTitle": "First Color Image From Viking Lander 1",
       "nasaDescription": "First Color Image From Viking Lander 1"
+    },
+    "portrait": {
+      "src": "/media/images/viking-1/portrait.jpg",
+      "alt": "101-KSC-73PC-630",
+      "caption": "A Viking lander. NASA's Viking project landed two of these laboratories on Mars in 1976.",
+      "credit": "NASA",
+      "illustration": false,
+      "nasaId": "101-ksc-73pc-630",
+      "url": "https://images.nasa.gov/details/101-ksc-73pc-630",
+      "nasaTitle": "101-KSC-73PC-630",
+      "nasaDescription": "KENNEDY SPACE CENTER, FLA. -- Viking Project In 1976: NASA will land two automated scientific laboratories on the planet Mars. This pioneering effort to explore in detail the surface of another primary planet in our solar system will be identified by a name that exemplifies the spirit of historic exploration. To accomplish this goal, two spacecraft will be launched from the Kennedy Space Center within a month of another in mid-1975. These spacecraft, each including a lander and an orbiter, will hurtle nearly 460 million miles around the Sun before reaching the red planet. The descent will occu"
     }
   },
   "ingenuity": {
@@ -207,6 +262,17 @@
       "url": "https://images.nasa.gov/details/PIA26237",
       "nasaTitle": "Ingenuity at 'Valinor Hills'",
       "nasaDescription": "This natural-color mosaic showing NASA's Ingenuity Mars Helicopter at \"Valinor Hills\" was acquired by the agency's Perseverance Mars rover on Feb. 21, 2024, the 1,068th Martian day, or sol, of the mission. The helicopter – the first aircraft to achieve powered, controlled flight on another world – sits just left of center, a speck-like figure amid a field of sand ripples.  Ingenuity damaged its rotor blades during landing on its 72nd and final flight on Jan. 18, 2024. The helicopter team nicknamed the spot where the last flight concluded Valinor Hills after the fictional location in J.R.R. Tol"
+    },
+    "portrait": {
+      "src": "/media/images/ingenuity/portrait.jpg",
+      "alt": "NASA's Ingenuity Mars Helicopter",
+      "caption": "The flight model of NASA's Ingenuity Mars Helicopter.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": false,
+      "nasaId": "PIA23882",
+      "url": "https://images.nasa.gov/details/PIA23882",
+      "nasaTitle": "NASA's Ingenuity Mars Helicopter",
+      "nasaDescription": "The flight model of NASA's Ingenuity Mars Helicopter.  https://photojournal.jpl.nasa.gov/catalog/PIA23882"
     }
   },
   "dawn": {
@@ -242,6 +308,17 @@
       "url": "https://images.nasa.gov/details/PIA20350",
       "nasaTitle": "Occator Crater and Ceres Brightest Spots",
       "nasaDescription": "NASA Dawn spacecraft captured Occator Crater, containing the brightest area on Ceres; this closeup reveals a dome in a smooth-walled pit in the bright center of the crater."
+    },
+    "portrait": {
+      "src": "/media/images/dawn/portrait.jpg",
+      "alt": "Dawn Blue Glow Artist Concept",
+      "caption": "Dawn arriving at the dwarf planet Ceres.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": true,
+      "nasaId": "PIA18922",
+      "url": "https://images.nasa.gov/details/PIA18922",
+      "nasaTitle": "Dawn Blue Glow Artist Concept",
+      "nasaDescription": "This artist concept shows NASA Dawn spacecraft arriving at the dwarf planet Ceres. Dawn travels through space using a technology called ion propulsion, with ions glowing with blue light are accelerated out of an engine, giving the spacecraft thrust."
     }
   },
   "near-shoemaker": {
@@ -266,6 +343,17 @@
       "url": "https://images.nasa.gov/details/PIA02900",
       "nasaTitle": "Back in the Saddle Again",
       "nasaDescription": "Again and again, NEAR Shoemaker's imager is being directed at the \"saddle region\" of Eros, to observe this feature under the widest variety of lighting conditions. This image of the saddle was taken March 22, 2000, from a range of 208 kilometers (129 miles). Generically speaking, a saddle is a low ridge connecting two mountains. The definition does not include an explanation for the origin of the curvature. Similarly, on Eros, the term \"saddle region\" is a description of a physical feature and doesn't imply any particular origin.  Perhaps the most frequently asked question about Eros' surface "
+    },
+    "portrait": {
+      "src": "/media/images/near-shoemaker/portrait.jpg",
+      "alt": "NASA NEAR Spacecraft Rendezvous with Asteroid Eros Artist Concept",
+      "caption": "NEAR meeting asteroid Eros.",
+      "credit": "NASA",
+      "illustration": true,
+      "nasaId": "PIA18177",
+      "url": "https://images.nasa.gov/details/PIA18177",
+      "nasaTitle": "NASA NEAR Spacecraft Rendezvous with Asteroid Eros Artist Concept",
+      "nasaDescription": "Artist rendering of the the Near Earth Asteroid Rendezvous NEAR spacecraft rendezvous with the asteroid Eros."
     }
   },
   "pioneer-10": {
@@ -301,6 +389,121 @@
       "url": "https://images.nasa.gov/details/ARC-1973-AC73-9253",
       "nasaTitle": "ARC-1973-AC73-9253",
       "nasaDescription": "Photograph by Pioneer 10   Jupiter at a range of 2584000km (ref: image number sequence A-51 (before) during the 4 days on either side of closest approach) moon seen on upper right on image."
+    },
+    "portrait": {
+      "src": "/media/images/pioneer-10/portrait.jpg",
+      "alt": "ARC-1972-AC72-2135",
+      "caption": "Pioneer 10 being readied for launch in 1972.",
+      "credit": "NASA",
+      "illustration": false,
+      "nasaId": "ARC-1972-AC72-2135",
+      "url": "https://images.nasa.gov/details/ARC-1972-AC72-2135",
+      "nasaTitle": "ARC-1972-AC72-2135",
+      "nasaDescription": "PIONEER F (PIONEER-10) SPACECRAFT AT CAPE KENNEDY BEING READIED FOR MISSION (SHOWS THE POSITION OF THE PIONEER INTERSTALLER PLAQUE)"
+    }
+  },
+  "surveyor-3": {
+    "portrait": {
+      "src": "/media/images/surveyor-3/portrait.jpg",
+      "alt": "View of Surveyor III in its crater",
+      "caption": "Surveyor 3 in its crater, photographed by the Apollo 12 astronauts in November 1969.",
+      "credit": "NASA",
+      "illustration": false,
+      "nasaId": "as12-48-7121",
+      "url": "https://images.nasa.gov/details/as12-48-7121",
+      "nasaTitle": "View of Surveyor III in its crater",
+      "nasaDescription": "AS12-48-7121 (20 Nov. 1969) --- An excellent view of the unmanned Surveyor 3 spacecraft which was photographed during the Apollo 12 second extravehicular activity (EVA) on the surface of the moon. The Apollo 12 Lunar Module (LM), with astronauts Charles Conrad Jr., commander, and Alan L. Bean, lunar module pilot, aboard landed within 600 feet of Surveyor 3 in the Ocean of Storms. The television camera and several other pieces were taken from Surveyor 3 and brought back to Earth for scientific examination. Surveyor 3 landed on the side of this small crater in the Ocean of Storms on April 19, 19"
+    }
+  },
+  "opportunity": {
+    "portrait": {
+      "src": "/media/images/opportunity/portrait.jpg",
+      "alt": "Opportunity's First Selfie",
+      "caption": "Opportunity's first selfie, taken in 2018.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": false,
+      "nasaId": "PIA22222",
+      "url": "https://images.nasa.gov/details/PIA22222",
+      "nasaTitle": "Opportunity's First Selfie",
+      "nasaDescription": "This self-portrait of NASA's Opportunity Mars rover shows the vehicle at a site called \"Perseverance Valley\" on the slopes of Endeavour Crater. It was taken with the rover's Microscopic Imager to celebrate the 5000th Martian Day, or sol, of the rover's mission.  The Microscopic Imager is a fixed-focus camera mounted at the end of the rover's robotic arm. Because it was designed for close inspection of rocks, soils and other targets at a distance of around 2.7 inches (7 cm), the rover is out of focus.  The rover's self-portrait view is made by stitching together multiple images take on Sol 5,00"
+    }
+  },
+  "sojourner": {
+    "portrait": {
+      "src": "/media/images/sojourner/portrait.jpg",
+      "alt": "Sojourner Sits Near \"Rock Garden\"",
+      "caption": "Sojourner on Mars, imaged by the Mars Pathfinder lander.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": false,
+      "nasaId": "PIA04318",
+      "url": "https://images.nasa.gov/details/PIA04318",
+      "nasaTitle": "Sojourner Sits Near \"Rock Garden\"",
+      "nasaDescription": "The Mars Pathfinder Rover Sojourner images by the Imager for Mars Pathfinder as it nears the rock \"Wedge.\" Part of the Rock Garden is visible in the upper right of the image.  http://photojournal.jpl.nasa.gov/catalog/PIA04318"
+    }
+  },
+  "viking-2": {
+    "portrait": {
+      "src": "/media/images/viking-2/portrait.jpg",
+      "alt": "101-KSC-73PC-630",
+      "caption": "A Viking lander. NASA's Viking project landed two of these laboratories on Mars in 1976.",
+      "credit": "NASA",
+      "illustration": false,
+      "nasaId": "101-ksc-73pc-630",
+      "url": "https://images.nasa.gov/details/101-ksc-73pc-630",
+      "nasaTitle": "101-KSC-73PC-630",
+      "nasaDescription": "KENNEDY SPACE CENTER, FLA. -- Viking Project In 1976: NASA will land two automated scientific laboratories on the planet Mars. This pioneering effort to explore in detail the surface of another primary planet in our solar system will be identified by a name that exemplifies the spirit of historic exploration. To accomplish this goal, two spacecraft will be launched from the Kennedy Space Center within a month of another in mid-1975. These spacecraft, each including a lander and an orbiter, will hurtle nearly 460 million miles around the Sun before reaching the red planet. The descent will occu"
+    }
+  },
+  "phoenix": {
+    "portrait": {
+      "src": "/media/images/phoenix/portrait.jpg",
+      "alt": "Phoenix Lander on Mars Artist Concept",
+      "caption": "The Phoenix Mars Lander on Mars.",
+      "credit": "NASA/JPL/UA/Lockheed Martin",
+      "illustration": true,
+      "nasaId": "PIA09344",
+      "url": "https://images.nasa.gov/details/PIA09344",
+      "nasaTitle": "Phoenix Lander on Mars Artist Concept",
+      "nasaDescription": "NASA Phoenix Mars Lander monitors the atmosphere overhead and reaches out to the soil below in this artist depiction of the spacecraft fully deployed on the surface of Mars."
+    }
+  },
+  "insight": {
+    "portrait": {
+      "src": "/media/images/insight/portrait.jpg",
+      "alt": "InSight's First Selfie",
+      "caption": "InSight's first full selfie on Mars, December 2018.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": false,
+      "nasaId": "PIA22876",
+      "url": "https://images.nasa.gov/details/PIA22876",
+      "nasaTitle": "InSight's First Selfie",
+      "nasaDescription": "This is NASA InSight's first full selfie on Mars. It displays the lander's solar panels and deck. On top of the deck are its science instruments, weather sensor booms and UHF antenna. The selfie was taken on Dec. 6, 2018 (Sol 10).  The selfie is made up of 11 images which were taken by its Instrument Deployment Camera, located on the elbow of its robotic arm. Those images are then stitched together into a mosaic.  https://photojournal.jpl.nasa.gov/catalog/PIA22876"
+    }
+  },
+  "pioneer-11": {
+    "portrait": {
+      "src": "/media/images/pioneer-11/portrait.jpg",
+      "alt": "ARC-1972-AC72-1338",
+      "caption": "The plaque carried by both Pioneer 10 and Pioneer 11.",
+      "credit": "NASA",
+      "illustration": false,
+      "nasaId": "ARC-1972-AC72-1338",
+      "url": "https://images.nasa.gov/details/ARC-1972-AC72-1338",
+      "nasaTitle": "ARC-1972-AC72-1338",
+      "nasaDescription": "Pioneer F/G Plaque: Pioneer 10 the first spacecraft to leave our solar system carries a message to other worlds. The plaque was designed by Drs. Carl Sagan and Frank Drake, the artwork was prepared by Linda Salzman Sagan."
+    }
+  },
+  "kepler": {
+    "portrait": {
+      "src": "/media/images/kepler/portrait.jpg",
+      "alt": "Kepler Spacecraft Artist Concept",
+      "caption": "The Kepler spacecraft.",
+      "credit": "NASA/Ames/JPL-Caltech",
+      "illustration": true,
+      "nasaId": "PIA11825",
+      "url": "https://images.nasa.gov/details/PIA11825",
+      "nasaTitle": "Kepler Spacecraft Artist Concept",
+      "nasaDescription": "This artist concept shows NASA Kepler spacecraft."
     }
   }
 }

@@ -96,4 +96,8 @@ export interface StoryIndex {
   generatedAt: string;
   levels: Record<LevelId, string>;
   stories: Record<string, Story>;
+  /** Map-only explorers whose NASA summary is narrated at /media/audio/<id>/summary.mp3. */
+  summaryAudio?: string[];
+  /** Each explorer's hardware photo (square thumbnail), keyed by explorer id. */
+  portraits?: Record<string, BeatImage>;
 }

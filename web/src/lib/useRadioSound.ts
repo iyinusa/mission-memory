@@ -1,23 +1,14 @@
 import { useEffect, useRef, useState } from "react";
+import { canPlayNow, setSoundOn, soundOn } from "./sound";
 
 // Radio-receiver sound effects, synthesized live with the Web Audio API (no audio files).
 // Static fades as the signal strengthens, a carrier tone hums when locked, and a chirp marks each find.
 // Artistic only: space itself is silent.
 
-const KEY = "mm-sound";
-
 interface Rig {
   ctx: AudioContext;
   noise: GainNode;
   tone: GainNode;
-}
-
-function savedPref(): boolean {
-  try {
-    return localStorage.getItem(KEY) === "on";
-  } catch {
-    return false;
-  }
 }
 
 function build(): Rig {
@@ -69,8 +60,19 @@ function chirp(ctx: AudioContext, freq: number, at: number) {
   o.stop(t + 0.12);
 }
 
-export function useRadioSound(strength: number, lockedId: string | null) {
-  const [enabled, setEnabled] = useState(savedPref);
+/** The page's sound switch, on unless the visitor turned it off. Shared by the radio and the narrator. */
+export function useSoundSwitch() {
+  const [enabled, setEnabled] = useState(soundOn);
+  const toggle = () =>
+    setEnabled((v) => {
+      setSoundOn(!v);
+      return !v;
+    });
+  return { enabled, toggle };
+}
+
+/** `ducked` lowers the radio while the narrator is speaking. */
+export function useRadioSound(enabled: boolean, strength: number, lockedId: string | null, ducked = false) {
   const rig = useRef<Rig | null>(null);
 
   const start = () => {
@@ -78,21 +80,15 @@ export function useRadioSound(strength: number, lockedId: string | null) {
     void rig.current.ctx.resume();
   };
 
-  const toggle = () => {
-    const next = !enabled;
-    setEnabled(next);
-    try {
-      localStorage.setItem(KEY, next ? "on" : "off");
-    } catch {
-      /* not remembered in private mode */
-    }
-    if (next) start();
-    else void rig.current?.ctx.suspend();
-  };
-
-  // Browsers only allow sound after a user gesture: if sound was left on, start at the first one.
   useEffect(() => {
-    if (!enabled || rig.current) return;
+    if (!enabled) void rig.current?.ctx.suspend();
+  }, [enabled]);
+
+  // Browsers only allow sound after a user gesture: start now if there has been one
+  // (e.g. the click that opened this world), otherwise at the first one.
+  useEffect(() => {
+    if (!enabled) return;
+    if (rig.current || canPlayNow()) return start();
     const go = () => start();
     window.addEventListener("pointerdown", go, { once: true });
     window.addEventListener("keydown", go, { once: true });
@@ -106,8 +102,9 @@ export function useRadioSound(strength: number, lockedId: string | null) {
     const r = rig.current;
     if (!r) return;
     const t = r.ctx.currentTime;
-    r.noise.gain.setTargetAtTime(enabled ? (1 - strength) * 0.08 : 0, t, 0.08);
-    r.tone.gain.setTargetAtTime(enabled ? strength * strength * 0.03 : 0, t, 0.1);
+    const level = enabled ? (ducked ? 0.25 : 1) : 0;
+    r.noise.gain.setTargetAtTime((1 - strength) * 0.08 * level, t, 0.08);
+    r.tone.gain.setTargetAtTime(strength * strength * 0.03 * level, t, 0.1);
   });
 
   useEffect(() => {
@@ -124,6 +121,4 @@ export function useRadioSound(strength: number, lockedId: string | null) {
     },
     [],
   );
-
-  return { enabled, toggle };
 }

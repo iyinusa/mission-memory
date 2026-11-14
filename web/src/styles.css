@@ -348,13 +348,48 @@ main {
   margin: 6px 0 0;
   font-size: 1.6rem;
 }
+.globe-label img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--signal);
+}
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 6px;
+}
+.panel-title h2 {
+  margin: 0;
+}
+.panel-photo {
+  flex: none;
+  width: 84px;
+  height: 84px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+.panel-credit {
+  margin: 8px 0 0;
+  color: var(--ink-dim);
+  font-size: 0.75rem;
+}
+.panel-credit a {
+  color: var(--ink-dim);
+}
 .panel-summary {
   color: var(--ink-dim);
   font-size: 0.95rem;
   flex: 1;
 }
 .globe-label {
-  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px 4px 4px;
   border-radius: 999px;
   background: #05070fd9;
   border: 1px solid var(--signal);
@@ -718,6 +753,22 @@ main {
 .narration {
   margin-top: 20px;
 }
+.play-story {
+  margin: 16px 0 8px 12px;
+  border-color: var(--signal);
+  color: var(--signal);
+}
+.play-story.on {
+  background: var(--signal);
+  color: #04120d;
+}
+.your-turn {
+  margin: 20px 0 0;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #7cf2c81a;
+  border: 1px solid #7cf2c855;
+}
 .narration audio {
   width: 100%;
   max-width: 480px;
@@ -936,6 +987,62 @@ main {
   margin: 0;
   color: #5b6480;
 }
+.postcard-to input {
+  width: 100%;
+  padding: 2px 0;
+  border: 0;
+  border-bottom: 2px dashed #1d223366;
+  background: transparent;
+  color: #1d2233;
+  font: 700 1.05rem var(--font-display);
+}
+.postcard-to input::placeholder {
+  color: #1d223366;
+  font-weight: 500;
+}
+.postcard-to input:focus-visible {
+  outline: 2px solid #0b9b78;
+  outline-offset: 2px;
+}
+.postcard-meta dd.postcard-to {
+  border-bottom: 0;
+}
+.postcard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.postcard-qr {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 640px;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+}
+.postcard-qr p {
+  margin: 0;
+}
+.postcard-qr strong {
+  color: var(--ink);
+}
+.qr {
+  flex: none;
+  width: 112px;
+  padding: 6px;
+  border-radius: 8px;
+  background: #fff;
+}
+.qr svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 .embed {
   padding: 16px;
@@ -946,6 +1053,10 @@ main {
     grid-template-columns: 1fr;
   }
   .dial-tick.wide-only em {
+    display: none;
+  }
+  /* On a phone already: offer Share instead of a code to scan. */
+  .postcard-qr {
     display: none;
   }
   .beat-steps {
@@ -971,7 +1082,16 @@ main {
   }
 }
 
+/* Printing gives exactly the card: its own colours, landscape, centred, nothing else on the page. */
 @media print {
+  @page {
+    size: A5 landscape;
+    margin: 0;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
   body * {
     visibility: hidden;
   }
@@ -980,10 +1100,22 @@ main {
     visibility: visible;
   }
   #postcard {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 190mm;
+    max-width: none;
+    margin: 0;
     box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .postcard-to input {
+    border-bottom-style: solid;
+  }
+  .postcard-to input::placeholder {
+    color: transparent;
   }
 }
 

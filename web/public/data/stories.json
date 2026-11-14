@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T16:14:55+00:00",
+  "generatedAt": "2026-11-14T17:46:27+00:00",
   "levels": {
     "younger": "Ages 9–11",
     "older": "Ages 12–14"
@@ -169,6 +169,10 @@
             "url": "https://images.nasa.gov/details/PIA13037"
           }
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
     },
     "apollo11-eagle": {
@@ -347,6 +351,10 @@
             "url": "https://images.nasa.gov/details/as11-40-5899"
           }
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
     },
     "apollo15-lrv": {
@@ -525,6 +533,10 @@
             "url": "https://images.nasa.gov/details/PIA13037"
           }
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
     },
     "spirit": {
@@ -709,6 +721,10 @@
             "url": "https://images.nasa.gov/details/PIA12203"
           }
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
     },
     "viking-1": {
@@ -895,6 +911,10 @@
             "url": "https://images.nasa.gov/details/PIA00563"
           }
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
     },
     "ingenuity": {
@@ -1064,6 +1084,10 @@
             "url": "https://images.nasa.gov/details/PIA26237"
           }
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
     },
     "dawn": {
@@ -1265,6 +1289,10 @@
             "url": "https://images.nasa.gov/details/PIA20350"
           }
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
     },
     "near-shoemaker": {
@@ -1433,6 +1461,10 @@
             "url": "https://images.nasa.gov/details/PIA02900"
           }
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
     },
     "pioneer-10": {
@@ -1614,7 +1646,159 @@
             }
           ]
         }
+      ],
+      "audio": [
+        "younger",
+        "older"
       ]
+    }
+  },
+  "summaryAudio": [
+    "surveyor-3",
+    "opportunity",
+    "sojourner",
+    "viking-2",
+    "phoenix",
+    "insight",
+    "pioneer-11",
+    "kepler"
+  ],
+  "portraits": {
+    "apollo-retroreflectors": {
+      "src": "/media/images/apollo-retroreflectors/portrait.jpg",
+      "alt": "View of the Laser Ranging Retro Reflector deployed by Apollo 14 astronauts",
+      "caption": "The laser ranging retroreflector left by Apollo 14.",
+      "credit": "NASA",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/as14-67-09386"
+    },
+    "apollo11-eagle": {
+      "src": "/media/images/apollo11-eagle/portrait.jpg",
+      "alt": "View Apollo 11 Lunar Module as it rested on lunar surface",
+      "caption": "The Apollo 11 lunar module resting on the Moon, 20 July 1969.",
+      "credit": "NASA",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/as11-40-5927"
+    },
+    "apollo15-lrv": {
+      "src": "/media/images/apollo15-lrv/portrait.jpg",
+      "alt": "Astronaut James Irwin works at Lunar Roving Vehicle during Apollo 15 EVA",
+      "caption": "The Lunar Roving Vehicle on the Moon during Apollo 15.",
+      "credit": "NASA",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/as15-86-11603"
+    },
+    "spirit": {
+      "src": "/media/images/spirit/portrait.jpg",
+      "alt": "Artist Concept of Rover on Mars",
+      "caption": "A Mars Exploration Rover like Spirit.",
+      "credit": "NASA/JPL/Cornell University",
+      "illustration": true,
+      "url": "https://images.nasa.gov/details/PIA04413"
+    },
+    "viking-1": {
+      "src": "/media/images/viking-1/portrait.jpg",
+      "alt": "101-KSC-73PC-630",
+      "caption": "A Viking lander. NASA's Viking project landed two of these laboratories on Mars in 1976.",
+      "credit": "NASA",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/101-ksc-73pc-630"
+    },
+    "ingenuity": {
+      "src": "/media/images/ingenuity/portrait.jpg",
+      "alt": "NASA's Ingenuity Mars Helicopter",
+      "caption": "The flight model of NASA's Ingenuity Mars Helicopter.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/PIA23882"
+    },
+    "dawn": {
+      "src": "/media/images/dawn/portrait.jpg",
+      "alt": "Dawn Blue Glow Artist Concept",
+      "caption": "Dawn arriving at the dwarf planet Ceres.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": true,
+      "url": "https://images.nasa.gov/details/PIA18922"
+    },
+    "near-shoemaker": {
+      "src": "/media/images/near-shoemaker/portrait.jpg",
+      "alt": "NASA NEAR Spacecraft Rendezvous with Asteroid Eros Artist Concept",
+      "caption": "NEAR meeting asteroid Eros.",
+      "credit": "NASA",
+      "illustration": true,
+      "url": "https://images.nasa.gov/details/PIA18177"
+    },
+    "pioneer-10": {
+      "src": "/media/images/pioneer-10/portrait.jpg",
+      "alt": "ARC-1972-AC72-2135",
+      "caption": "Pioneer 10 being readied for launch in 1972.",
+      "credit": "NASA",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/ARC-1972-AC72-2135"
+    },
+    "surveyor-3": {
+      "src": "/media/images/surveyor-3/portrait.jpg",
+      "alt": "View of Surveyor III in its crater",
+      "caption": "Surveyor 3 in its crater, photographed by the Apollo 12 astronauts in November 1969.",
+      "credit": "NASA",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/as12-48-7121"
+    },
+    "opportunity": {
+      "src": "/media/images/opportunity/portrait.jpg",
+      "alt": "Opportunity's First Selfie",
+      "caption": "Opportunity's first selfie, taken in 2018.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/PIA22222"
+    },
+    "sojourner": {
+      "src": "/media/images/sojourner/portrait.jpg",
+      "alt": "Sojourner Sits Near \"Rock Garden\"",
+      "caption": "Sojourner on Mars, imaged by the Mars Pathfinder lander.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/PIA04318"
+    },
+    "viking-2": {
+      "src": "/media/images/viking-2/portrait.jpg",
+      "alt": "101-KSC-73PC-630",
+      "caption": "A Viking lander. NASA's Viking project landed two of these laboratories on Mars in 1976.",
+      "credit": "NASA",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/101-ksc-73pc-630"
+    },
+    "phoenix": {
+      "src": "/media/images/phoenix/portrait.jpg",
+      "alt": "Phoenix Lander on Mars Artist Concept",
+      "caption": "The Phoenix Mars Lander on Mars.",
+      "credit": "NASA/JPL/UA/Lockheed Martin",
+      "illustration": true,
+      "url": "https://images.nasa.gov/details/PIA09344"
+    },
+    "insight": {
+      "src": "/media/images/insight/portrait.jpg",
+      "alt": "InSight's First Selfie",
+      "caption": "InSight's first full selfie on Mars, December 2018.",
+      "credit": "NASA/JPL-Caltech",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/PIA22876"
+    },
+    "pioneer-11": {
+      "src": "/media/images/pioneer-11/portrait.jpg",
+      "alt": "ARC-1972-AC72-1338",
+      "caption": "The plaque carried by both Pioneer 10 and Pioneer 11.",
+      "credit": "NASA",
+      "illustration": false,
+      "url": "https://images.nasa.gov/details/ARC-1972-AC72-1338"
+    },
+    "kepler": {
+      "src": "/media/images/kepler/portrait.jpg",
+      "alt": "Kepler Spacecraft Artist Concept",
+      "caption": "The Kepler spacecraft.",
+      "credit": "NASA/Ames/JPL-Caltech",
+      "illustration": true,
+      "url": "https://images.nasa.gov/details/PIA11825"
     }
   }
 }

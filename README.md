@@ -30,8 +30,19 @@ https://missionmemory.kenaff.com   (one origin)
 - `scripts/` — build-time data pipeline. `ingest.py` builds `artifacts.json` from NSSDCA and checks every quoted fact
   against its NASA page. `build_stories.py` does the same for every story beat in `stories.json`, then writes the
   fact-check checklist to `review/STORIES-REVIEW.md`. `images.py` fetches the chosen NASA Image and Video Library photos
-  (`images.json`) with their official credits, and keeps the image table in `CREDITS.md` up to date.
+  (`images.json`) with their official credits, and keeps the image table in `CREDITS.md` up to date. `narrate.py` voices
+  approved stories with Kokoro TTS (voice `bm_fable`) into MP3s tagged as synthetic speech, re-voicing only chapters
+  whose text changed.
 - `brand/` — `build.py` regenerates the logo, favicons and link-preview image into `web/public`.
+
+### Content pipeline
+
+```bash
+python3 scripts/ingest.py          # NSSDCA → artifacts.json (every quoted fact verified)
+python3 scripts/images.py          # NASA Image Library photos + credits
+python3 scripts/narrate.py         # narration for approved stories (needs: pip3 install kokoro soundfile; ffmpeg)
+python3 scripts/build_stories.py   # verify story quotes, merge images + audio → stories.json, review checklist
+```
 
 ## Run locally
 

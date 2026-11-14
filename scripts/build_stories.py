@@ -14,6 +14,7 @@ import sys
 from datetime import datetime, timezone
 
 import ingest
+from speech import clip_digest, clip_name, summary_clip_name
 
 SRC = ingest.ROOT / "scripts" / "stories.json"
 IMAGES = ingest.ROOT / "web" / "public" / "data" / "images.json"  # written by scripts/images.py
@@ -28,6 +29,16 @@ TITLES = {
     "now": "Where I rest now",
 }
 LEVELS = {"younger": "Ages 9–11", "older": "Ages 12–14"}
+
+
+AUDIO = ingest.ROOT / "web" / "public" / "media" / "audio"
+_audio_manifest = json.loads((AUDIO / "manifest.json").read_text()) if (AUDIO / "manifest.json").exists() else {}
+
+
+def audio_current(sid: str, level: str, beat: dict) -> bool:
+    """True if this beat's MP3 exists and was voiced from the current text (see scripts/narrate.py)."""
+    rel = clip_name(sid, level, beat["key"])
+    return (AUDIO / rel).exists() and _audio_manifest.get(rel) == clip_digest(beat[level])
 
 
 def syllables(word: str) -> int:
@@ -104,6 +115,8 @@ def main() -> int:
             "interaction": story.get("interaction"),
             "postcard": story["postcard"],
             "beats": beats,
+            # Levels whose narration is complete and matches the current text (see scripts/narrate.py).
+            "audio": [lvl for lvl in LEVELS if all(audio_current(sid, lvl, b) for b in story["beats"])],
         }
 
     if ingest.errors:
@@ -114,7 +127,19 @@ def main() -> int:
 
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     avg = {lvl: sum(g) / len(g) for lvl, g in grades.items()}
-    OUT.write_text(json.dumps({"generatedAt": now, "levels": LEVELS, "stories": published}, indent=2, ensure_ascii=False) + "\n")
+    summary_audio = [
+        a["id"]
+        for a in artifacts.values()
+        if a["tier"] == "map" and (AUDIO / summary_clip_name(a["id"])).exists() and _audio_manifest.get(summary_clip_name(a["id"])) == clip_digest(a["summary"])
+    ]
+    # Each explorer's hardware photo, shown beside its name on the globe, the map and the panel.
+    portraits = {
+        gid: {k: v["portrait"][k] for k in ("src", "alt", "caption", "credit", "illustration", "url")} for gid, v in images.items() if "portrait" in v
+    }
+    OUT.write_text(
+        json.dumps({"generatedAt": now, "levels": LEVELS, "stories": published, "summaryAudio": summary_audio, "portraits": portraits}, indent=2, ensure_ascii=False)
+        + "\n"
+    )
 
     REVIEW.parent.mkdir(exist_ok=True)
     header = [
