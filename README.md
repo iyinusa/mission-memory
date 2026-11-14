@@ -27,7 +27,9 @@ https://missionmemory.kenaff.com   (one origin)
 - `web/` — Vite + React + TypeScript. Also builds `mcp-app.html`, the same player bundled as an MCP Apps view.
 - `mcp/` — Node + TypeScript MCP server. Tools: `list_ghosts` and `tune_in`, which opens the story player as a
   `ui://` view inside MCP clients. It reads its content from the `web` container, so both always match.
-- `scripts/` — build-time data and narration pipeline (NSSDCA ingest, Kokoro TTS).
+- `scripts/` — build-time data pipeline. `ingest.py` builds `artifacts.json` from NSSDCA and checks every quoted fact
+  against its NASA page. `build_stories.py` does the same for every story beat in `stories.json`, then writes the
+  fact-check checklist to `review/STORIES-REVIEW.md`.
 - `brand/` — `build.py` regenerates the logo, favicons and link-preview image into `web/public`.
 
 ## Run locally

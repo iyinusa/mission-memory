@@ -1,7 +1,10 @@
 {
   "_comment": "Hand-curated cast. Every location and date carries a verbatim quote from a NASA source; scripts/ingest.py fails if a quote is not found on that page. Longitudes are east-positive, -180..180.",
   "sources": {
-    "mars24": { "label": "NASA GISS Mars24: Mars Landers", "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html" }
+    "mars24": {
+      "label": "NASA GISS Mars24: Mars Landers",
+      "url": "https://www.giss.nasa.gov/tools/mars24/help/landers.html"
+    }
   },
   "ghosts": [
     {
@@ -12,19 +15,63 @@
       "tier": "hero",
       "status": "active",
       "statusNote": "Still reflecting lasers fired from Earth",
-      "nssdca": ["1971-008C", "1969-059C", "1971-063C"],
+      "nssdca": [
+        "1971-008C",
+        "1969-059C",
+        "1971-063C"
+      ],
       "missionUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C",
       "summarySource": "nssdca-exp:1969-059C-04",
-      "location": { "lat": -3.64589, "lon": -17.47194, "url": "nssdca:1971-008C", "quote": "3.64589 S latitude, 17.47194 W" },
+      "location": {
+        "lat": -3.64589,
+        "lon": -17.47194,
+        "url": "nssdca:1971-008C",
+        "quote": "3.64589 S latitude, 17.47194 W"
+      },
       "sites": [
-        { "label": "Apollo 11, Tranquility Base", "lat": 0.6735, "lon": 23.473, "url": "nssdca:1969-059C", "quote": "0.6735 N latitude, 23.4730 E longitude" },
-        { "label": "Apollo 14, Fra Mauro", "lat": -3.64589, "lon": -17.47194, "url": "nssdca:1971-008C", "quote": "3.64589 S latitude, 17.47194 W" },
-        { "label": "Apollo 15, Hadley-Apennine", "lat": 26.13239, "lon": 3.6333, "url": "nssdca:1971-063C", "quote": "26.13239 N latitude, 3.63330 E" }
+        {
+          "label": "Apollo 11, Tranquility Base",
+          "lat": 0.6735,
+          "lon": 23.473,
+          "url": "nssdca:1969-059C",
+          "quote": "0.6735 N latitude, 23.4730 E longitude"
+        },
+        {
+          "label": "Apollo 14, Fra Mauro",
+          "lat": -3.64589,
+          "lon": -17.47194,
+          "url": "nssdca:1971-008C",
+          "quote": "3.64589 S latitude, 17.47194 W"
+        },
+        {
+          "label": "Apollo 15, Hadley-Apennine",
+          "lat": 26.13239,
+          "lon": 3.6333,
+          "url": "nssdca:1971-063C",
+          "quote": "26.13239 N latitude, 3.63330 E"
+        }
       ],
       "evidence": [
-        { "claim": "status", "url": "nssdca-exp:1971-063C-08", "quote": "The LRRR could be used indefinitely" },
-        { "claim": "purpose", "url": "nssdca-exp:1969-059C-04", "quote": "Laser ranging beams from earth were reflected back to their point of origin for precise measurement of earth-moon distance" },
-        { "claim": "network", "url": "nssdca-exp:1971-008C-09", "quote": "provided a network of stations (well-separated in longitude and latitude)" }
+        {
+          "claim": "status",
+          "url": "nssdca-exp:1971-063C-08",
+          "quote": "The LRRR could be used indefinitely"
+        },
+        {
+          "claim": "purpose",
+          "url": "nssdca-exp:1969-059C-04",
+          "quote": "Laser ranging beams from earth were reflected back to their point of origin for precise measurement of earth-moon distance"
+        },
+        {
+          "claim": "network",
+          "url": "nssdca-exp:1971-008C-09",
+          "quote": "provided a network of stations (well-separated in longitude and latitude)"
+        }
+      ],
+      "storySources": [
+        "https://www.nasa.gov/missions/artemis/clps/nasa-anticipates-lunar-findings-from-next-generation-retroreflector/",
+        "https://www.nasa.gov/image-article/retroreflectors-from-apollo-mars/",
+        "https://science.nasa.gov/moon/facts/"
       ]
     },
     {
@@ -35,9 +82,16 @@
       "tier": "story",
       "status": "dormant",
       "statusNote": "Resting at Tranquility Base since 1969",
-      "nssdca": ["1969-059C"],
+      "nssdca": [
+        "1969-059C"
+      ],
       "missionUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C",
-      "location": { "lat": 0.67416, "lon": 23.47314, "url": "nssdca:1969-059C", "quote": "0.67416 degrees N latitude, 23.47314" }
+      "location": {
+        "lat": 0.67416,
+        "lon": 23.47314,
+        "url": "nssdca:1969-059C",
+        "quote": "0.67416 degrees N latitude, 23.47314"
+      }
     },
     {
       "id": "apollo15-lrv",
@@ -47,11 +101,25 @@
       "tier": "story",
       "status": "dormant",
       "statusNote": "Parked at Hadley-Apennine since 1971",
-      "nssdca": ["1971-063C"],
+      "nssdca": [
+        "1971-063C"
+      ],
       "missionUrl": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C",
-      "location": { "lat": 26.13239, "lon": 3.6333, "url": "nssdca:1971-063C", "quote": "26.13239 N latitude, 3.63330 E" },
+      "location": {
+        "lat": 26.13239,
+        "lon": 3.6333,
+        "url": "nssdca:1971-063C",
+        "quote": "26.13239 N latitude, 3.63330 E"
+      },
       "evidence": [
-        { "claim": "first", "url": "nssdca:1971-063C", "quote": "This was the first time a vehicle of this type had been used" }
+        {
+          "claim": "first",
+          "url": "nssdca:1971-063C",
+          "quote": "This was the first time a vehicle of this type had been used"
+        }
+      ],
+      "storySources": [
+        "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html"
       ]
     },
     {
@@ -62,12 +130,27 @@
       "tier": "map",
       "status": "silent",
       "statusNote": "Last data on 4 May 1967",
-      "nssdca": ["1967-035A"],
+      "nssdca": [
+        "1967-035A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/surveyor-3/",
-      "location": { "lat": -3.0162, "lon": -23.418, "url": "nssdca:1967-035A", "quote": "3.0162 S, 336.582 E" },
-      "lastContact": { "date": "1967-05-04", "url": "nssdca:1967-035A", "quote": "The last data were returned on 04 May 1967" },
+      "location": {
+        "lat": -3.0162,
+        "lon": -23.418,
+        "url": "nssdca:1967-035A",
+        "quote": "3.0162 S, 336.582 E"
+      },
+      "lastContact": {
+        "date": "1967-05-04",
+        "url": "nssdca:1967-035A",
+        "quote": "The last data were returned on 04 May 1967"
+      },
       "evidence": [
-        { "claim": "visited", "url": "nssdca:1967-035A", "quote": "Astronauts Pete Conrad and Alan Bean visited the spacecraft" }
+        {
+          "claim": "visited",
+          "url": "nssdca:1967-035A",
+          "quote": "Astronauts Pete Conrad and Alan Bean visited the spacecraft"
+        }
       ]
     },
     {
@@ -78,12 +161,37 @@
       "tier": "hero",
       "status": "silent",
       "statusNote": "Last signal on 22 March 2010",
-      "nssdca": ["2003-027A"],
+      "nssdca": [
+        "2003-027A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
-      "location": { "lat": -14.572, "lon": 175.478, "url": "nssdca:2003-027A", "quote": "14.572 S, 175.478 E", "crossCheck": { "source": "mars24", "lat": -14.57, "lon": 175.48, "quote": "175.48°E -14.57°N" } },
-      "lastContact": { "date": "2010-03-22", "url": "nssdca:2003-027A", "quote": "The last transmission from Spirit occurred on 22 March 2010" },
+      "location": {
+        "lat": -14.572,
+        "lon": 175.478,
+        "url": "nssdca:2003-027A",
+        "quote": "14.572 S, 175.478 E",
+        "crossCheck": {
+          "source": "mars24",
+          "lat": -14.57,
+          "lon": 175.48,
+          "quote": "175.48°E -14.57°N"
+        }
+      },
+      "lastContact": {
+        "date": "2010-03-22",
+        "url": "nssdca:2003-027A",
+        "quote": "The last transmission from Spirit occurred on 22 March 2010"
+      },
       "evidence": [
-        { "claim": "distance", "url": "nssdca:2003-027A", "quote": "The rover travelled a total of 7.73 km over a period of 6 years, 2 months" }
+        {
+          "claim": "distance",
+          "url": "nssdca:2003-027A",
+          "quote": "The rover travelled a total of 7.73 km over a period of 6 years, 2 months"
+        }
+      ],
+      "storySources": [
+        "https://science.nasa.gov/resource/rovers-wheel-churns-up-bright-martian-soil/",
+        "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/"
       ]
     },
     {
@@ -94,10 +202,27 @@
       "tier": "map",
       "status": "silent",
       "statusNote": "Last signal on 10 June 2018",
-      "nssdca": ["2003-032A"],
+      "nssdca": [
+        "2003-032A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/",
-      "location": { "lat": -1.946, "lon": -5.527, "url": "nssdca:2003-032A", "quote": "1.946° S and 354.473° E", "crossCheck": { "source": "mars24", "lat": -1.95, "lon": -5.53, "quote": "354.47°E -1.95°N" } },
-      "lastContact": { "date": "2018-06-10", "url": "nssdca:2003-032A", "quote": "The final communication from the rover was received on 10 June 2018" }
+      "location": {
+        "lat": -1.946,
+        "lon": -5.527,
+        "url": "nssdca:2003-032A",
+        "quote": "1.946° S and 354.473° E",
+        "crossCheck": {
+          "source": "mars24",
+          "lat": -1.95,
+          "lon": -5.53,
+          "quote": "354.47°E -1.95°N"
+        }
+      },
+      "lastContact": {
+        "date": "2018-06-10",
+        "url": "nssdca:2003-032A",
+        "quote": "The final communication from the rover was received on 10 June 2018"
+      }
     },
     {
       "id": "sojourner",
@@ -107,10 +232,28 @@
       "tier": "map",
       "status": "silent",
       "statusNote": "Contact lost on 27 September 1997",
-      "nssdca": ["MESURPR", "1996-068A"],
+      "nssdca": [
+        "MESURPR",
+        "1996-068A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/mars-pathfinder/",
-      "location": { "lat": 19.33, "lon": -33.55, "url": "nssdca:1996-068A", "quote": "The landing site in the Ares Vallis region of Mars is at 19.33 N, 33.55 W", "crossCheck": { "source": "mars24", "lat": 19.47, "lon": -33.25, "quote": "326.75°E 19.47°N" } },
-      "lastContact": { "date": "1997-09-27", "url": "nssdca:1996-068A", "quote": "until 27 September 1997 when communications were lost" }
+      "location": {
+        "lat": 19.33,
+        "lon": -33.55,
+        "url": "nssdca:1996-068A",
+        "quote": "The landing site in the Ares Vallis region of Mars is at 19.33 N, 33.55 W",
+        "crossCheck": {
+          "source": "mars24",
+          "lat": 19.47,
+          "lon": -33.25,
+          "quote": "326.75°E 19.47°N"
+        }
+      },
+      "lastContact": {
+        "date": "1997-09-27",
+        "url": "nssdca:1996-068A",
+        "quote": "until 27 September 1997 when communications were lost"
+      }
     },
     {
       "id": "viking-1",
@@ -120,10 +263,21 @@
       "tier": "story",
       "status": "silent",
       "statusNote": "Contact lost on 13 November 1982",
-      "nssdca": ["1975-075C"],
+      "nssdca": [
+        "1975-075C"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/viking-1/",
-      "location": { "lat": 22.27, "lon": -47.95, "url": "nssdca:1975-075C", "quote": "22.27 deg N latitude and 312.05 deg E" },
-      "lastContact": { "date": "1982-11-13", "url": "nssdca:1975-075C", "quote": "It operated until 13 November 1982 when contact was lost" }
+      "location": {
+        "lat": 22.27,
+        "lon": -47.95,
+        "url": "nssdca:1975-075C",
+        "quote": "22.27 deg N latitude and 312.05 deg E"
+      },
+      "lastContact": {
+        "date": "1982-11-13",
+        "url": "nssdca:1975-075C",
+        "quote": "It operated until 13 November 1982 when contact was lost"
+      }
     },
     {
       "id": "viking-2",
@@ -133,10 +287,21 @@
       "tier": "map",
       "status": "silent",
       "statusNote": "Switched off on 11 April 1980",
-      "nssdca": ["1975-083C"],
+      "nssdca": [
+        "1975-083C"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/viking-1/",
-      "location": { "lat": 47.6673, "lon": 134.2809, "url": "nssdca:1975-083C", "quote": "47.6673 deg N latitude and 134.2809 deg" },
-      "lastContact": { "date": "1980-04-11", "url": "nssdca:1975-083C", "quote": "was turned off on April 11, 1980 when its batteries failed" }
+      "location": {
+        "lat": 47.6673,
+        "lon": 134.2809,
+        "url": "nssdca:1975-083C",
+        "quote": "47.6673 deg N latitude and 134.2809 deg"
+      },
+      "lastContact": {
+        "date": "1980-04-11",
+        "url": "nssdca:1975-083C",
+        "quote": "was turned off on April 11, 1980 when its batteries failed"
+      }
     },
     {
       "id": "phoenix",
@@ -146,10 +311,27 @@
       "tier": "map",
       "status": "silent",
       "statusNote": "Last signal on 2 November 2008",
-      "nssdca": ["2007-034A"],
+      "nssdca": [
+        "2007-034A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/insight/",
-      "location": { "lat": 68.15, "lon": -125.9, "url": "nssdca:2007-034A", "quote": "68.15 N, 125.9 W", "crossCheck": { "source": "mars24", "lat": 68.22, "lon": -125.75, "quote": "234.25°E 68.22°N" } },
-      "lastContact": { "date": "2008-11-02", "url": "nssdca:2007-034A", "quote": "its last signal was received on 02 November 2008" }
+      "location": {
+        "lat": 68.15,
+        "lon": -125.9,
+        "url": "nssdca:2007-034A",
+        "quote": "68.15 N, 125.9 W",
+        "crossCheck": {
+          "source": "mars24",
+          "lat": 68.22,
+          "lon": -125.75,
+          "quote": "234.25°E 68.22°N"
+        }
+      },
+      "lastContact": {
+        "date": "2008-11-02",
+        "url": "nssdca:2007-034A",
+        "quote": "its last signal was received on 02 November 2008"
+      }
     },
     {
       "id": "insight",
@@ -159,10 +341,21 @@
       "tier": "map",
       "status": "silent",
       "statusNote": "Last transmission on 15 December 2022",
-      "nssdca": ["2018-042A"],
+      "nssdca": [
+        "2018-042A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/insight/",
-      "location": { "lat": 4.5, "lon": 135.62, "url": "mars24", "quote": "135.62°E 4.50°N" },
-      "lastContact": { "date": "2022-12-15", "url": "nssdca:2018-042A", "quote": "The last transmission from InSight was received on 15 December 2022" }
+      "location": {
+        "lat": 4.5,
+        "lon": 135.62,
+        "url": "mars24",
+        "quote": "135.62°E 4.50°N"
+      },
+      "lastContact": {
+        "date": "2022-12-15",
+        "url": "nssdca:2018-042A",
+        "quote": "The last transmission from InSight was received on 15 December 2022"
+      }
     },
     {
       "id": "ingenuity",
@@ -172,13 +365,32 @@
       "tier": "story",
       "status": "dormant",
       "statusNote": "Grounded after its 72nd flight on 18 January 2024",
-      "nssdca": ["2020-052A"],
+      "nssdca": [
+        "2020-052A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
-      "location": { "lat": 18.44, "lon": 77.45, "url": "mars24", "quote": "Perseverance (and Ingenuity helicopter): NASA rover project that landed Feb. 18, 2021, in Jezero Crater, at 77.45°E 18.44°N" },
-      "lastContact": { "date": "2024-01-18", "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "It flew for the last time on Jan. 18, 2024" },
+      "location": {
+        "lat": 18.44,
+        "lon": 77.45,
+        "url": "mars24",
+        "quote": "Perseverance (and Ingenuity helicopter): NASA rover project that landed Feb. 18, 2021, in Jezero Crater, at 77.45°E 18.44°N"
+      },
+      "lastContact": {
+        "date": "2024-01-18",
+        "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
+        "quote": "It flew for the last time on Jan. 18, 2024"
+      },
       "evidence": [
-        { "claim": "flights", "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "the helicopter eventually completed 72 flights across nearly three years" },
-        { "claim": "first flight", "url": "nssdca:2020-052A", "quote": "The first flight, on 19 April 2021, lasted 39.1 seconds, hovering at 3 meters altitude for 30 seconds" }
+        {
+          "claim": "flights",
+          "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/",
+          "quote": "the helicopter eventually completed 72 flights across nearly three years"
+        },
+        {
+          "claim": "first flight",
+          "url": "nssdca:2020-052A",
+          "quote": "The first flight, on 19 April 2021, lasted 39.1 seconds, hovering at 3 meters altitude for 30 seconds"
+        }
       ]
     },
     {
@@ -189,12 +401,26 @@
       "tier": "hero",
       "status": "silent",
       "statusNote": "Contact ended on 31 October 2018, still orbiting Ceres",
-      "nssdca": ["2007-043A"],
+      "nssdca": [
+        "2007-043A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/dawn/",
-      "lastContact": { "date": "2018-10-31", "url": "nssdca:2007-043A", "quote": "After the end of the mission Dawn remained in orbit around Ceres, communications ended on 31 October 2018" },
+      "lastContact": {
+        "date": "2018-10-31",
+        "url": "nssdca:2007-043A",
+        "quote": "After the end of the mission Dawn remained in orbit around Ceres, communications ended on 31 October 2018"
+      },
       "evidence": [
-        { "claim": "xenon", "url": "nssdca:2007-043A", "quote": "The xenon tank held 425 kg of propellant at launch" },
-        { "claim": "orbit lifetime", "url": "nssdca:2007-043A", "quote": "The final orbit will be stable with a lifetime of several hundred years" }
+        {
+          "claim": "xenon",
+          "url": "nssdca:2007-043A",
+          "quote": "The xenon tank held 425 kg of propellant at launch"
+        },
+        {
+          "claim": "orbit lifetime",
+          "url": "nssdca:2007-043A",
+          "quote": "The final orbit will be stable with a lifetime of several hundred years"
+        }
       ]
     },
     {
@@ -205,12 +431,26 @@
       "tier": "story",
       "status": "silent",
       "statusNote": "Final contact on 28 February 2001, resting on Eros",
-      "nssdca": ["1996-008A"],
+      "nssdca": [
+        "1996-008A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/near-shoemaker/",
-      "lastContact": { "date": "2001-02-28", "url": "nssdca:1996-008A", "quote": "NEAR Shoemaker Phones Home for the Last Time - 28 February 2001" },
+      "lastContact": {
+        "date": "2001-02-28",
+        "url": "nssdca:1996-008A",
+        "quote": "NEAR Shoemaker Phones Home for the Last Time - 28 February 2001"
+      },
       "evidence": [
-        { "claim": "first touchdown", "url": "nssdca:1996-008A", "quote": "This was the first spacecraft touchdown on an asteroid" },
-        { "claim": "landing", "url": "nssdca:1996-008A", "quote": "The mission ended with a touchdown in the \"saddle\" region of Eros on 12 February 2001" }
+        {
+          "claim": "first touchdown",
+          "url": "nssdca:1996-008A",
+          "quote": "This was the first spacecraft touchdown on an asteroid"
+        },
+        {
+          "claim": "landing",
+          "url": "nssdca:1996-008A",
+          "quote": "The mission ended with a touchdown in the \"saddle\" region of Eros on 12 February 2001"
+        }
       ]
     },
     {
@@ -221,9 +461,15 @@
       "tier": "story",
       "status": "silent",
       "statusNote": "Last signal detected on 23 January 2003",
-      "nssdca": ["1972-012A"],
+      "nssdca": [
+        "1972-012A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/pioneer-10/",
-      "lastContact": { "date": "2003-01-23", "url": "nssdca:1972-012A", "quote": "The spacecraft signal was last detected on 23 January 2003" }
+      "lastContact": {
+        "date": "2003-01-23",
+        "url": "nssdca:1972-012A",
+        "quote": "The spacecraft signal was last detected on 23 January 2003"
+      }
     },
     {
       "id": "pioneer-11",
@@ -233,9 +479,15 @@
       "tier": "map",
       "status": "silent",
       "statusNote": "Science operations ended on 30 September 1995",
-      "nssdca": ["1973-019A"],
+      "nssdca": [
+        "1973-019A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/pioneer-10/",
-      "lastContact": { "date": "1995-09-30", "url": "nssdca:1973-019A", "quote": "Science operations and daily telemetry ceased on 30 September 1995" }
+      "lastContact": {
+        "date": "1995-09-30",
+        "url": "nssdca:1973-019A",
+        "quote": "Science operations and daily telemetry ceased on 30 September 1995"
+      }
     },
     {
       "id": "kepler",
@@ -245,11 +497,21 @@
       "tier": "map",
       "status": "silent",
       "statusNote": "Retired on 30 October 2018",
-      "nssdca": ["2009-011A"],
+      "nssdca": [
+        "2009-011A"
+      ],
       "missionUrl": "https://science.nasa.gov/mission/kepler/",
-      "lastContact": { "date": "2018-10-30", "url": "https://science.nasa.gov/mission/kepler/", "quote": "Before retiring the spacecraft on Oct. 30, 2018" },
+      "lastContact": {
+        "date": "2018-10-30",
+        "url": "https://science.nasa.gov/mission/kepler/",
+        "quote": "Before retiring the spacecraft on Oct. 30, 2018"
+      },
       "evidence": [
-        { "claim": "discoveries", "url": "https://science.nasa.gov/mission/kepler/", "quote": "Kepler leaves a legacy of more than 2,600 planet discoveries" }
+        {
+          "claim": "discoveries",
+          "url": "https://science.nasa.gov/mission/kepler/",
+          "quote": "Kepler leaves a legacy of more than 2,600 planet discoveries"
+        }
       ]
     }
   ]

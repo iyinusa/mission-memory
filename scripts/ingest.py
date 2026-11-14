@@ -55,9 +55,12 @@ def fetch(url: str) -> str:
     return body
 
 
+SMART_PUNCT = str.maketrans({"‘": "'", "’": "'", "“": '"', "”": '"', "\xa0": " "})
+
+
 def to_text(page: str) -> str:
     page = re.sub(r"<script.*?</script>|<style.*?</style>", " ", page, flags=re.S | re.I)
-    text = html.unescape(re.sub(r"<[^>]+>", " ", page)).replace("\xa0", " ")
+    text = html.unescape(re.sub(r"<[^>]+>", " ", page)).translate(SMART_PUNCT)
     return re.sub(r"\s+", " ", text).strip()
 
 
@@ -75,7 +78,7 @@ def text_of(url: str) -> str:
 
 
 def norm(s: str) -> str:
-    return re.sub(r"\s+", " ", s.replace("\xa0", " ")).strip()
+    return re.sub(r"\s+", " ", s.translate(SMART_PUNCT)).strip()
 
 
 def verify(ghost_id: str, what: str, url: str, quote: str) -> bool:

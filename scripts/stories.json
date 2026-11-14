@@ -1,0 +1,571 @@
+{
+  "_comment": "Story source of truth. Each beat has two reading levels (younger 9-11, older 12-14) sharing the same NASA citations. scripts/build_stories.py verifies every quote against its page. Reviewers: set review.status to 'approved' only after checking every beat.",
+  "stories": [
+    {
+      "id": "apollo-retroreflectors",
+      "interaction": "laser",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "Look up at the Moon tonight. Somewhere up there, I'm still catching light from Earth and sending it home.",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "I'm not one machine. I'm three! I'm a set of special mirrors that astronauts placed on the Moon during Apollo 11, Apollo 14 and Apollo 15. My job is to help scientists on Earth measure exactly how far away the Moon is.",
+          "older": "I'm actually three explorers in one: laser ranging retroreflectors that astronauts set up at the Apollo 11, 14 and 15 landing sites. Spread far apart across the Moon, we form a network of targets. By bouncing laser beams off us, scientists on Earth can measure the distance between Earth and the Moon with great precision.",
+          "cites": [
+            { "url": "nssdca-exp:1969-059C-04", "quote": "Laser ranging beams from earth were reflected back to their point of origin for precise measurement of earth-moon distance" },
+            { "url": "nssdca-exp:1971-008C-09", "quote": "This instrument, those at Apollo 11 (Tranquility base), and at the Apollo 15 site" },
+            { "url": "nssdca-exp:1971-008C-09", "quote": "provided a network of stations (well-separated in longitude and latitude)" }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "I'm made of glass cubes with a clever shape. Light that hits a cube bounces straight back to where it came from. I don't even need power! The Moon is about 384,400 km away, so light takes about two and a half seconds to get there and back. Fire the laser and see!",
+          "older": "Each of my arrays is a panel of fused-silica corner cubes: 100 at the Apollo 14 site and 300 at Apollo 15. A corner cube reflects light straight back the way it came, so a laser pulse fired from Earth returns to the very telescope that sent it. I need no power at all. The Moon is about 384,400 km away, so the round trip takes light roughly 2.5 seconds. Fire the laser and time it.",
+          "cites": [
+            { "url": "nssdca-exp:1971-008C-09", "quote": "The instrument was an array of 100 small fused-silica corner cubes, each 3.8 cm in diameter." },
+            { "url": "nssdca-exp:1971-063C-08", "quote": "300 individual fused-silica optical corner reflectors" },
+            { "url": "nssdca-exp:1971-008C-09", "quote": "Each corner cube reflected light parallel to the incident direction, insuring that the reflected laser pulse returned to its place of origin on the earth." },
+            { "url": "nssdca:1969-059C", "quote": "required no power" },
+            { "url": "https://science.nasa.gov/moon/facts/", "quote": "The Moon is an average of 238,855 miles (384,400 kilometers) away." }
+          ],
+          "notes": "Derived: 2 x 384,400 km / 299,792 km/s = 2.56 s round trip."
+        },
+        {
+          "key": "discovered",
+          "younger": "By timing the light, scientists measured the distance to the Moon very precisely. They learned how the Moon moves and wobbles. My light even helped measure Earth itself, like where Earth's North Pole is, to within 15 cm!",
+          "older": "Timing those light pulses gave scientists very accurate measurements of the Earth-Moon distance and of how the Moon moves in its orbit. Because the arrays are spread across the Moon, they revealed its slow wobbles, called librations. They even taught us about Earth: its continental drift, and the position of its north pole to within about 15 centimetres.",
+          "cites": [
+            { "url": "nssdca-exp:1971-008C-09", "quote": "very accurate determinations of the earth-moon-distance" },
+            { "url": "nssdca-exp:1971-008C-09", "quote": "to permit a complete geometrical separation of the lunar librations" },
+            { "url": "nssdca-exp:1971-008C-09", "quote": "information about the earth and its continental drift motions" },
+            { "url": "nssdca-exp:1971-008C-09", "quote": "north pole position could be determined to plus or minus 15 cm" }
+          ]
+        },
+        {
+          "key": "lastDay",
+          "younger": "My last day? It hasn't happened yet! The astronauts went home in 1969 and 1971, but I'm still working. Scientists say I can keep working for as long as they need me.",
+          "older": "My last day hasn't come. The astronauts who set me up left the Moon in 1969 and 1971, but I need no power, so I can't run out of it. NASA's records say I could be used indefinitely, and as telescopes on Earth have improved, I've been returning more data, and more accurate data, than before.",
+          "cites": [
+            { "url": "nssdca-exp:1971-063C-08", "quote": "The LRRR could be used indefinitely" },
+            { "url": "nssdca-exp:1971-063C-08", "quote": "Now that smaller telescopes can be used, the experiment is providing greater quantities of more accurate data." },
+            { "url": "nssdca:1969-059C", "quote": "required no power" }
+          ]
+        },
+        {
+          "key": "now",
+          "younger": "I'm still on the Moon, catching laser light from Earth. More than 50 years later, scientists still use my data. And new, better reflectors are heading to the Moon too!",
+          "older": "I'm still at the Apollo 11, 14 and 15 sites, quietly bouncing light back to Earth. More than 50 years later, lunar research still uses data from Apollo-era retroreflectors like me. A new generation is following: NASA's next reflectors promise findings an order of magnitude more accurate than mine.",
+          "cites": [
+            { "url": "https://www.nasa.gov/missions/artemis/clps/nasa-anticipates-lunar-findings-from-next-generation-retroreflector/", "quote": "lunar research still leverages data from those Apollo-era retroreflectors" },
+            { "url": "https://www.nasa.gov/missions/artemis/clps/nasa-anticipates-lunar-findings-from-next-generation-retroreflector/", "quote": "promises to deliver findings an order of magnitude more accurate than Apollo-era reflectors" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apollo11-eagle",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "Every journey home needs a launch pad. I was proud to be one.",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "I'm the bottom half of Eagle, the Apollo 11 lunar module. In July 1969 I carried Neil Armstrong and Buzz Aldrin down to the Moon. We were the first spacecraft with people on board ever to land there!",
+          "older": "I'm the descent stage of Eagle, the Apollo 11 lunar module: the bottom half of the first crewed vehicle to land on the Moon. My job was to carry astronauts Neil Armstrong and Edwin \"Buzz\" Aldrin down to the surface, along with the experiments and tools they would need.",
+          "cites": [
+            { "url": "nssdca:1969-059C", "quote": "was the first crewed vehicle to land on the Moon" },
+            { "url": "nssdca:1969-059C", "quote": "It carried two astronauts, Commander Neil A. Armstrong and LM pilot Edwin E." },
+            { "url": "nssdca:1969-059C", "quote": "The descent stage comprised the lower part of the spacecraft" }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "I'm an eight-sided box on four long legs. Inside, I held the landing rocket, fuel tanks, water and oxygen. The top half of Eagle, with the astronauts inside, sat right on top of me. My rocket slowed us down so we could land.",
+          "older": "I'm an eight-sided box 4.2 metres across, standing on four landing legs with round footpads. Inside I carried the landing rocket, tanks of fuel and oxidizer, plus water, oxygen and room for equipment. The ascent stage, with the crew cabin, rode on top of me. To bring us down, my engine fired for 756.3 seconds.",
+          "cites": [
+            { "url": "nssdca:1969-059C", "quote": "octagonal prism 4.2 meters across" },
+            { "url": "nssdca:1969-059C", "quote": "Four landing legs with round footpads were mounted on the sides of the descent stage" },
+            { "url": "nssdca:1969-059C", "quote": "The descent stage contained the landing rocket" },
+            { "url": "nssdca:1969-059C", "quote": "mounted on top of the descent stage" },
+            { "url": "nssdca:1969-059C", "quote": "the LM descent engine fired for 756.3 seconds and descent to the lunar surface began" }
+          ]
+        },
+        {
+          "key": "discovered",
+          "younger": "We landed on 20 July 1969 in the Sea of Tranquility. Then Neil Armstrong stepped onto the Moon! Buzz Aldrin followed and called it \"magnificent desolation\". They set up experiments and packed boxes of Moon samples to bring home.",
+          "older": "We touched down on 20 July 1969 in the Sea of Tranquility. Hours later, Neil Armstrong stepped onto the lunar surface, and Buzz Aldrin followed 19 minutes after him, calling it \"magnificent desolation\". They were the first people to walk on the Moon. They set up a small package of science experiments and loaded boxes of samples, so scientists could study real pieces of the Moon on Earth.",
+          "cites": [
+            { "url": "nssdca:1969-059C", "quote": "The LM landed at 20:17:40 UT" },
+            { "url": "nssdca:1969-059C", "quote": "(the Sea of Tranquility)" },
+            { "url": "nssdca:1969-059C", "quote": "Armstrong stepped onto the lunar surface at 02:56:15 UT on 21 July" },
+            { "url": "nssdca:1969-059C", "quote": "Aldrin followed 19 minutes later, calling the lunar surface \"Magnificent desolation\"" },
+            { "url": "nssdca:1969-059C", "quote": "the first men to walk on the Moon" },
+            { "url": "nssdca:1969-059C", "quote": "Early Apollo Scientific Experiment Package (EASEP)" },
+            { "url": "nssdca:1969-059C", "quote": "after transferring the sample boxes up to Aldrin" }
+          ],
+          "notes": "'Hours later' derived: landing 20:17 UT on 20 July, first step 02:56 UT on 21 July (about 6.5 hours)."
+        },
+        {
+          "key": "lastDay",
+          "younger": "After almost a whole day on the Moon, the top half of Eagle blasted off to take the astronauts home. I was its launch pad! Then I stayed behind.",
+          "older": "After 21 hours and 36 minutes on the Moon, it was time to go. On 21 July 1969 the ascent stage fired its engine and lifted off, using me as its launch pad, to meet up with the command module waiting in orbit. My job was done, and I stayed behind.",
+          "cites": [
+            { "url": "nssdca:1969-059C", "quote": "The LM lifted off from the Moon at 17:54:01 UT on 21 July after 21 hours, 36 minutes on the lunar surface." },
+            { "url": "nssdca:1969-059C", "quote": "The descent stage served as a platform for launching the ascent stage and was left behind on the Moon." },
+            { "url": "nssdca:1969-059C", "quote": "rendezvous and docking with the command and service module" }
+          ]
+        },
+        {
+          "key": "now",
+          "younger": "I'm still standing at Tranquility Base. Behind my ladder is a plaque. It says: \"Here men from the planet Earth first set foot on the Moon July 1969, A.D. We came in peace for all mankind.\"",
+          "older": "I'm still standing at Tranquility Base, where the first footprints on the Moon were made. Behind my ladder is a plaque the astronauts read aloud before they left: \"Here men from the planet Earth first set foot on the Moon July 1969, A.D. We came in peace for all mankind.\"",
+          "cites": [
+            { "url": "nssdca:1969-059C", "quote": "The astronauts then unveiled the plaque mounted on a strut behind the ladder and read the inscription aloud" },
+            { "url": "nssdca:1969-059C", "quote": "Here men from the planet Earth first set foot on the Moon July 1969, A.D." },
+            { "url": "nssdca:1969-059C", "quote": "We came in peace for all mankind." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apollo15-lrv",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "Go farther than you think you can.",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "I'm the Lunar Roving Vehicle: a car built for the Moon! Apollo 15 brought me there in 1971. I helped astronauts Dave Scott and Jim Irwin explore much farther from their spacecraft. I was the first car of my kind ever used on the Moon.",
+          "older": "I'm the Lunar Roving Vehicle, an electric car designed for the low gravity and airless vacuum of the Moon. I arrived with Apollo 15 in July 1971 so astronauts David Scott and James Irwin could extend the range of their moonwalks. I was the first vehicle of my kind ever used there.",
+          "cites": [
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "The Lunar Roving Vehicle (LRV) was an electric vehicle designed to operate in the low-gravity vacuum of the Moon" },
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "allowing the Apollo astronauts to extend the range of their surface" },
+            { "url": "nssdca:1971-063C", "quote": "It carried two astronauts, Commander David R. Scott and LM pilot James B. Irwin" },
+            { "url": "nssdca:1971-063C", "quote": "This was the first time a vehicle of this type had been used" }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "I could fold up to fit inside the lunar module! On the Moon, the astronauts unfolded me and lowered me to the ground. Each of my four wheels had its own electric motor. My tyres were made of woven steel wire.",
+          "older": "My frame was hinged so I could fold up and hang in a storage bay on the side of the lunar module. On the Moon, my wheels folded out and my whole frame was let down to the surface by pulleys. Each of my four wheels had its own electric motor, my tyres were woven from steel strands, and a T-shaped hand controller between the seats steered me. Two 36-volt batteries gave me power.",
+          "cites": [
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "hinged in the center so it could be folded up and hung in the Lunar Module quad 1 bay" },
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "the entire frame let down to the surface by pulleys" },
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "Each wheel had its own electric drive" },
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "woven 0.083 cm diameter steel strands" },
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "A T-shaped hand controller situated between the two seats" },
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "two 36-volt silver-zinc potassium hydroxide non-rechargeable batteries" }
+          ]
+        },
+        {
+          "key": "discovered",
+          "younger": "We made three big drives: to the edge of Hadley Rille, along the Apennine Mountains, and to Scarp Crater. In total, the astronauts covered 27.9 km and collected 77 kg of Moon rocks and soil!",
+          "older": "Across three moonwalks I carried the astronauts through the region around our landing site: 10.3 km to the edge of Hadley Rille, 12.5 km along the base of the Apennine Mountains, and 5.1 km to Scarp Crater. In total they covered 27.9 km and collected 77.31 kg of rock and soil samples for scientists back on Earth.",
+          "cites": [
+            { "url": "nssdca:1971-063C", "quote": "The LRV was used to explore regions within 5 km of the LM landing site." },
+            { "url": "nssdca:1971-063C", "quote": "covered 10.3 km to the edge of Hadley Rille" },
+            { "url": "nssdca:1971-063C", "quote": "the LRV was driven on a 12.5 km traverse southeast along the base of the Appenine Mountains" },
+            { "url": "nssdca:1971-063C", "quote": "the LRV was driven a total of 5.1 km west to Scarp Crater" },
+            { "url": "nssdca:1971-063C", "quote": "they covered 27.9 km and collected 77.31 kg of rock and soil samples" }
+          ]
+        },
+        {
+          "key": "lastDay",
+          "younger": "On 2 August 1971 the astronauts blasted off and flew home. I stayed behind. My batteries could not be recharged, so my driving days were over.",
+          "older": "On 2 August 1971, after almost three days on the Moon, the astronauts lifted off in the lunar module and headed home. I stayed behind. My batteries were never meant to be recharged, so my last drive on the Moon was my last drive ever.",
+          "cites": [
+            { "url": "nssdca:1971-063C", "quote": "The LM lifted off the Moon on 2 August at 17:11:22 UT after 66 hours, 55 minutes on the lunar surface." },
+            { "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html", "quote": "non-rechargeable batteries" },
+            { "url": "https://www.spaceappschallenge.org/2026/challenges/nasas-discarded-equipment-storytelling/?tab=resources", "quote": "Parked permanently on the Moon.", "verify": false }
+          ],
+          "notes": "'Almost three days' derived from 66 h 55 min. 'Stayed behind' is cited to the challenge's NASA-authored resource list, which the script cannot fetch; check it by hand."
+        },
+        {
+          "key": "now",
+          "younger": "I'm still parked on the Moon at Hadley-Apennine. Nearby, the astronauts left a small plaque and figure to remember space explorers who had died.",
+          "older": "I'm still parked at the foot of the Apennine mountains. Nearby, the astronauts left a plaque and a small figure in memory of fourteen American and Soviet space explorers who had died. Two more rovers like me followed, on Apollo 16 and 17.",
+          "cites": [
+            { "url": "nssdca:1971-063C", "quote": "at the foot of the Apennine mountain range" },
+            { "url": "nssdca:1971-063C", "quote": "The astronauts also left a plaque and small figure on the surface in memory of all fourteen American and Soviet space explorers" },
+            { "url": "nssdca:1971-063C", "quote": "in the case of Apollo 15, 16, and 17, the lunar rover" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spirit",
+      "interaction": "drag-wheel",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "Even a broken wheel can make a discovery. Keep going.",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "Hi, I'm Spirit, a robot geologist with six wheels. In 2004 I landed in Gusev Crater on Mars. Scientists picked it because it looked like an old lake bed. My job was to look for clues that water once flowed on Mars.",
+          "older": "I'm Spirit, one of NASA's twin Mars Exploration Rovers. I landed in Gusev Crater on 4 January 2004. From orbit, Gusev looked like a dried-up crater lake, and if water had once filled it, layers of sediment might still be waiting at the bottom. My mission, like my twin Opportunity's, was to search the rocks for the history of water on Mars.",
+          "cites": [
+            { "url": "mars24", "quote": "NASA rover that landed Jan. 4, 2004" },
+            { "url": "nssdca:2003-027A", "quote": "Gusev Crater was chosen as a landing site because it has the appearance of a crater lakebed." },
+            { "url": "nssdca:2003-027A", "quote": "If Gusev was at one time filled with water, the bottom of the crater may contain sedimentary deposits" },
+            { "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/", "quote": "The rovers landed on the Red Planet in 2004, in search of answers about the history of water on Mars." }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "Each of my six wheels has its own motor. A bendy suspension called a rocker-bogie helps me roll over rocks. But one day, one of my wheels stopped working! So my team had me drag the broken wheel along. Try it yourself!",
+          "older": "I roll on six wheels, each with its own motor, joined by a rocker-bogie suspension for rough ground. My cameras sit on a mast about 1.4 metres above my wheels. Partway through my mission I lost the use of one wheel. My drivers on Earth found a way to keep exploring: drag the dead wheel along behind me. Give it a try.",
+          "cites": [
+            { "url": "nssdca:2003-027A", "quote": "Each wheel has its own motor" },
+            { "url": "nssdca:2003-027A", "quote": "The wheels are attached to a rocker-bogie suspension system." },
+            { "url": "nssdca:2003-027A", "quote": "at a height of about 1.4 meters from the base of the wheels" },
+            { "url": "nssdca:2003-027A", "quote": "although it lost the use of one of its six wheels" },
+            { "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/", "quote": "While dragging a wheel, Spirit churned up soil" }
+          ]
+        },
+        {
+          "key": "discovered",
+          "younger": "Dragging my wheel scraped open a trench of bright white soil. It was about 90% pure silica! On Earth, soil like that forms in hot springs or steamy vents. So long ago, Mars had hot water: maybe a place where tiny life could have lived.",
+          "older": "In March 2007 my dragging wheel churned up a trench of bright soil near a plateau called Home Plate. It turned out to be about 90% pure silica, with the composition of opal. On Earth, silica like this usually forms in hot springs or hot steam vents. It was strong evidence that ancient Mars had hot water, the kind of place where life as we know it thrives, and where ancient microbes might once have lived too.",
+          "cites": [
+            { "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/", "quote": "found a patch of bright-toned soil so rich in silica that scientists proposed water must have been involved in concentrating it" },
+            { "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/", "quote": "Spirit churned up soil and found 90% pure silica at \"Home Plate.\"" },
+            { "url": "https://science.nasa.gov/resource/rovers-wheel-churns-up-bright-martian-soil/", "quote": "The trench exposed a patch of nearly pure silica, with the composition of opal." },
+            { "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/", "quote": "On Earth, this kind of silica usually exists in hot springs or hot steam vents, where life as we know it often finds a hot, happy home" },
+            { "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/science-highlights/", "quote": "perhaps ancient microbes on Mars did as well" }
+          ]
+        },
+        {
+          "key": "lastDay",
+          "younger": "In April 2009, I broke through a thin crust into soft sand and got stuck. Winter was coming. I couldn't tilt my solar panels toward the Sun to get enough power to last. My last message reached Earth on 22 March 2010.",
+          "older": "On 23 April 2009 my wheels broke through a thin crust into a hidden pocket of sand, and I could barely move. As the Martian winter approached, I couldn't turn my solar panels toward the Sun to gather enough power to make it through. My last transmission reached Earth on 22 March 2010.",
+          "cites": [
+            { "url": "nssdca:2003-027A", "quote": "On 23 April 2009, the rover broke through a thin crust into a pocket of sand that severely limited its mobility." },
+            { "url": "nssdca:2003-027A", "quote": "panels could not be oriented in a direction to produce enough power to make it through the winter" },
+            { "url": "nssdca:2003-027A", "quote": "The last transmission from Spirit occurred on 22 March 2010." }
+          ]
+        },
+        {
+          "key": "now",
+          "younger": "I'm still sitting in Gusev Crater. In 6 years and 2 months I drove 7.73 km. My twin Opportunity and I showed that, long ago, Mars had water on its surface for a long time.",
+          "older": "I'm still parked in Gusev Crater, silent. Over 6 years and 2 months I travelled 7.73 km. Together, my twin Opportunity and I confirmed that water was long-standing on the surface of Mars in ancient times.",
+          "cites": [
+            { "url": "nssdca:2003-027A", "quote": "The rover travelled a total of 7.73 km over a period of 6 years, 2 months." },
+            { "url": "https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/", "quote": "Spirit and Opportunity confirmed that water was long standing on the surface of Mars in ancient times." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "viking-1",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "The best questions don't need an answer right away. Keep asking.",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "I'm Viking 1. In 1976 I made the first truly successful landing on Mars. My big question: could there be life on Mars?",
+          "older": "I'm the Viking 1 Lander, and on 20 July 1976 I made the first truly successful landing on Mars. I was built to study Mars up close: its chemistry, weather, quakes, magnetism and, above all, biology. My team wanted to collect evidence about the possibility of life on Mars.",
+          "cites": [
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "made the first truly successful landing on Mars" },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "touched down safely and began transmitting the first images from the surface of the Red Planet" },
+            { "url": "nssdca:1975-075C", "quote": "to study the biology, chemical composition (organic and inorganic), meteorology, seismology, magnetic properties" },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "collect evidence on the possibility on life on Mars" }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "I travelled to Mars attached to an orbiter. The orbiter took pictures to help find a safe place to land. Then I separated, dropped through the air of Mars and landed softly. My robot arm could scoop up soil for my science lab.",
+          "older": "I rode to Mars attached to an orbiter, which photographed the surface to help choose a landing site. The first choice turned out to be rougher than expected. Then I separated, entered the Martian atmosphere and soft-landed in Chryse Planitia. Two nuclear power generators kept me running, and my sampler arm could scoop soil into an onboard biology laboratory.",
+          "cites": [
+            { "url": "nssdca:1975-075C", "quote": "After orbiting Mars and returning images used for landing site selection, the orbiter and lander detached" },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "scientists discovered that the area was rougher than expected" },
+            { "url": "nssdca:1975-075C", "quote": "The Viking 1 Lander touched down in western Chryse Planitia" },
+            { "url": "nssdca:1975-075C", "quote": "Power was provided by two radioisotope thermal generator (RTG) units" },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "scooped up the first soil samples and deposited them into a special biological laboratory" }
+          ]
+        },
+        {
+          "key": "discovered",
+          "younger": "I sent the first picture from the surface of Mars just 25 seconds after landing! My soil tests found lots of sulfur. Did I find life? My results were puzzling, and scientists are still working on that question.",
+          "older": "Transmission of my first surface image began just 25 seconds after landing, and I took a 300-degree panorama of gently rolling plains. On 28 July 1976 my arm scooped up the first soil samples. The soil held an abundance of sulfur, unlike any known material on Earth or the Moon. My life-detection results were puzzling: some data could be read as a weak sign of life, but my main test for organic compounds did not support it.",
+          "cites": [
+            { "url": "nssdca:1975-075C", "quote": "Transmission of the first surface image began 25 seconds after landing." },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "the lander also took a 300-degree panorama of its surroundings" },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "On July 28, 1976, the lander's robot arm scooped up the first soil samples" },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "Data showed an abundance of sulfur, certainly different from any known material found on Earth or the Moon." },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "could have been construed as indicating the presence of life (weak positive), but the major test for organic compounds" }
+          ],
+          "notes": "Reviewer: read the full organics sentence on the Viking 1 mission page to confirm 'did not support it'."
+        },
+        {
+          "key": "lastDay",
+          "younger": "I worked on Mars for more than six years. In November 1982, I received a faulty command and stopped working. On 13 November 1982, contact with me was lost forever.",
+          "older": "I kept working for more than six years. Along the way I was renamed the Thomas Mutch Memorial Station, after the leader of the Viking imaging team. In November 1982 I received a faulty command and stopped operating, and on 13 November 1982 contact with me was lost for good.",
+          "cites": [
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "Lander stopped operating after getting a faulty command" },
+            { "url": "nssdca:1975-075C", "quote": "It operated until 13 November 1982 when contact was lost." },
+            { "url": "nssdca:1975-075C", "quote": "named the Thomas Mutch Memorial Station" },
+            { "url": "nssdca:1975-075C", "quote": "in honor of the original leader of the Viking imaging team" }
+          ],
+          "notes": "Sources differ: mission page says it stopped on 11 Nov 1982 after a faulty command; NSSDCA says contact was lost on 13 Nov. Rename date also differs (NSSDCA Jan 1981, mission page Jan 1982), so the story gives no rename date. 'More than six years' derived: Jul 1976 to Nov 1982."
+        },
+        {
+          "key": "now",
+          "younger": "I'm still sitting on the plains of Chryse Planitia. Every Mars mission since has carried on my question: was Mars ever a home for life?",
+          "older": "I'm still resting in western Chryse Planitia. The two Viking orbiters returned 52,663 images and mapped about 97 percent of Mars. And every Mars mission since has carried on my question: was the once warm, wet Mars ever a place where life could live?",
+          "cites": [
+            { "url": "nssdca:1975-075C", "quote": "The Viking 1 Lander touched down in western Chryse Planitia" },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "In total, the two Viking orbiters returned 52,663 images of Mars and mapped about 97 percent of the surface" },
+            { "url": "https://science.nasa.gov/mission/viking-1/", "quote": "Mars missions ever since, and those yet to come, seek to uncover whether the planet's once warm and wet climate was ever habitable to some form of life" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ingenuity",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "They planned five flights. I made 72. Dream bigger.",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "I'm Ingenuity, a tiny helicopter. I rode to Mars under the belly of the Perseverance rover. My mission: try to fly on another planet for the very first time!",
+          "older": "I'm Ingenuity, the Mars Helicopter. I rode to Mars strapped beneath the Perseverance rover as a technology test. My job was to prove that a machine could fly, under its own control, in the very thin air of Mars.",
+          "cites": [
+            { "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "After riding to Mars strapped beneath the Perseverance rover" },
+            { "url": "nssdca:2020-052A", "quote": "The helicopter is mounted on the belly of the rover" },
+            { "url": "nssdca:2020-052A", "quote": "the primary objective is to demonstrate that autonomous, controlled flight can be achieved in the tenuous martian atmosphere" }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "The air on Mars is very thin, so flying is hard. I'm light: only 1.8 kg. My two sets of blades spin in opposite directions, almost 3,000 times a minute! Solar panels charge my batteries, and a heater keeps me safe at night.",
+          "older": "Flying on Mars is hard because its atmosphere is so thin. I'm light, about 1.8 kg, and I fly with twin counter-rotating blades that spin at almost 3,000 rpm. Solar panels above my rotors charge lithium-ion batteries, and a heater helps me survive the night.",
+          "cites": [
+            { "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "Successfully flying in the extremely thin Martian atmosphere." },
+            { "url": "nssdca:2020-052A", "quote": "The helicopter has a mass of roughly 1.8 kg and flies with twin counter-rotating blades which will rotate at almost 3000 rpm." },
+            { "url": "nssdca:2020-052A", "quote": "Power is provided by solar panels mounted above the rotors charging lithium-ion batteries." },
+            { "url": "nssdca:2020-052A", "quote": "The helicopter has a heating mechanism for night-time survival." }
+          ]
+        },
+        {
+          "key": "discovered",
+          "younger": "On 19 April 2021 I flew! I hovered 3 metres up for 30 seconds: the first powered flight on another planet. People called it a \"Wright Brothers moment\". I was meant to fly just 5 times, but I flew 72 times!",
+          "older": "On 19 April 2021 I lifted off for 39.1 seconds, hovering 3 metres above Jezero Crater: the first powered, controlled flight on another planet, a feat called a \"Wright Brothers moment\". I was designed to make no more than five test flights in 30 days. Instead I made 72 flights across nearly three years, flying higher and faster than anyone had imagined, and spending more than 2 hours in the air.",
+          "cites": [
+            { "url": "nssdca:2020-052A", "quote": "The first flight, on 19 April 2021, lasted 39.1 seconds, hovering at 3 meters altitude for 30 seconds." },
+            { "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "Wright Brothers moment" },
+            { "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "Designed to be a technology demonstration that would make no more than five test flights in 30 days" },
+            { "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "the helicopter eventually completed 72 flights across nearly three years, soaring higher and faster than previously imagined" },
+            { "url": "nssdca:2020-052A", "quote": "logged more than 2 hours of flight time" }
+          ]
+        },
+        {
+          "key": "lastDay",
+          "younger": "On 18 January 2024, during my 72nd flight, contact was lost just before I landed. I dropped about 1 metre and damaged my rotor blades. I could never fly again.",
+          "older": "On 18 January 2024, during my 72nd flight, contact was lost just before landing. I dropped about a metre and damaged my rotors, so I could no longer fly. My flying days were over, but I had already gone far beyond what my team first planned.",
+          "cites": [
+            { "url": "nssdca:2020-052A", "quote": "During a flight on January 18, 2024, contact was lost just before landing, the helicopter dropped about 1 meter and damaged its rotors so it was no longer capable of flight." },
+            { "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "It flew for the last time on Jan. 18, 2024" }
+          ],
+          "notes": "'72nd flight' derived: 72 flights in total, the last on 18 Jan 2024."
+        },
+        {
+          "key": "now",
+          "younger": "I'm still standing in Jezero Crater on Mars. I proved that flying on Mars is possible!",
+          "older": "I'm still standing in Jezero Crater, grounded for good. I was the first aircraft to achieve powered, controlled flight on another planet, and I showed that flying in the thin air of Mars is possible.",
+          "cites": [
+            { "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "Destination Jezero Crater, Mars" },
+            { "url": "https://science.nasa.gov/mission/mars-2020-perseverance/ingenuity-mars-helicopter/", "quote": "The first aircraft to achieve powered, controlled flight on another planet" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dawn",
+      "interaction": "ion-thrust",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "Small pushes add up. Keep at it.",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "I'm Dawn. My job was to visit two of the biggest objects in the asteroid belt: the giant asteroid Vesta and the dwarf planet Ceres. They hold clues about the very early days of our solar system.",
+          "older": "I'm Dawn, built to orbit not one but two worlds in the asteroid belt: the giant asteroid Vesta and the dwarf planet Ceres. By measuring their structure, shape, size, makeup and mass, scientists hoped to learn about the role of water in how they formed, and about conditions in the solar system's earliest days.",
+          "cites": [
+            { "url": "nssdca:2007-043A", "quote": "Dawn is a mission designed to rendezvous and orbit the asteroids 4 Vesta and 1 Ceres." },
+            { "url": "https://science.nasa.gov/mission/dawn/", "quote": "giant asteroid Vesta and dwarf planet Ceres" },
+            { "url": "nssdca:2007-043A", "quote": "internal structure, density, shape, size, composition and mass" },
+            { "url": "nssdca:2007-043A", "quote": "role of water in asteroid evolution" },
+            { "url": "nssdca:2007-043A", "quote": "the ultimate goal of understanding the conditions and processes present at the solar system's earliest epoch" }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "I didn't use a big, loud rocket to get around. I used ion engines! They give a very gentle push, about as strong as the weight of two sheets of paper. But a tiny push, kept up for a long time, adds up. Hold the button to thrust!",
+          "older": "To travel between worlds I used ion engines. They turn xenon gas into charged particles and fire them out with electric fields, powered by solar wings 19.7 metres from tip to tip. My engines' maximum thrust was just 92 millinewtons, about the weight of two sheets of paper on Earth. But a gentle push, kept up for a long time, adds up: I reached Vesta in 2011, left it in 2012 and arrived at Ceres in 2015. Hold to thrust.",
+          "cites": [
+            { "url": "nssdca:2007-043A", "quote": "using xenon which is ionized and accelerated by electrodes" },
+            { "url": "nssdca:2007-043A", "quote": "Two solar panel wings extend 19.7 m tip-to-tip" },
+            { "url": "nssdca:2007-043A", "quote": "The xenon ion engines have a maximum thrust at 2.6 kW input power of 92 mN" },
+            { "url": "nssdca:2007-043A", "quote": "Dawn reached Vesta on 16 July 2011" },
+            { "url": "nssdca:2007-043A", "quote": "Dawn departed Vesta on 5 September 2012" },
+            { "url": "nssdca:2007-043A", "quote": "entered initial orbit around Ceres on 6 March 2015" }
+          ],
+          "notes": "Derived: 92 mN / 9.81 m/s^2 = 9.4 g, about two 80 gsm A4 sheets (5 g each)."
+        },
+        {
+          "key": "discovered",
+          "younger": "At Vesta I saw a giant crater about 500 km wide. Some meteorites that fell to Earth seem to come from Vesta! At Ceres I found big salt deposits. Ceres might be up to one quarter water. That could be more water than Earth has!",
+          "older": "At Vesta I mapped Rheasilvia, a crater about 500 km wide left by a massive collision. Vesta appears to be the source of a family of meteorites found on Earth, and my data helped scientists test that story. Then I made Ceres the first dwarf planet ever visited by a spacecraft. Its crust holds large salt deposits, and Ceres could be as much as 25 percent water. If so, it has more water than Earth.",
+          "cites": [
+            { "url": "https://science.nasa.gov/solar-system/asteroids/4-vesta/", "quote": "a massive collision responsible for the Rheasilvia crater, which is about 310 miles (500 kilometers) wide" },
+            { "url": "https://science.nasa.gov/solar-system/asteroids/4-vesta/", "quote": "Vesta appears to be the source of the Howardite, Eucrite and Diogenite groups of meteorites that have been found on Earth." },
+            { "url": "https://science.nasa.gov/solar-system/asteroids/4-vesta/", "quote": "a story that was tested and enhanced by the information Dawn provided" },
+            { "url": "https://science.nasa.gov/dwarf-planets/ceres/facts/", "quote": "Ceres became the first dwarf planet to receive a visit from a spacecraft." },
+            { "url": "https://science.nasa.gov/dwarf-planets/ceres/facts/", "quote": "rocky and dusty with large salt deposits" },
+            { "url": "https://science.nasa.gov/dwarf-planets/ceres/facts/", "quote": "In fact, Ceres could be composed of as much as 25 percent water." },
+            { "url": "https://science.nasa.gov/dwarf-planets/ceres/facts/", "quote": "If that is correct, Ceres has more water than Earth does." }
+          ]
+        },
+        {
+          "key": "lastDay",
+          "younger": "I circled Ceres for years, getting as close as 375 km. On 31 October 2018, my radio went quiet for good.",
+          "older": "I spiralled down until, by December 2015, I was circling Ceres just 375 km above its surface. I kept working until 31 October 2018, when my communications with Earth ended.",
+          "cites": [
+            { "url": "nssdca:2007-043A", "quote": "finally to a 375 km altitude circular science orbit, achieving this in December of 2015" },
+            { "url": "nssdca:2007-043A", "quote": "communications ended on 31 October 2018" }
+          ]
+        },
+        {
+          "key": "now",
+          "younger": "I'm still circling Ceres, silent. My orbit is steady, and it should last for several hundred years.",
+          "older": "I'm still in orbit around Ceres, silent. My final orbit is stable and should last several hundred years. Along the way I visited two very different worlds: the giant asteroid Vesta and the dwarf planet Ceres.",
+          "cites": [
+            { "url": "nssdca:2007-043A", "quote": "After the end of the mission Dawn remained in orbit around Ceres" },
+            { "url": "nssdca:2007-043A", "quote": "The final orbit will be stable with a lifetime of several hundred years." },
+            { "url": "https://science.nasa.gov/mission/dawn/", "quote": "two very different extraterrestrial bodies" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "near-shoemaker",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "I wasn't built to land, but I tried anyway. You never know until you try.",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "I'm NEAR Shoemaker. My mission was to meet an asteroid called Eros and study it up close for a whole year. Eros is about 33 km long!",
+          "older": "I'm NEAR Shoemaker, short for Near Earth Asteroid Rendezvous. I was sent to study asteroid 433 Eros from orbit for about a year: its makeup, shape, mass and magnetic field. Eros measures about 13 by 13 by 33 km, the second largest near-Earth asteroid. I was renamed in honour of the geologist Eugene Shoemaker.",
+          "cites": [
+            { "url": "nssdca:1996-008A", "quote": "The ultimate goal of the mission was to study the near Earth asteroid 433 Eros from orbit for approximately one year." },
+            { "url": "nssdca:1996-008A", "quote": "Eros is an S-class asteroid approximately 13 x 13 x 33 km in size, the second largest near-Earth asteroid." },
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "to gather data on its physical properties, mineral components, morphology, internal mass distribution, and magnetic field" },
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "NASA renamed the spacecraft NEAR Shoemaker in honor of renowned geologist Eugene M." }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "I carried cameras, a laser to measure distances, and instruments to find out what Eros is made of. I was the first spacecraft to use solar power that far from the Sun, beyond Mars!",
+          "older": "My toolkit included a multi-spectral camera, a laser rangefinder, a magnetometer, and X-ray and gamma-ray spectrometers to read what the asteroid is made of. I was the first spacecraft to rely on solar cells for power beyond the orbit of Mars. Getting into orbit wasn't easy: a rendezvous burn aborted because of a software problem, so I arrived about a year later than planned.",
+          "cites": [
+            { "url": "nssdca:1996-008A", "quote": "the spacecraft is equipped with an X-ray/gamma ray spectrometer, a near infrared imaging spectrograph, a multi-spectral camera fitted with a CCD imaging detector, a laser rangefinder, and a magnetometer" },
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "The spacecraft was the first to rely on solar cells for power during operations beyond Mars orbit." },
+            { "url": "nssdca:1996-008A", "quote": "The first of four scheduled rendezvous burns on 20 December 1998 at 22:00 UT aborted due to a software problem." },
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "roughly a year later than intended" }
+          ]
+        },
+        {
+          "key": "discovered",
+          "younger": "On 14 February 2000, I became the first spacecraft ever to orbit an asteroid. I found that Eros has two medium-sized craters, a long ridge, and no magnetic field at all.",
+          "older": "On 14 February 2000 I entered orbit around Eros, becoming the first human-made object to orbit an asteroid. I found two medium-sized craters, a long surface ridge, and a density similar to Earth's crust. And Eros turned out to have no magnetic field.",
+          "cites": [
+            { "url": "nssdca:1996-008A", "quote": "Orbit insertion around Eros occurred on 14 February 2000" },
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "becoming the first human-made object to orbit an asteroid" },
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "NEAR also found that the asteroid has two medium-sized craters, a long surface ridge, and a density similar to Earth's crust." },
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "NEAR data showed that Eros had no magnetic field." }
+          ]
+        },
+        {
+          "key": "lastDay",
+          "younger": "I wasn't built to land. But on 12 February 2001, my team brought me down onto Eros, and I survived! I kept sending data for about two weeks. My final contact was on 28 February 2001.",
+          "older": "I was never designed to land. But at the end of my mission, on 12 February 2001, my team brought me down onto Eros, in a region called the \"saddle\". I survived the touchdown, becoming the first spacecraft to land on an asteroid, and my gamma-ray spectrometer kept collecting data from the surface for about two weeks. My final contact with Earth came on 28 February 2001.",
+          "cites": [
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "which was not designed as a lander" },
+            { "url": "nssdca:1996-008A", "quote": "The mission ended with a touchdown in the \"saddle\" region of Eros on 12 February 2001." },
+            { "url": "https://science.nasa.gov/mission/near-shoemaker/", "quote": "survived touchdown on the asteroid and returned valuable data for about two weeks" },
+            { "url": "nssdca:1996-008A", "quote": "The gamma-ray spectrometer collected data from the asteroid's surface over this time." },
+            { "url": "nssdca:1996-008A", "quote": "NEAR Shoemaker Phones Home for the Last Time - 28 February 2001" }
+          ]
+        },
+        {
+          "key": "now",
+          "younger": "I'm still resting on asteroid Eros. In December 2002, scientists tried to call me one more time, but I didn't answer.",
+          "older": "I'm still resting in the saddle of Eros. On 10 December 2002, scientists tried to contact me one last time, but there was no answer. I was the first spacecraft to orbit an asteroid, and the first to touch down on one.",
+          "cites": [
+            { "url": "nssdca:1996-008A", "quote": "A later attempt to contact the spacecraft on 10 December 2002 was unsuccessful." },
+            { "url": "nssdca:1996-008A", "quote": "The mission was the first-ever to orbit an asteroid and to touch down on the surface of an asteroid." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pioneer-10",
+      "review": { "status": "draft", "reviewer": "", "notes": "" },
+      "postcard": "I'm still going. Two million years to Aldebaran. What will you explore?",
+      "beats": [
+        {
+          "key": "why",
+          "younger": "I'm Pioneer 10. In 1972 I became the first spacecraft sent to the outer solar system. My job was to be the first to visit the giant planet Jupiter.",
+          "older": "I'm Pioneer 10, NASA's first mission to the outer planets. Launched on 3 March 1972, I was the first spacecraft sent to the outer solar system and the first to investigate the planet Jupiter.",
+          "cites": [
+            { "url": "nssdca:1972-012A", "quote": "This mission was the first to be sent to the outer solar system and the first to investigate the planet Jupiter" },
+            { "url": "https://science.nasa.gov/mission/pioneer-10/", "quote": "first mission to the outer planets" },
+            { "url": "nssdca:1972-012A", "quote": "Launch Date: 1972-03-03" }
+          ]
+        },
+        {
+          "key": "how",
+          "younger": "I made my electricity with four nuclear power generators. I crossed the whole asteroid belt! And I carry a picture plaque showing a man, a woman, and where our Sun and Earth are in the galaxy.",
+          "older": "Four radioisotope generators, held out on long trusses, made my electricity: about 155 watts at launch. My magnetometer rode on a 6.6-metre boom, away from the rest of me. Between July 1972 and February 1973 I crossed the asteroid belt, a journey of about 435 million km. And on my body I carry a plaque with drawings of a man, a woman, and the location of the Sun and Earth in our galaxy.",
+          "cites": [
+            { "url": "nssdca:1972-012A", "quote": "Power for the spacecraft was obtained by four SNAP-19 radioisotope thermonuclear generators (RTG)" },
+            { "url": "nssdca:1972-012A", "quote": "generated about 155 W at launch" },
+            { "url": "nssdca:1972-012A", "quote": "A third boom extended 6.6 m from the experiment compartment to hold the magnetometer away from the spacecraft." },
+            { "url": "https://science.nasa.gov/mission/pioneer-10/", "quote": "On July 15, 1972, the spacecraft entered the asteroid belt, emerging in February 1973 after a voyage of about 271 million miles (435 million kilometers)." },
+            { "url": "nssdca:1972-012A", "quote": "A plaque was mounted on the spacecraft body with drawings depicting a man, a woman, and the location of the sun and the earth in our galaxy." }
+          ]
+        },
+        {
+          "key": "discovered",
+          "younger": "On 4 December 1973 I flew past Jupiter, about 200,000 km away. I took the first close-up pictures of Ganymede, one of Jupiter's moons. In 1983, I became the first human-made object to travel beyond the farthest planet!",
+          "older": "On 4 December 1973 I made my closest approach to Jupiter, about 200,000 km away, and became the first spacecraft to take close-up images of its moon Ganymede. On 13 June 1983 I crossed the orbit of Neptune, then the outermost planet, becoming the first human-made object to go beyond the farthest planet.",
+          "cites": [
+            { "url": "nssdca:1972-012A", "quote": "The spacecraft achieved its closest approach to Jupiter on 04 December 1973, when it reached approximately 2.8 Jovian radii (about 200,000 km)." },
+            { "url": "https://science.nasa.gov/mission/pioneer-10/", "quote": "It was the first spacecraft to obtain close-up images of Ganymede." },
+            { "url": "https://science.nasa.gov/mission/pioneer-10/", "quote": "crossed the orbit of Neptune (then the outermost planet) on June 13, 1983, thus becoming the first human-made object to go beyond the furthest planet" }
+          ]
+        },
+        {
+          "key": "lastDay",
+          "younger": "My power slowly faded over the years, so my team switched off my instruments one by one. My last signal was heard on 23 January 2003, more than 30 years after I launched.",
+          "older": "As my nuclear power slowly faded, my team switched off instruments one by one to save energy. By August 2000 only one instrument was still returning data. My signal was last detected on 23 January 2003. In a final attempt on 6 and 7 February 2003, no signal at all was heard: my power had fallen too low to run my transmitter.",
+          "cites": [
+            { "url": "nssdca:1972-012A", "quote": "some were turned off permanently" },
+            { "url": "nssdca:1972-012A", "quote": "As of August 2000, only the GTT instrument was still returning data." },
+            { "url": "nssdca:1972-012A", "quote": "The spacecraft signal was last detected on 23 January 2003" },
+            { "url": "nssdca:1972-012A", "quote": "No signal at all was detected during a final attempt on 06-07 February 2003." },
+            { "url": "nssdca:1972-012A", "quote": "the spacecraft power level had fallen below that needed to power the onboard transmitter" }
+          ],
+          "notes": "'More than 30 years' derived: March 1972 to January 2003."
+        },
+        {
+          "key": "now",
+          "younger": "I'm still flying away from the Sun, toward a red star called Aldebaran. It's 68 light-years away. I'll need about two million years to get there!",
+          "older": "I'm still coasting outward, heading generally toward the red star Aldebaran, the eye of Taurus the Bull. It's 68 light-years away, and the trip will take me about two million years. The Voyager spacecraft are heading the opposite way; I'm travelling toward the tail of the Sun's bubble and on into interstellar space.",
+          "cites": [
+            { "url": "nssdca:1972-012A", "quote": "The spacecraft is heading generally towards the red star Aldebaran, which forms the eye of Taurus (The Bull)." },
+            { "url": "nssdca:1972-012A", "quote": "The journey over a distance of 68 light years to Aldebaran will require about two million years to complete." },
+            { "url": "nssdca:1972-012A", "quote": "are heading in the opposite direction towards the nose of the heliosphere" },
+            { "url": "nssdca:1972-012A", "quote": "towards the tail region and interstellar space" }
+          ]
+        }
+      ]
+    }
+  ]
+}
