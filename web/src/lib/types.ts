@@ -1,5 +1,5 @@
 // Data contract shared by the web app, the MCP view and the build scripts.
-// Every fact shown to a learner must trace back to an entry in `sources`.
+// Every fact shown to a learner must trace back to an entry in `sources` / `evidence`.
 
 export type WorldId = "moon" | "mars" | "beyond";
 
@@ -32,7 +32,7 @@ export interface Artifact {
   id: string;
   name: string;
   world: WorldId;
-  /** Where it rests: "Moon", "Mars", "Ceres", "433 Eros", "Heliocentric orbit", "Interstellar space" */
+  /** Where it rests: "Moon", "Mars", "Orbiting Ceres", "Leaving the Solar System", ... */
   body: string;
   nssdcaId: string | null;
   nssdcaUrl: string | null;
@@ -56,4 +56,33 @@ export interface Artifact {
 export interface ArtifactIndex {
   generatedAt: string;
   artifacts: Artifact[];
+}
+
+export type LevelId = "younger" | "older";
+export type BeatKey = "why" | "how" | "discovered" | "lastDay" | "now";
+
+export interface BeatSource extends Source {
+  quote: string;
+}
+
+export interface Beat {
+  key: BeatKey;
+  title: string;
+  text: Record<LevelId, string>;
+  sources: BeatSource[];
+}
+
+export interface Story {
+  reviewStatus: "draft" | "approved";
+  interaction: "laser" | "drag-wheel" | "ion-thrust" | null;
+  postcard: string;
+  beats: Beat[];
+  /** Narration MP3s exist at /media/audio/<id>/<level>-<beat>.mp3 for these levels. */
+  audio?: LevelId[];
+}
+
+export interface StoryIndex {
+  generatedAt: string;
+  levels: Record<LevelId, string>;
+  stories: Record<string, Story>;
 }

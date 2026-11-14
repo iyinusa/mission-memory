@@ -1,7 +1,7 @@
 import { registerAppResource, registerAppTool, RESOURCE_MIME_TYPE } from "@modelcontextprotocol/ext-apps/server";
 import { McpServer } from "@modelcontextprotocol/server";
 import { z } from "zod";
-import { getArtifacts, getViewHtml, ghostUrl, PUBLIC_ORIGIN } from "./content.js";
+import { getArtifacts, getStory, getViewHtml, ghostUrl, PUBLIC_ORIGIN } from "./content.js";
 
 const VIEW_URI = "ui://mission-memory/ghost.html";
 
@@ -56,14 +56,16 @@ export function createServer(): McpServer {
       if (!artifact) {
         return { isError: true, content: [{ type: "text", text: `No explorer with id "${ghost}". Call list_ghosts.` }] };
       }
-      // Text fallback for clients that cannot render the view.
+      const story = await getStory(artifact.id);
+      // Text fallback for clients that cannot render the view: the story in the explorer's own words.
+      const told = story ? story.beats.map((b) => `${b.title}: ${b.text.younger}`) : [artifact.summary];
       const text = [
         `${artifact.name}, ${artifact.body}. ${artifact.statusNote}.`,
-        artifact.summary,
+        ...told,
         `Full story: ${ghostUrl(artifact.id)}`,
         `Sources: ${artifact.sources.map((s) => s.url).join(", ")}`,
       ].join("\n\n");
-      return { content: [{ type: "text", text }], structuredContent: { artifact } };
+      return { content: [{ type: "text", text }], structuredContent: { artifact, story, origin: PUBLIC_ORIGIN } };
     },
   );
 

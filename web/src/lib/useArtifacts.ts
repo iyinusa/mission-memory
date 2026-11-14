@@ -1,16 +1,26 @@
 import { useEffect, useState } from "react";
-import { loadArtifacts } from "./data";
-import type { ArtifactIndex } from "./types";
+import { loadArtifacts, loadStories } from "./data";
+import type { ArtifactIndex, StoryIndex } from "./types";
 
-export function useArtifacts() {
-  const [index, setIndex] = useState<ArtifactIndex | null>(null);
+function useLoad<T>(loader: () => Promise<T>) {
+  const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadArtifacts()
-      .then(setIndex)
+    loader()
+      .then(setData)
       .catch((e: Error) => setError(e.message));
-  }, []);
+  }, [loader]);
 
-  return { index, error };
+  return { data, error };
+}
+
+export function useArtifacts() {
+  const { data, error } = useLoad<ArtifactIndex>(loadArtifacts);
+  return { index: data, error };
+}
+
+export function useStories() {
+  const { data, error } = useLoad<StoryIndex>(loadStories);
+  return { stories: data, error };
 }

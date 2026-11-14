@@ -40,6 +40,17 @@ export async function getArtifacts(): Promise<Artifact[]> {
   return index.artifacts;
 }
 
+// Mirrors web/src/lib/types.ts Story (only the fields this server reads); passed through to the view as-is.
+interface Story {
+  postcard: string;
+  beats: { title: string; text: { younger: string; older: string } }[];
+}
+
+export async function getStory(id: string): Promise<Story | null> {
+  const index = await fetchCached("/data/stories.json", (r) => r.json() as Promise<{ stories: Record<string, Story> }>);
+  return index.stories[id] ?? null;
+}
+
 export function getViewHtml(): Promise<string> {
   return fetchCached("/mcp-app.html", (r) => r.text());
 }
