@@ -98,7 +98,7 @@ From the [NASA Image and Video Library](https://images.nasa.gov/), with each ima
 
 | Tool | How it was used | Where it is disclosed |
 |---|---|---|
-| Claude Code (Anthropic) | Research, planning support, code, and first drafts of story text written only from cited NASA facts. Every story is fact-checked by the team. | This file, the README, and a label on each story in the app |
+| Claude Code (Anthropic) | Research, planning support, code assistance, and first drafts of story text written only from cited NASA facts. Every story is fact-checked and approved by the team. | This file, the README, the project page, the site's `si-disclosure` metadata, and the `provenance` field in `stories.json` |
 | Kokoro-82M TTS (hexgrad, Apache-2.0), voice `bm_fable` | Synthetic narration audio | A label on the audio player, and the MP3 metadata (ID3 tags) |
 
 No SI-generated images or video are used.

@@ -1,6 +1,6 @@
 # Story fact-check
 
-Generated 2026-11-15T13:09:01+00:00 by `scripts/build_stories.py`. Edit stories in `scripts/stories.json`, then re-run the script.
+Generated 2026-11-15T16:20:28+00:00 by `scripts/build_stories.py`. Edit stories in `scripts/stories.json`, then re-run the script.
 
 Every quote below has already been found word-for-word on its NASA page by the script.
 Your job is to check the **meaning**: does each sentence of the story say only what the quotes support?

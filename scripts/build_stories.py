@@ -50,6 +50,12 @@ def syllables(word: str) -> int:
     return max(1, n)
 
 
+# SI-use disclosure carried in the data itself (the challenge asks for it in text and metadata).
+PROVENANCE = (
+    "Story text drafted with SI (Claude Code) only from the cited NASA sources, then fact-checked and approved by the team. Narration is synthetic speech (Kokoro-82M TTS, voice bm_fable). No SI-generated images or video."
+)
+
+
 def fk_grade(text: str) -> float:
     sentences = max(1, len(re.findall(r"[.!?]+(?=\s|$)", text)))
     words = re.findall(r"[A-Za-z][A-Za-z'-]*", text)
@@ -154,7 +160,7 @@ def main() -> int:
     lines = {k: v for k, v in json.loads((ingest.ROOT / "scripts" / "lines.json").read_text()).items() if not k.startswith("_")}
     OUT.write_text(
         json.dumps(
-            {"generatedAt": now, "levels": LEVELS, "stories": published, "summaryAudio": summary_audio, "portraits": portraits, "lines": lines},
+            {"generatedAt": now, "provenance": PROVENANCE, "levels": LEVELS, "stories": published, "summaryAudio": summary_audio, "portraits": portraits, "lines": lines},
             indent=2,
             ensure_ascii=False,
         )

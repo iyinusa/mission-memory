@@ -96,6 +96,8 @@ export interface Story {
 
 export interface StoryIndex {
   generatedAt: string;
+  /** How the story text and narration were made (SI-use disclosure). */
+  provenance?: string;
   levels: Record<LevelId, string>;
   stories: Record<string, Story>;
   /** Map-only explorers whose NASA summary is narrated at /media/audio/<id>/summary.mp3. */

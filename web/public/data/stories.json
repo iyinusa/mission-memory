@@ -1,5 +1,6 @@
 {
-  "generatedAt": "2026-11-15T13:09:01+00:00",
+  "generatedAt": "2026-11-15T16:20:28+00:00",
+  "provenance": "Story text drafted with SI (Claude Code) only from the cited NASA sources, then fact-checked and approved by the team. Narration is synthetic speech (Kokoro-82M TTS, voice bm_fable). No SI-generated images or video.",
   "levels": {
     "younger": "Ages 9–11",
     "older": "Ages 12–14"
