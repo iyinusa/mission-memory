@@ -13,6 +13,36 @@ Built for the [2026 NASA Space Apps Challenge](https://www.spaceappschallenge.or
 - **Live:** https://missionmemory.kenaff.com
 - **MCP server (for AI assistants):** `https://missionmemory.kenaff.com/mcp`
 
+## See it in action
+
+### Tune In
+
+Turn the dial (or drag the globe) across a world. Static clears when you reach an explorer, and it starts to speak.
+
+![The Tune In dial scanning Mars, locking onto Phoenix, Viking 1 and Sojourner](docs/media/tuner.gif)
+
+| Moon | Mars | Beyond |
+|---|---|---|
+| ![The Moon globe with Apollo and Surveyor sites](docs/media/world-moon.png) | ![The Mars globe with rover and lander sites](docs/media/world-mars.png) | ![The Beyond map of probes in deep space](docs/media/world-beyond.png) |
+
+### Hands-on moments
+
+| Drive Spirit with a broken wheel | Bounce a laser off the Moon | Feel Dawn's gentle ion thrust |
+|---|---|---|
+| ![Dragging Spirit's broken wheel digs up bright silica soil](docs/media/lab-wheel.gif) | ![A laser pulse returns from an Apollo retroreflector](docs/media/lab-laser.gif) | ![Holding the thrust button slowly speeds up Dawn](docs/media/lab-ion.gif) |
+
+### Stories and postcards
+
+| Spirit tells its own story | A postcard to keep |
+|---|---|
+| ![Spirit's story chapter with a NASA photo and citation](docs/media/story-spirit.png) | ![Spirit's postcard: "Even a broken wheel can make a discovery. Keep going."](docs/media/postcard-spirit.png) |
+
+### Inside AI assistants
+
+Add `https://missionmemory.kenaff.com/mcp` as a connector, then ask *"Show me the explorers on Mars"* or *"Tune in to Spirit"*.
+
+<img src="docs/media/claude-card.png" alt="The Mars Tune In dial and globe running inside Claude as an interactive card" width="600">
+
 ## How it works
 
 ```text
