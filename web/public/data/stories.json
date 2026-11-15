@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-14T18:02:36+00:00",
+  "generatedAt": "2026-11-15T13:09:01+00:00",
   "levels": {
     "younger": "Ages 9–11",
     "older": "Ages 12–14"
   },
   "stories": {
     "apollo-retroreflectors": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": "laser",
       "postcard": "Look up at the Moon tonight. Somewhere up there, I'm still catching light from Earth and sending it home.",
       "beats": [
@@ -176,7 +176,7 @@
       ]
     },
     "apollo11-eagle": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": null,
       "postcard": "Every journey home needs a launch pad. I was proud to be one.",
       "beats": [
@@ -358,7 +358,7 @@
       ]
     },
     "apollo15-lrv": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": null,
       "postcard": "Go farther than you think you can.",
       "beats": [
@@ -540,7 +540,7 @@
       ]
     },
     "spirit": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": "drag-wheel",
       "postcard": "Even a broken wheel can make a discovery. Keep going.",
       "beats": [
@@ -728,7 +728,7 @@
       ]
     },
     "viking-1": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": null,
       "postcard": "The best questions don't need an answer right away. Keep asking.",
       "beats": [
@@ -767,7 +767,7 @@
           "title": "How I worked",
           "text": {
             "younger": "I travelled to Mars attached to an orbiter. The orbiter took pictures to help find a safe place to land. Then I separated, dropped through the air of Mars and landed softly. My robot arm could scoop up soil for my science lab.",
-            "older": "I rode to Mars attached to an orbiter, which photographed the surface to help choose a landing site. The first choice turned out to be rougher than expected. Then I separated, entered the Martian atmosphere and soft-landed in Chryse Planitia. Two nuclear power generators kept me running, and my sampler arm could scoop soil into an onboard biology laboratory."
+            "older": "I rode to Mars attached to an orbiter, which photographed the surface to help choose a landing site. The first choice turned out to be rougher than expected. Then I separated, entered the Martian atmosphere and soft-landed in Chryse Planitia. Not everything worked: my seismometer, built to feel marsquakes, failed to unlock after landing. Two nuclear power generators kept me running, and my sampler arm could scoop soil into an onboard biology laboratory."
           },
           "sources": [
             {
@@ -788,6 +788,11 @@
             {
               "label": "NSSDCA: Viking 1 Lander (1975-075C)",
               "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C",
+              "quote": "The seismometer failed to uncage"
+            },
+            {
+              "label": "NSSDCA: Viking 1 Lander (1975-075C)",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075C",
               "quote": "Power was provided by two radioisotope thermal generator (RTG) units"
             },
             {
@@ -795,7 +800,15 @@
               "url": "https://science.nasa.gov/mission/viking-1/",
               "quote": "scooped up the first soil samples and deposited them into a special biological laboratory"
             }
-          ]
+          ],
+          "image": {
+            "src": "/media/images/viking-1/101-ksc-73pc-630.jpg",
+            "alt": "101-KSC-73PC-630",
+            "caption": "A model of a Viking lander, photographed before launch. Its long sampler arm reaches out to the right.",
+            "credit": "NASA",
+            "illustration": false,
+            "url": "https://images.nasa.gov/details/101-ksc-73pc-630"
+          }
         },
         {
           "key": "discovered",
@@ -918,7 +931,7 @@
       ]
     },
     "ingenuity": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": null,
       "postcard": "They planned five flights. I made 72. Dream bigger.",
       "beats": [
@@ -1091,7 +1104,7 @@
       ]
     },
     "dawn": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": "ion-thrust",
       "postcard": "Small pushes add up. Keep at it.",
       "beats": [
@@ -1134,10 +1147,15 @@
           "key": "how",
           "title": "How I worked",
           "text": {
-            "younger": "I didn't use a big, loud rocket to get around. I used ion engines! They give a very gentle push, about as strong as the weight of two sheets of paper. But a tiny push, kept up for a long time, adds up. Hold the button to thrust!",
-            "older": "To travel between worlds I used ion engines. They turn xenon gas into charged particles and fire them out with electric fields, powered by solar wings 19.7 metres from tip to tip. My engines' maximum thrust was just 92 millinewtons, about the weight of two sheets of paper on Earth. But a gentle push, kept up for a long time, adds up: I reached Vesta in 2011, left it in 2012 and arrived at Ceres in 2015. Hold to thrust."
+            "younger": "A big rocket launched me into space. But to travel between worlds, I used ion engines! They give a very gentle push, about as strong as the weight of two sheets of paper. But a tiny push, kept up for a long time, adds up. Hold the button to thrust!",
+            "older": "A Delta II rocket launched me, but to travel between worlds I used ion engines. They turn xenon gas into charged particles and fire them out with electric fields, powered by solar wings 19.7 metres from tip to tip. My engines' maximum thrust was just 92 millinewtons, about the weight of two sheets of paper on Earth. But a gentle push, kept up for a long time, adds up: I reached Vesta in 2011, left it in 2012 and arrived at Ceres in 2015. Hold to thrust."
           },
           "sources": [
+            {
+              "label": "NSSDCA: Dawn (2007-043A)",
+              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A",
+              "quote": "Launch Vehicle: Delta II 7925"
+            },
             {
               "label": "NSSDCA: Dawn (2007-043A)",
               "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2007-043A",
@@ -1177,7 +1195,7 @@
           "image": {
             "src": "/media/images/dawn/PIA18922.jpg",
             "alt": "Dawn Blue Glow Artist Concept",
-            "caption": "Dawn's ion engine glowing blue as it arrives at Ceres.",
+            "caption": "Artist's concept of Dawn arriving at Ceres, with its ion engine glowing blue.",
             "credit": "NASA/JPL-Caltech",
             "illustration": true,
             "url": "https://images.nasa.gov/details/PIA18922"
@@ -1296,7 +1314,7 @@
       ]
     },
     "near-shoemaker": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": null,
       "postcard": "I wasn't built to land, but I tried anyway. You never know until you try.",
       "beats": [
@@ -1332,7 +1350,7 @@
           "image": {
             "src": "/media/images/near-shoemaker/PIA18177.jpg",
             "alt": "NASA NEAR Spacecraft Rendezvous with Asteroid Eros Artist Concept",
-            "caption": "NEAR meeting asteroid Eros.",
+            "caption": "Artist's concept of NASA's NEAR spacecraft meeting asteroid Eros.",
             "credit": "NASA",
             "illustration": true,
             "url": "https://images.nasa.gov/details/PIA18177"
@@ -1468,7 +1486,7 @@
       ]
     },
     "pioneer-10": {
-      "reviewStatus": "draft",
+      "reviewStatus": "approved",
       "interaction": null,
       "postcard": "I'm still going. Two million years to Aldebaran. What will you explore?",
       "beats": [
@@ -1477,7 +1495,7 @@
           "title": "Why I was sent",
           "text": {
             "younger": "I'm Pioneer 10. In 1972 I became the first spacecraft sent to the outer solar system. My job was to be the first to visit the giant planet Jupiter.",
-            "older": "I'm Pioneer 10, NASA's first mission to the outer planets. Launched on 3 March 1972, I was the first spacecraft sent to the outer solar system and the first to investigate the planet Jupiter."
+            "older": "I'm Pioneer 10, NASA's first mission to the outer planets. Launched on 2 March 1972, I was the first spacecraft sent to the outer solar system and the first to investigate the planet Jupiter."
           },
           "sources": [
             {
@@ -1491,15 +1509,15 @@
               "quote": "first mission to the outer planets"
             },
             {
-              "label": "NSSDCA: Pioneer 10 (1972-012A)",
-              "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A",
-              "quote": "Launch Date: 1972-03-03"
+              "label": "NASA Science mission page",
+              "url": "https://science.nasa.gov/mission/pioneer-10/",
+              "quote": "March 2, 1972: Launch"
             }
           ],
           "image": {
             "src": "/media/images/pioneer-10/ARC-1972-AC72-2135.jpg",
             "alt": "ARC-1972-AC72-2135",
-            "caption": "Pioneer 10 being readied for launch at Cape Kennedy in 1972.",
+            "caption": "Pioneer 10 (originally called Pioneer F) being readied for launch at Cape Kennedy in 1972.",
             "credit": "NASA",
             "illustration": false,
             "url": "https://images.nasa.gov/details/ARC-1972-AC72-2135"
@@ -1722,7 +1740,7 @@
       "src": "/media/images/dawn/portrait.jpg",
       "full": "/media/images/dawn/PIA18922.jpg",
       "alt": "Dawn Blue Glow Artist Concept",
-      "caption": "Dawn arriving at the dwarf planet Ceres.",
+      "caption": "Artist's concept of Dawn arriving at the dwarf planet Ceres.",
       "credit": "NASA/JPL-Caltech",
       "illustration": true,
       "url": "https://images.nasa.gov/details/PIA18922"
@@ -1731,7 +1749,7 @@
       "src": "/media/images/near-shoemaker/portrait.jpg",
       "full": "/media/images/near-shoemaker/PIA18177.jpg",
       "alt": "NASA NEAR Spacecraft Rendezvous with Asteroid Eros Artist Concept",
-      "caption": "NEAR meeting asteroid Eros.",
+      "caption": "Artist's concept of NASA's NEAR spacecraft meeting asteroid Eros.",
       "credit": "NASA",
       "illustration": true,
       "url": "https://images.nasa.gov/details/PIA18177"
@@ -1740,7 +1758,7 @@
       "src": "/media/images/pioneer-10/portrait.jpg",
       "full": "/media/images/pioneer-10/ARC-1972-AC72-2135.jpg",
       "alt": "ARC-1972-AC72-2135",
-      "caption": "Pioneer 10 being readied for launch in 1972.",
+      "caption": "Pioneer 10 (originally called Pioneer F) being readied for launch in 1972.",
       "credit": "NASA",
       "illustration": false,
       "url": "https://images.nasa.gov/details/ARC-1972-AC72-2135"
@@ -1817,5 +1835,8 @@
       "illustration": true,
       "url": "https://images.nasa.gov/details/PIA11825"
     }
+  },
+  "lines": {
+    "welcome": "Welcome to Mission Memory. On the Moon, on Mars, and far beyond, NASA's robot explorers are still out there. A few are still working. Most went quiet long ago. Pick a world, and let's tune in to their stories."
   }
 }

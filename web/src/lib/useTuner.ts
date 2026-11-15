@@ -115,7 +115,10 @@ export function useTuner(stations: Station[], min: number, max: number, startId:
 
   const resume = () => {
     const s = scan.current;
-    if (mode === "done" || s.needle >= max) {
+    // Nothing left to find ahead (e.g. back from the last explorer's story): start the sweep over,
+    // rather than running into the end of the dial and stopping at once.
+    const ahead = sorted.some((st) => st.value > s.needle + span * 0.001);
+    if (mode === "done" || s.needle >= max || !ahead) {
       s.needle = min;
       setNeedleState(min);
       setLockedId(null);

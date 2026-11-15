@@ -1,0 +1,15 @@
+{
+  "_comment": "What the hands-on moments say: shown on screen and spoken by the narrator (scripts/narrate.py voices each line to media/audio/labs/<key>.mp3). Facts come from the cited story beats; comparisons (car, train, jet, sound) are everyday figures.",
+  "laser-back": "It's back! The light took about two and a half seconds to reach the Moon and return. Light travels about 300,000 km every second, so the Moon is about 384,400 km away.",
+  "laser-great": "Great timing! You stopped the clock right as the light came home.",
+  "laser-close": "Nice try! Real telescopes time it to a tiny fraction of a second. Fire again to get closer.",
+  "laser-nostop": "Fire again, and this time stop the clock just as the light comes back.",
+  "wheel-start": "The pink wheel can't turn, so it drags and digs a trench. Keep driving!",
+  "wheel-found": "Bright white soil! When Spirit really did this in 2007, its instruments found the soil was about 90% pure silica. On Earth, silica like this forms in hot springs or steam vents. Keep driving to the end of the track.",
+  "wheel-parked": "You made it to the end of the track. That's the whole drive! Press Start again to drive it once more.",
+  "ion-start": "Hold it down longer: something happens soon!",
+  "ion-car": "100 km/h faster: as fast as a car! Keep holding.",
+  "ion-train": "300 km/h faster: a high-speed train! Keep going.",
+  "ion-jet": "900 km/h faster: a passenger jet! One more to go.",
+  "ion-sound": "1,235 km/h faster: faster than the speed of sound! That's the end of our test. Dawn kept up its gentle push for a very long time, and that's how it reached Vesta and then Ceres. Press Reset to fly again."
+}

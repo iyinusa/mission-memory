@@ -1,0 +1,4 @@
+{
+  "_comment": "Site lines spoken by the narrator (Mission Control). narrate.py voices each into web/public/media/audio/site/<key>.mp3.",
+  "welcome": "Welcome to Mission Memory. On the Moon, on Mars, and far beyond, NASA's robot explorers are still out there. A few are still working. Most went quiet long ago. Pick a world, and let's tune in to their stories."
+}

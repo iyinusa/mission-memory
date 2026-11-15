@@ -1,4 +1,4 @@
-import { lazy, Suspense, useMemo } from "react";
+import { lazy, Suspense, useEffect, useMemo } from "react";
 import { Link, useParams, useSearchParams } from "react-router";
 import BeyondMap from "../components/BeyondMap";
 import Loading from "../components/Loading";
@@ -9,6 +9,7 @@ import ZoomPhoto from "../components/ZoomBubble";
 import { WORLDS, byWorld, dialValue } from "../lib/data";
 import { useArtifacts, useStories } from "../lib/useArtifacts";
 import { NARRATOR_CPS } from "../lib/sound";
+import { logFound } from "../lib/missionLog";
 import { useNarrator } from "../lib/useNarrator";
 import { useRadioSound, useSoundSwitch } from "../lib/useRadioSound";
 import { useTuner, type Station } from "../lib/useTuner";
@@ -62,6 +63,10 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
     if (tuner.mode === "scan") tuner.hold(seconds * 1000 + 1200);
   });
   useRadioSound(sound.enabled, tuner.strength, tuner.lockedId, narrator.speaking);
+  // Tuning to an explorer yourself puts it in the Mission Log (the automatic scan alone doesn't).
+  useEffect(() => {
+    if (tuner.lockedId && tuner.mode !== "scan") logFound(tuner.lockedId);
+  }, [tuner.lockedId, tuner.mode]);
 
   const select = (id: string) => {
     tuner.select(id);
@@ -179,7 +184,7 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
                 <Typewriter key={locked.id} text={intro} cps={narrator.speaking ? NARRATOR_CPS : 38} />
               </p>
               <Link className="button primary" to={`/ghost/${locked.id}`} onClick={() => setParams({ ghost: locked.id }, { replace: true })}>
-                {locked.tier === "map" ? "Read the NASA record" : "Tune in to its story"}
+                {locked.tier === "map" ? "NASA's record ▶" : "Hear its story ▶"}
               </Link>
             </>
           ) : (
@@ -188,8 +193,8 @@ function Tuner({ world, ghosts, stories }: { world: WorldId; ghosts: Artifact[];
               <h2>{scanning ? "Listening for explorers…" : "Nothing on this frequency"}</h2>
               <p className="panel-summary">
                 {scanning
-                  ? `Sweeping the ${world === "beyond" ? "years" : "longitudes"} for a signal from the explorers NASA left behind.`
-                  : "Keep tuning: drag the dial or the globe, or tap a glowing marker."}
+                  ? "Searching for a signal…"
+                  : "Drag the dial, or tap a glowing dot."}
               </p>
             </div>
           )}

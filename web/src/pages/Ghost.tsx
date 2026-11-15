@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import FactCard from "../components/FactCard";
 import Loading from "../components/Loading";
 import StoryPlayer from "../components/StoryPlayer";
 import { WORLDS } from "../lib/data";
+import { logFound } from "../lib/missionLog";
 import { useArtifacts, useStories } from "../lib/useArtifacts";
 import NotFound from "./NotFound";
 
@@ -10,6 +12,10 @@ export default function Ghost() {
   const { ghostId } = useParams();
   const { index, error } = useArtifacts();
   const { stories, error: storyError } = useStories();
+  // Opening an explorer's page puts it in the Mission Log.
+  useEffect(() => {
+    if (ghostId && index?.artifacts.some((a) => a.id === ghostId)) logFound(ghostId);
+  }, [ghostId, index]);
 
   if (error || storyError) return <p role="alert">Could not load explorers: {error ?? storyError}</p>;
   if (!index || !stories) return <Loading />;

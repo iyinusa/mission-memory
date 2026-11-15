@@ -139,7 +139,7 @@ export default function BeyondMap({ ghosts, selectedId, onSelect, needle, min, s
 
 /** The explorer's photo on the map (opposite its label); hover it for the bigger picture. */
 function Avatar({ id, photo, x, y }: { id: string; photo: BeatImage; x: number; y: number }) {
-  const { bind, bubble } = useZoomBubble(photo);
+  const { bind, layers } = useZoomBubble(photo);
   return (
     <g transform={`translate(${x} ${y})`} className="map-avatar" {...bind}>
       <clipPath id={`face-${id}`}>
@@ -147,7 +147,7 @@ function Avatar({ id, photo, x, y }: { id: string; photo: BeatImage; x: number; 
       </clipPath>
       <image href={photo.src} x="-22" y="-22" width="44" height="44" clipPath={`url(#face-${id})`} preserveAspectRatio="xMidYMid slice" />
       <circle r="22" fill="none" stroke="var(--signal)" strokeWidth="2" />
-      {bubble}
+      {layers}
     </g>
   );
 }

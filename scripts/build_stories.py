@@ -65,6 +65,7 @@ def main() -> int:
     images = json.loads(IMAGES.read_text()) if IMAGES.exists() else {}
 
     published, review_md, manual = {}, [], []
+    signed: list[str] = []
     grades = {lvl: [] for lvl in LEVELS}
     quotes = 0
 
@@ -74,7 +75,19 @@ def main() -> int:
             ingest.errors.append(f"{sid}: no such explorer in artifacts.json")
             continue
         beats = []
-        review_md.append(f"\n## {artifacts[sid]['name']}  \n`{sid}` · status: **{story['review']['status']}**\n")
+        review = story["review"]
+        approved = review["status"] == "approved"
+        box = "[x]" if approved else "[ ]"  # an approved story has had every line checked
+        if approved:
+            signed.append(sid)
+        who = f" by {review['reviewer']}" if approved and review.get("reviewer") else ""
+        review_md.append(f"\n## {artifacts[sid]['name']}  \n`{sid}` · status: **{review['status']}**{who}\n")
+        if review.get("notes"):
+            review_md.append(f"> **Reviewer notes:** {review['notes']}\n")
+        if review.get("changes"):
+            review_md.append("**Applied after review:**\n")
+            review_md += [f"- {c}" for c in review["changes"]]
+            review_md.append("")
         for beat in story["beats"]:
             if beat["key"] not in TITLES:
                 ingest.errors.append(f"{sid}: unknown beat key {beat['key']}")
@@ -85,7 +98,8 @@ def main() -> int:
                     quotes += 1
                     ingest.verify(sid, f"beat {beat['key']}", url, c["quote"])
                 else:
-                    manual.append(f"{sid} / {beat['key']}: \"{c['quote']}\" at {url}")
+                    done = "[x]" if c.get("confirmed") else "[ ]"
+                    manual.append(f"- {done} {sid} / {beat['key']}: \"{c['quote']}\" at {url}{' (confirmed by the reviewer)' if c.get('confirmed') else ''}")
                 sources.append({"label": ingest.label_for(url, named), "url": url, "quote": ingest.norm(c["quote"])})
             for lvl in LEVELS:
                 grades[lvl].append(fk_grade(beat[lvl]))
@@ -100,12 +114,12 @@ def main() -> int:
                 review_md.append(f"- **{label}:** {beat[lvl]}")
             if image:
                 review_md.append(
-                    f"- [ ] **Image** [{image['nasaId']}]({image['url']}): our caption \"{image['caption']}\" matches NASA's title "
+                    f"- {box} **Image** [{image['nasaId']}]({image['url']}): our caption \"{image['caption']}\" matches NASA's title "
                     f"\"{image['nasaTitle']}\"{' (illustration)' if image['illustration'] else ''}. NASA description: {image['nasaDescription'][:300]}"
                 )
             review_md.append("\n  NASA says:")
             for s in sources:
-                review_md.append(f"  - [ ] \"{s['quote']}\" ([{s['label']}]({s['url']}))")
+                review_md.append(f"  - {box} \"{s['quote']}\" ([{s['label']}]({s['url']}))")
             if beat.get("notes"):
                 review_md.append(f"\n  > **Check:** {beat['notes']}")
             review_md.append("")
@@ -136,8 +150,14 @@ def main() -> int:
     portraits = {
         gid: {k: v["portrait"][k] for k in ("src", "full", "alt", "caption", "credit", "illustration", "url")} for gid, v in images.items() if "portrait" in v
     }
+    # Site lines the narrator speaks (scripts/lines.json); the page shows the same text.
+    lines = {k: v for k, v in json.loads((ingest.ROOT / "scripts" / "lines.json").read_text()).items() if not k.startswith("_")}
     OUT.write_text(
-        json.dumps({"generatedAt": now, "levels": LEVELS, "stories": published, "summaryAudio": summary_audio, "portraits": portraits}, indent=2, ensure_ascii=False)
+        json.dumps(
+            {"generatedAt": now, "levels": LEVELS, "stories": published, "summaryAudio": summary_audio, "portraits": portraits, "lines": lines},
+            indent=2,
+            ensure_ascii=False,
+        )
         + "\n"
     )
 
@@ -156,9 +176,12 @@ def main() -> int:
         "4. When a whole story is right, set its `review.status` to `approved` and your name in `review.reviewer`.",
         "",
         f"Reading level (Flesch-Kincaid grade, average per beat): ages 9–11 → **{avg['younger']:.1f}**, ages 12–14 → **{avg['older']:.1f}**.",
+        "",
+        f"**Sign-off:** {len(signed)} of {len(src['stories'])} stories approved"
+        + (f" by {', '.join(sorted({s['review']['reviewer'] for s in src['stories'] if s['id'] in signed}))}." if signed else "."),
     ]
     if manual:
-        header += ["", "**Quotes the script cannot fetch. Check these by hand:**", ""] + [f"- [ ] {m}" for m in manual]
+        header += ["", "**Quotes the script cannot fetch. Check these by hand:**", ""] + manual
     REVIEW.write_text("\n".join(header + review_md) + "\n")
 
     print(f"✓ {len(published)} stories, {quotes} verified quotes, {len(manual)} to check by hand → {OUT.relative_to(ingest.ROOT)}")

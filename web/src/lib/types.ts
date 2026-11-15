@@ -102,4 +102,6 @@ export interface StoryIndex {
   summaryAudio?: string[];
   /** Each explorer's hardware photo (square thumbnail), keyed by explorer id. */
   portraits?: Record<string, BeatImage>;
+  /** Site lines spoken by the narrator (audio at /media/audio/site/<key>.mp3). */
+  lines?: Record<string, string>;
 }

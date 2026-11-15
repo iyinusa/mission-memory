@@ -71,6 +71,10 @@
     }
   },
   "viking-1": {
+    "how": {
+      "nasaId": "101-ksc-73pc-630",
+      "caption": "A model of a Viking lander, photographed before launch. Its long sampler arm reaches out to the right."
+    },
     "discovered": {
       "nasaId": "PIA00381",
       "caption": "The first photograph ever taken on the surface of Mars, by Viking 1 minutes after landing on 20 July 1976."
@@ -113,7 +117,7 @@
   "dawn": {
     "how": {
       "nasaId": "PIA18922",
-      "caption": "Dawn's ion engine glowing blue as it arrives at Ceres.",
+      "caption": "Artist's concept of Dawn arriving at Ceres, with its ion engine glowing blue.",
       "illustration": true
     },
     "discovered": {
@@ -126,14 +130,14 @@
     },
     "portrait": {
       "nasaId": "PIA18922",
-      "caption": "Dawn arriving at the dwarf planet Ceres.",
+      "caption": "Artist's concept of Dawn arriving at the dwarf planet Ceres.",
       "illustration": true
     }
   },
   "near-shoemaker": {
     "why": {
       "nasaId": "PIA18177",
-      "caption": "NEAR meeting asteroid Eros.",
+      "caption": "Artist's concept of NASA's NEAR spacecraft meeting asteroid Eros.",
       "illustration": true
     },
     "now": {
@@ -142,14 +146,14 @@
     },
     "portrait": {
       "nasaId": "PIA18177",
-      "caption": "NEAR meeting asteroid Eros.",
+      "caption": "Artist's concept of NASA's NEAR spacecraft meeting asteroid Eros.",
       "illustration": true
     }
   },
   "pioneer-10": {
     "why": {
       "nasaId": "ARC-1972-AC72-2135",
-      "caption": "Pioneer 10 being readied for launch at Cape Kennedy in 1972."
+      "caption": "Pioneer 10 (originally called Pioneer F) being readied for launch at Cape Kennedy in 1972."
     },
     "how": {
       "nasaId": "ARC-1972-A72-2137",
@@ -161,7 +165,7 @@
     },
     "portrait": {
       "nasaId": "ARC-1972-AC72-2135",
-      "caption": "Pioneer 10 being readied for launch in 1972."
+      "caption": "Pioneer 10 (originally called Pioneer F) being readied for launch in 1972."
     }
   },
   "surveyor-3": {

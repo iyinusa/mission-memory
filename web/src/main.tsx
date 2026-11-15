@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import World from "./pages/World";
 import Ghost from "./pages/Ghost";
 import Embed from "./pages/Embed";
+import MissionLogPage from "./pages/MissionLog";
 import NotFound from "./pages/NotFound";
 import PostcardPage from "./pages/PostcardPage";
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: "/world/:worldId", element: <World /> },
       { path: "/ghost/:ghostId", element: <Ghost /> },
       { path: "/postcard/:ghostId", element: <PostcardPage /> },
+      { path: "/log", element: <MissionLogPage /> },
       { path: "*", element: <NotFound /> },
     ],
   },

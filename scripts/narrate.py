@@ -29,6 +29,8 @@ from speech import SPEED, VOICE, clip_digest, clip_name, speakable, summary_clip
 ROOT = Path(__file__).resolve().parent.parent
 STORIES = ROOT / "web" / "public" / "data" / "stories.json"
 ARTIFACTS = ROOT / "web" / "public" / "data" / "artifacts.json"
+LINES = ROOT / "scripts" / "lines.json"
+LAB_LINES = ROOT / "web" / "src" / "lib" / "labLines.json"  # what the hands-on moments say (also shown on screen)
 AUDIO = ROOT / "web" / "public" / "media" / "audio"
 MANIFEST = AUDIO / "manifest.json"
 RATE = 24_000
@@ -90,6 +92,14 @@ def main() -> int:
     for a in json.loads(ARTIFACTS.read_text())["artifacts"]:
         if a["tier"] == "map" and (not only or a["id"] in only):
             jobs.append((summary_clip_name(a["id"]), a["summary"], f"{a['name']}: NASA summary"))
+    # Site lines (e.g. the Mission Control welcome on the landing page).
+    if not only:
+        for key, text in json.loads(LINES.read_text()).items():
+            if not key.startswith("_"):
+                jobs.append((f"site/{key}.mp3", text, f"Mission Control: {key}"))
+        for key, text in json.loads(LAB_LINES.read_text()).items():
+            if not key.startswith("_"):
+                jobs.append((f"labs/{key}.mp3", text, f"Hands-on: {key}"))
 
     for rel, text, title in jobs:
         out = AUDIO / rel

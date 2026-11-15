@@ -469,6 +469,11 @@
         "date": "2003-01-23",
         "url": "nssdca:1972-012A",
         "quote": "The spacecraft signal was last detected on 23 January 2003"
+      },
+      "launch": {
+        "date": "1972-03-02",
+        "url": "https://science.nasa.gov/mission/pioneer-10/",
+        "quote": "March 2, 1972: Launch"
       }
     },
     {

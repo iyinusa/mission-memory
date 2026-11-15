@@ -5,9 +5,9 @@
       "id": "apollo-retroreflectors",
       "interaction": "laser",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "The stories say the reflectors’ 'job' is to measure the Moon’s distance. More precisely, the retroreflectors are passive targets; scientists on Earth send the lasers and measure the round-trip light travel time to calculate the distance. That distinction does not make the story incorrect—it is a reasonable simplification for ages 9–14."
       },
       "postcard": "Look up at the Moon tonight. Somewhere up there, I'm still catching light from Earth and sending it home.",
       "beats": [
@@ -120,9 +120,9 @@
     {
       "id": "apollo11-eagle",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "The photo shows Aldrin beside a landing leg, while the descent stage includes all four legs and the lower structure; the caption is therefore appropriately worded rather than claiming the leg itself is the entire descent stage."
       },
       "postcard": "Every journey home needs a launch pad. I was proud to be one.",
       "beats": [
@@ -251,9 +251,9 @@
     {
       "id": "apollo15-lrv",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "'A car built for the Moon' is a good age-9–11 simplification. The more precise description is that it was an electric, four-wheeled lunar rover designed for the Moon’s low gravity and vacuum; the astronauts drove it, rather than it operating autonomously."
       },
       "postcard": "Go farther than you think you can.",
       "beats": [
@@ -354,10 +354,11 @@
             {
               "url": "https://www.spaceappschallenge.org/2026/challenges/nasas-discarded-equipment-storytelling/?tab=resources",
               "quote": "Parked permanently on the Moon.",
-              "verify": false
+              "verify": false,
+              "confirmed": true
             }
           ],
-          "notes": "'Almost three days' derived from 66 h 55 min. 'Stayed behind' is cited to the challenge's NASA-authored resource list, which the script cannot fetch; check it by hand."
+          "notes": "'Almost three days' derived from 66 h 55 min. 'Stayed behind' is cited to the challenge's NASA-authored resource list, which the script cannot fetch; the reviewer confirmed it by hand."
         },
         {
           "key": "now",
@@ -384,9 +385,9 @@
       "id": "spirit",
       "interaction": "drag-wheel",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "'Robot geologist' is a good age 9–11 description: Spirit carried instruments to examine Martian rocks and soils. 'Look for clues that water once flowed' is accurate, though NASA’s broader goal was to find evidence of past water activity and past habitable environments, not necessarily flowing surface water specifically. The ages 12–14 wording is especially precise: it correctly distinguishes the orbital appearance of a dried-up crater lake from the hypothesis that water once filled it, and correctly says sedimentary layers might remain."
       },
       "postcard": "Even a broken wheel can make a discovery. Keep going.",
       "beats": [
@@ -507,9 +508,13 @@
     {
       "id": "viking-1",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "For ages 9–11, 'could there be life on Mars?' is a clear simplification of NASA’s goal to collect evidence about the possibility of life. It does not claim Viking 1 found life, and NASA’s results did not establish that it did. For ages 12–14, 'quakes' means seismology, and 'magnetism' means magnetic properties; both are listed among the lander’s science objectives. However, Viking 1’s seismometer failed to uncage after landing, so it could not make useful seismic measurements.",
+        "changes": [
+          "Added that the seismometer failed to unlock after landing (NSSDCA: \"The seismometer failed to uncage\").",
+          "Added NASA photo 101-KSC-73PC-630 (a model of the Viking lander, showing the sampler arm) to 'How I worked', so the story shows the hardware itself."
+        ]
       },
       "postcard": "The best questions don't need an answer right away. Keep asking.",
       "beats": [
@@ -539,7 +544,7 @@
         {
           "key": "how",
           "younger": "I travelled to Mars attached to an orbiter. The orbiter took pictures to help find a safe place to land. Then I separated, dropped through the air of Mars and landed softly. My robot arm could scoop up soil for my science lab.",
-          "older": "I rode to Mars attached to an orbiter, which photographed the surface to help choose a landing site. The first choice turned out to be rougher than expected. Then I separated, entered the Martian atmosphere and soft-landed in Chryse Planitia. Two nuclear power generators kept me running, and my sampler arm could scoop soil into an onboard biology laboratory.",
+          "older": "I rode to Mars attached to an orbiter, which photographed the surface to help choose a landing site. The first choice turned out to be rougher than expected. Then I separated, entered the Martian atmosphere and soft-landed in Chryse Planitia. Not everything worked: my seismometer, built to feel marsquakes, failed to unlock after landing. Two nuclear power generators kept me running, and my sampler arm could scoop soil into an onboard biology laboratory.",
           "cites": [
             {
               "url": "nssdca:1975-075C",
@@ -552,6 +557,10 @@
             {
               "url": "nssdca:1975-075C",
               "quote": "The Viking 1 Lander touched down in western Chryse Planitia"
+            },
+            {
+              "url": "nssdca:1975-075C",
+              "quote": "The seismometer failed to uncage"
             },
             {
               "url": "nssdca:1975-075C",
@@ -589,7 +598,7 @@
               "quote": "could have been construed as indicating the presence of life (weak positive), but the major test for organic compounds"
             }
           ],
-          "notes": "Reviewer: read the full organics sentence on the Viking 1 mission page to confirm 'did not support it'."
+          "notes": "The reviewer read the full organics sentence on the Viking 1 mission page and confirmed 'did not support it'."
         },
         {
           "key": "lastDay",
@@ -639,9 +648,9 @@
     {
       "id": "ingenuity",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "For ages 9–11, 'fly on another planet for the very first time' is accurate if 'fly' means powered, controlled flight. NASA’s precise wording is 'first powered, controlled flight on another planet,' which avoids ambiguity about whether a prior object had merely been carried through another planet’s atmosphere. 'Tiny helicopter' is also reasonable: Ingenuity had a mass of 1.8 kg (about 4 lb on Earth) and rotor blades spanning about 1.2 m (4 ft)."
       },
       "postcard": "They planned five flights. I made 72. Dream bigger.",
       "beats": [
@@ -751,9 +760,13 @@
       "id": "dawn",
       "interaction": "ion-thrust",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "'I didn’t use a big, loud rocket to get around' is a good simplification, but Dawn was launched by a Delta II rocket, its ion engines were for propulsion after launch and for traveling between Vesta and Ceres. 'Solar wings' is an appropriate informal term for the solar arrays. 'I reached Vesta in 2011, left it in 2012 and arrived at Ceres in 2015' is correct, NASA gives the exact dates listed above. A slightly more precise caption would be: 'Artist’s concept of Dawn arriving at Ceres, with its ion engine glowing blue.'",
+        "changes": [
+          "'How I worked' now says a rocket (a Delta II) launched Dawn and the ion engines were for travelling between worlds (NSSDCA: \"Launch Vehicle: Delta II 7925\").",
+          "Ion-engine illustration caption now starts \"Artist's concept of\"."
+        ]
       },
       "postcard": "Small pushes add up. Keep at it.",
       "beats": [
@@ -786,9 +799,13 @@
         },
         {
           "key": "how",
-          "younger": "I didn't use a big, loud rocket to get around. I used ion engines! They give a very gentle push, about as strong as the weight of two sheets of paper. But a tiny push, kept up for a long time, adds up. Hold the button to thrust!",
-          "older": "To travel between worlds I used ion engines. They turn xenon gas into charged particles and fire them out with electric fields, powered by solar wings 19.7 metres from tip to tip. My engines' maximum thrust was just 92 millinewtons, about the weight of two sheets of paper on Earth. But a gentle push, kept up for a long time, adds up: I reached Vesta in 2011, left it in 2012 and arrived at Ceres in 2015. Hold to thrust.",
+          "younger": "A big rocket launched me into space. But to travel between worlds, I used ion engines! They give a very gentle push, about as strong as the weight of two sheets of paper. But a tiny push, kept up for a long time, adds up. Hold the button to thrust!",
+          "older": "A Delta II rocket launched me, but to travel between worlds I used ion engines. They turn xenon gas into charged particles and fire them out with electric fields, powered by solar wings 19.7 metres from tip to tip. My engines' maximum thrust was just 92 millinewtons, about the weight of two sheets of paper on Earth. But a gentle push, kept up for a long time, adds up: I reached Vesta in 2011, left it in 2012 and arrived at Ceres in 2015. Hold to thrust.",
           "cites": [
+            {
+              "url": "nssdca:2007-043A",
+              "quote": "Launch Vehicle: Delta II 7925"
+            },
             {
               "url": "nssdca:2007-043A",
               "quote": "using xenon which is ionized and accelerated by electrodes"
@@ -894,9 +911,12 @@
     {
       "id": "near-shoemaker",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "'Meet an asteroid' is a good age 9–11 simplification for rendezvous, NEAR entered orbit around Eros on 14 February 2000. 'Study it up close for a whole year' is accurate as the planned orbital-study duration, though NEAR ultimately also touched down on Eros on 12 February 2001 and returned data for about two weeks afterward. 'Makeup' is a suitable child-friendly term for composition and mineralogy. One nuance: NASA later reported that Eros had no magnetic field, studying whether it had one was still a mission objective, so the ages 12–14 wording remains accurate. For maximum clarity, use: 'Artist’s concept of NASA’s NEAR spacecraft meeting asteroid Eros.' This preserves the friendly wording while signaling that it is an illustration rather than just a photograph.",
+        "changes": [
+          "Illustration caption now reads \"Artist's concept of NASA's NEAR spacecraft meeting asteroid Eros.\""
+        ]
       },
       "postcard": "I wasn't built to land, but I tried anyway. You never know until you try.",
       "beats": [
@@ -1016,16 +1036,20 @@
     {
       "id": "pioneer-10",
       "review": {
-        "status": "draft",
-        "reviewer": "",
-        "notes": ""
+        "status": "approved",
+        "reviewer": "Olawunmi Yinusa",
+        "notes": "The ages 12–14 story should say: 'Launched on 2 March 1972 …'. NASA’s Science page gives the launch date and time as 2 March 1972, 01:49:04 UT. The NSSDCA catalog lists '1972-03-03,' likely reflecting a UTC/local-date or catalog-convention difference, but NASA’s mission page is the clearer source for the launch date. For the ages 9–11 version, 'In 1972' remains correct. A slightly more precise caption would be: 'Pioneer 10 (originally called Pioneer F) being readied for launch at Cape Kennedy in 1972.'",
+        "changes": [
+          "Launch date changed to 2 March 1972, from NASA's mission page (the Florida date; NSSDCA's 3 March is the UT date). The fact card uses the same date.",
+          "Photo caption now says Pioneer 10 was originally called Pioneer F."
+        ]
       },
       "postcard": "I'm still going. Two million years to Aldebaran. What will you explore?",
       "beats": [
         {
           "key": "why",
           "younger": "I'm Pioneer 10. In 1972 I became the first spacecraft sent to the outer solar system. My job was to be the first to visit the giant planet Jupiter.",
-          "older": "I'm Pioneer 10, NASA's first mission to the outer planets. Launched on 3 March 1972, I was the first spacecraft sent to the outer solar system and the first to investigate the planet Jupiter.",
+          "older": "I'm Pioneer 10, NASA's first mission to the outer planets. Launched on 2 March 1972, I was the first spacecraft sent to the outer solar system and the first to investigate the planet Jupiter.",
           "cites": [
             {
               "url": "nssdca:1972-012A",
@@ -1036,8 +1060,8 @@
               "quote": "first mission to the outer planets"
             },
             {
-              "url": "nssdca:1972-012A",
-              "quote": "Launch Date: 1972-03-03"
+              "url": "https://science.nasa.gov/mission/pioneer-10/",
+              "quote": "March 2, 1972: Launch"
             }
           ]
         },

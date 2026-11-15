@@ -173,6 +173,11 @@ def build(ghost: dict, named: dict) -> dict:
     if last:
         cite("last contact", last["url"], last["quote"])
 
+    # NSSDCA dates launches in UT; a manifest "launch" (with its own quote) can give the date NASA's mission page uses.
+    launch = ghost.get("launch")
+    if launch:
+        cite("launch date", launch["url"], launch["quote"])
+
     for ev in ghost.get("evidence", []):
         cite(ev["claim"], ev["url"], ev["quote"])
 
@@ -187,7 +192,7 @@ def build(ghost: dict, named: dict) -> dict:
         "missionUrl": ghost.get("missionUrl"),
         "lat": lat,
         "lon": lon,
-        "launched": nssdca_launch(primary),
+        "launched": launch["date"] if launch else nssdca_launch(primary),
         "arrived": None,
         "lastContact": last["date"] if last else None,
         "status": ghost["status"],

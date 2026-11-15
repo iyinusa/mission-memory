@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T11:58:50+00:00",
+  "generatedAt": "2026-11-15T10:44:55+00:00",
   "artifacts": [
     {
       "id": "apollo-retroreflectors",
@@ -753,7 +753,7 @@
       "missionUrl": "https://science.nasa.gov/mission/pioneer-10/",
       "lat": null,
       "lon": null,
-      "launched": "1972-03-03",
+      "launched": "1972-03-02",
       "arrived": null,
       "lastContact": "2003-01-23",
       "status": "silent",
@@ -767,6 +767,12 @@
           "quote": "The spacecraft signal was last detected on 23 January 2003",
           "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A",
           "label": "NSSDCA: Pioneer 10 (1972-012A)"
+        },
+        {
+          "claim": "launch date",
+          "quote": "March 2, 1972: Launch",
+          "url": "https://science.nasa.gov/mission/pioneer-10/",
+          "label": "NASA Science mission page"
         }
       ],
       "sources": [

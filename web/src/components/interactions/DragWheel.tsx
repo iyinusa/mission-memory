@@ -1,16 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { labText, roverLoop, sparkle, useLabVoice, useLoop } from "../../lib/labSound";
 
 const W = 600;
 const H = 200;
 const START_X = 520;
 const END_X = 70;
-const SPEED = 110; // px per second while driving
+const SPEED = 60; // px per second while driving: slow enough to watch the trench and hear the narrator
 const WHEEL_Y = 62; // the broken wheel's track (top side of the rover, seen from above)
 const SILICA = { x0: 230, x1: 360 }; // where the bright soil hides under the dust (illustrative)
 const BROKEN_DX = 46; // the broken wheel sits at the rover's back right; the trench starts there
 
 /** Drive Spirit with its broken wheel dragging; the trench it digs uncovers bright silica. Top-down, not to scale. */
-export default function DragWheel() {
+export default function DragWheel({ mediaBase = "", onStart }: { mediaBase?: string; onStart?: () => void }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   const soil = useRef<HTMLCanvasElement | null>(null);
   const [x, setX] = useState(START_X);
@@ -18,6 +19,33 @@ export default function DragWheel() {
   const wheelX = x + BROKEN_DX;
   const found = wheelX <= SILICA.x1 - (SILICA.x1 - SILICA.x0) * 0.4;
   const done = x <= END_X;
+  const voice = useLabVoice(mediaBase);
+  const engine = useLoop(roverLoop);
+
+  // Motors whir while driving; the grind brightens once the wheel is in the silica.
+  useEffect(() => engine.set(driving && !done, found ? 1 : 0), [engine, driving, done, found]);
+
+  // The narrator speaks at each turn of the drive, so you know what to look for and when it's over.
+  const wasFound = useRef(found);
+  useEffect(() => {
+    if (found && !wasFound.current) {
+      // A discovery stop: the rover halts while the narrator explains, then you drive on.
+      setDriving(false);
+      sparkle();
+      voice.say("wheel-found");
+    }
+    wasFound.current = found;
+  }, [found]);
+  const wasDone = useRef(done);
+  useEffect(() => {
+    if (done && !wasDone.current) voice.say("wheel-parked");
+    wasDone.current = done;
+  }, [done]);
+
+  const begin = () => {
+    onStart?.();
+    voice.say("wheel-start", { once: true });
+  };
 
   // Speckled red soil, generated once.
   useEffect(() => {
@@ -79,12 +107,17 @@ export default function DragWheel() {
   }, [driving, done]);
 
   const hold = {
-    onPointerDown: () => setDriving(true),
+    onPointerDown: (e: React.PointerEvent<HTMLButtonElement>) => {
+      e.currentTarget.setPointerCapture(e.pointerId); // a finger sliding off the button keeps driving
+      begin();
+      setDriving(true);
+    },
     onPointerUp: () => setDriving(false),
     onPointerLeave: () => setDriving(false),
     onKeyDown: (e: React.KeyboardEvent) => {
       if (e.key === " " || e.key === "Enter") {
         e.preventDefault();
+        begin();
         setX((v) => Math.max(END_X, v - 24));
       }
     },
@@ -105,19 +138,20 @@ export default function DragWheel() {
         <button type="button" className="button primary" disabled={done} {...hold}>
           {done ? "Parked" : "Hold to drive"}
         </button>
-        <button type="button" className="button" onClick={() => setX(START_X)} disabled={x === START_X}>
+        <button
+          type="button"
+          className="button"
+          onClick={() => {
+            voice.stop();
+            setX(START_X);
+          }}
+          disabled={x === START_X}
+        >
           Start again
         </button>
       </div>
       <div className="lab-result" aria-live="polite">
-        {found ? (
-          <p>
-            <strong>Bright white soil!</strong> When Spirit really did this in 2007, its instruments found the soil was about 90% pure silica. On Earth,
-            silica like this forms in hot springs or steam vents.
-          </p>
-        ) : (
-          <p>The pink wheel can't turn, so it drags and digs a trench. Keep driving and watch what the trench uncovers.</p>
-        )}
+        <p>{labText(done ? "wheel-parked" : found ? "wheel-found" : "wheel-start")}</p>
       </div>
       <p className="lab-foot">Seen from above, not to scale. Keyboard: press Space or Enter on the drive button to move a little at a time.</p>
     </div>

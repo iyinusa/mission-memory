@@ -40,6 +40,7 @@ From the [NASA Image and Video Library](https://images.nasa.gov/), with each ima
 | spirit / lastDay | [PIA12102](https://images.nasa.gov/details/PIA12102) | NASA/JPL/USGS |
 | spirit / now | [PIA12203](https://images.nasa.gov/details/PIA12203) | NASA/JPL-Caltech/Cornell University |
 | spirit / portrait | [PIA04413](https://images.nasa.gov/details/PIA04413) | NASA/JPL/Cornell University |
+| viking-1 / how | [101-ksc-73pc-630](https://images.nasa.gov/details/101-ksc-73pc-630) | NASA |
 | viking-1 / discovered | [PIA00381](https://images.nasa.gov/details/PIA00381) | NASA/JPL |
 | viking-1 / lastDay | [PIA00567](https://images.nasa.gov/details/PIA00567) | NASA/JPL |
 | viking-1 / now | [PIA00563](https://images.nasa.gov/details/PIA00563) | NASA/JPL |

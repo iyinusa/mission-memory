@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { labText, laserZap, ping, useLabVoice } from "../../lib/labSound";
 
 // NASA Science, Moon facts: "an average of 238,855 miles (384,400 kilometers) away".
 const MOON_KM = 384_400;
@@ -10,17 +11,33 @@ const MOON_X = 540;
 
 type Phase = "idle" | "flying" | "done";
 
+const GOOD_TIMING_S = 0.15;
+
 /** Fire a laser at the Apollo reflectors, watch it come back, and measure the Moon's distance yourself. */
-export default function LaserRanging() {
+export default function LaserRanging({ mediaBase = "", onStart }: { mediaBase?: string; onStart?: () => void }) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [elapsed, setElapsed] = useState(0);
   const [stopped, setStopped] = useState<number | null>(null);
   const start = useRef(0);
   const raf = useRef(0);
+  const stoppedAt = useRef<number | null>(null);
+  const voice = useLabVoice(mediaBase);
 
   useEffect(() => () => cancelAnimationFrame(raf.current), []);
 
+  // The light is back: a ping, then the narrator explains (once) and comments on your timing.
+  const landed = () => {
+    ping();
+    voice.say("laser-back", { once: true });
+    const s = stoppedAt.current;
+    voice.say(s == null ? "laser-nostop" : Math.abs(s - ROUND_TRIP_S) < GOOD_TIMING_S ? "laser-great" : "laser-close");
+  };
+
   const fire = () => {
+    onStart?.();
+    voice.stop();
+    laserZap();
+    stoppedAt.current = null;
     setStopped(null);
     setElapsed(0);
     setPhase("flying");
@@ -30,6 +47,7 @@ export default function LaserRanging() {
       if (t >= ROUND_TRIP_S) {
         setElapsed(ROUND_TRIP_S);
         setPhase("done");
+        landed();
         return;
       }
       setElapsed(t);
@@ -38,7 +56,11 @@ export default function LaserRanging() {
     raf.current = requestAnimationFrame(tick);
   };
 
-  const stop = () => setStopped((performance.now() - start.current) / 1000);
+  const stop = () => {
+    const s = (performance.now() - start.current) / 1000;
+    stoppedAt.current = s;
+    setStopped(s);
+  };
 
   // Pulse position: out to the Moon for the first half, back to Earth for the second.
   const half = ROUND_TRIP_S / 2;
@@ -82,14 +104,15 @@ export default function LaserRanging() {
         {phase === "done" && (
           <>
             <p>
-              The light came back after <strong>{ROUND_TRIP_S.toFixed(2)} seconds</strong>. Light travels about 300,000 km every second, so the
-              Moon is about <strong>{MOON_KM.toLocaleString("en-GB")} km</strong> away: half the round trip.
+              {labText("laser-back")} <small>(Exactly {ROUND_TRIP_S.toFixed(2)} s: half the round trip is the distance.)</small>
             </p>
-            {userKm != null && (
+            {userKm != null ? (
               <p>
                 You stopped the clock at <strong>{stopped!.toFixed(2)} s</strong>, which puts the Moon <strong>{userKm.toLocaleString("en-GB")} km</strong> away.{" "}
-                {Math.abs(stopped! - ROUND_TRIP_S) < 0.15 ? "Great timing!" : "Real telescopes time it to a tiny fraction of a second."}
+                {labText(Math.abs(stopped! - ROUND_TRIP_S) < GOOD_TIMING_S ? "laser-great" : "laser-close")}
               </p>
+            ) : (
+              <p>{labText("laser-nostop")}</p>
             )}
           </>
         )}
