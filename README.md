@@ -24,9 +24,10 @@ https://missionmemory.kenaff.com   (one origin)
 └── /mcp              MCP server (Streamable HTTP), proxied to the private `mcp` container
 ```
 
-- `web/` — Vite + React + TypeScript. Also builds `mcp-app.html`, the same player bundled as an MCP Apps view.
-- `mcp/` — Node + TypeScript MCP server. Tools: `list_ghosts` and `tune_in`, which opens the story player as a
-  `ui://` view inside MCP clients. It reads its content from the `web` container, so both always match.
+- `web/` — Vite + React + TypeScript. Also builds `mcp-app.html`, the same player and world tuner bundled as an MCP Apps view.
+- `mcp/` — Node + TypeScript MCP server. Tools: `list_ghosts`; `tune_in`, which opens an explorer's story player; and
+  `explore_world`, which opens the Tune In dial and globe for the Moon, Mars or beyond (stories open inside the same view).
+  Both views render as a `ui://` resource inside MCP clients. It reads its content from the `web` container, so both always match.
 - `scripts/` — build-time data pipeline. `ingest.py` builds `artifacts.json` from NSSDCA and checks every quoted fact
   against its NASA page. `build_stories.py` does the same for every story beat in `stories.json`, then writes the
   fact-check checklist to `review/STORIES-REVIEW.md`. `images.py` fetches the chosen NASA Image and Video Library photos

@@ -1349,11 +1349,15 @@ main {
   max-width: 62ch;
 }
 /* First opening: the chapter types itself out over an invisible copy that holds its full height. */
-.beat-text.typing {
+.beat-text.typing,
+.typing-box {
   display: grid;
+}
+.beat-text.typing {
   cursor: pointer;
 }
-.beat-text.typing > span {
+.beat-text.typing > span,
+.typing-box > span {
   grid-area: 1 / 1;
 }
 .typing-space {
@@ -1901,5 +1905,26 @@ main {
   * {
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* MCP card: back from a story to the world tuner. */
+.embed-back {
+  margin-bottom: 12px;
+}
+
+/* World tuner inside an MCP host: the card grows with its content, so viewport units can't size the globe.
+   Fixed sizes instead, with the globe and what it finds side by side whenever the chat is wide enough. */
+.embed .world-view {
+  max-height: 340px;
+}
+@media (min-width: 620px) {
+  .embed .world-stage {
+    grid-template-columns: minmax(0, 1.25fr) minmax(240px, 1fr);
+  }
+  .embed .world-view {
+    aspect-ratio: auto;
+    min-height: 400px;
+    max-height: none;
   }
 }

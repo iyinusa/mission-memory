@@ -1,7 +1,7 @@
 import { registerAppResource, registerAppTool, RESOURCE_MIME_TYPE } from "@modelcontextprotocol/ext-apps/server";
 import { McpServer } from "@modelcontextprotocol/server";
 import { z } from "zod";
-import { getArtifacts, getStory, getViewHtml, ghostUrl, PUBLIC_ORIGIN } from "./content.js";
+import { getArtifacts, getStory, getStoryIndex, getViewHtml, ghostUrl, PUBLIC_ORIGIN, worldUrl } from "./content.js";
 
 const VIEW_URI = "ui://mission-memory/ghost.html";
 
@@ -23,7 +23,7 @@ export function createServer(): McpServer {
     {
       title: "List ghost explorers",
       description:
-        "List the NASA rovers, landers and probes left behind on the Moon, on Mars and beyond, with their current status. Use the returned id with tune_in.",
+        "List the NASA rovers, landers and probes left behind on the Moon, on Mars and beyond, with their current status. Use the returned id with tune_in. To let someone browse a world visually, use explore_world instead.",
       inputSchema: z.object({
         world: z.enum(["moon", "mars", "beyond"]).optional().describe("Only list explorers on this world"),
       }),
@@ -69,12 +69,40 @@ export function createServer(): McpServer {
     },
   );
 
+  registerAppTool(
+    server,
+    "explore_world",
+    {
+      title: "Explore a world",
+      description:
+        "Open the Tune In dial for the Moon, Mars or beyond: it scans for the NASA explorers left behind there, shows each one on a 3D globe (or a map of the solar system for 'beyond'), and opens any explorer's story. Use when someone wants to browse or discover the explorers on a world.",
+      inputSchema: z.object({
+        world: z.enum(["moon", "mars", "beyond"]).describe("Which world to tune in to: 'moon', 'mars', or 'beyond' (asteroids, Ceres and probes leaving the solar system)"),
+      }),
+      _meta: { ui: { resourceUri: VIEW_URI } },
+    },
+    async ({ world }) => {
+      const ghosts = (await getArtifacts()).filter((a) => a.world === world);
+      const index = await getStoryIndex();
+      const ids = new Set(ghosts.map((g) => g.id));
+      const pick = <T,>(rec: Record<string, T> | undefined) => Object.fromEntries(Object.entries(rec ?? {}).filter(([id]) => ids.has(id)));
+      // Only this world's stories and photos, so the view has everything it needs without another call.
+      const stories = { ...index, stories: pick(index.stories), portraits: pick(index.portraits), summaryAudio: (index.summaryAudio ?? []).filter((id) => ids.has(id)) };
+      const text = [
+        `Explorers left behind (${world}):`,
+        ...ghosts.map((g) => `- ${g.name} (${g.id}): ${g.statusNote}${index.stories[g.id] ? " (full story)" : ""}`),
+        `Tune in on the web: ${worldUrl(world)}`,
+      ].join("\n");
+      return { content: [{ type: "text", text }], structuredContent: { world, ghosts, stories, origin: PUBLIC_ORIGIN } };
+    },
+  );
+
   const ui = {
     csp: { resourceDomains: [PUBLIC_ORIGIN], connectDomains: [PUBLIC_ORIGIN] },
     prefersBorder: true,
   };
 
-  registerAppResource(server, "Mission Memory story player", VIEW_URI, { mimeType: RESOURCE_MIME_TYPE, _meta: { ui } }, async () => ({
+  registerAppResource(server, "Mission Memory explorer view", VIEW_URI, { mimeType: RESOURCE_MIME_TYPE, _meta: { ui } }, async () => ({
     contents: [{ uri: VIEW_URI, mimeType: RESOURCE_MIME_TYPE, text: await getViewHtml(), _meta: { ui } }],
   }));
 

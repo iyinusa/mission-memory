@@ -107,8 +107,8 @@ function GhostPin({
   );
 }
 
-function Planet({ world, ghosts, needle, lockedId, onSelect, portraits, reduceMotion }: GlobeProps & { reduceMotion: boolean }) {
-  const map = useTexture(TEXTURES[world]);
+function Planet({ world, ghosts, needle, lockedId, onSelect, portraits, mediaBase = "", reduceMotion }: GlobeProps & { reduceMotion: boolean }) {
+  const map = useTexture(`${mediaBase}${TEXTURES[world]}`);
   map.colorSpace = THREE.SRGBColorSpace;
   map.anisotropy = 8;
   const group = useRef<THREE.Group>(null);
@@ -146,6 +146,8 @@ export interface GlobeProps {
   lockedId: string | null;
   /** Hardware photo per explorer id. */
   portraits?: Record<string, BeatImage>;
+  /** Prefix for the texture URL ("" on the site, the public origin inside MCP hosts). */
+  mediaBase?: string;
   onSelect: (id: string) => void;
   onTune: (lon: number) => void;
   onRelease: (lon: number) => void;

@@ -46,13 +46,28 @@ interface Story {
   beats: { title: string; text: { younger: string; older: string } }[];
 }
 
+// Mirrors web/src/lib/types.ts StoryIndex (passed through to the view as-is).
+export interface StoryIndex {
+  stories: Record<string, Story>;
+  summaryAudio?: string[];
+  portraits?: Record<string, unknown>;
+  [key: string]: unknown;
+}
+
+export function getStoryIndex(): Promise<StoryIndex> {
+  return fetchCached("/data/stories.json", (r) => r.json() as Promise<StoryIndex>);
+}
+
 export async function getStory(id: string): Promise<Story | null> {
-  const index = await fetchCached("/data/stories.json", (r) => r.json() as Promise<{ stories: Record<string, Story> }>);
-  return index.stories[id] ?? null;
+  return (await getStoryIndex()).stories[id] ?? null;
 }
 
 export function getViewHtml(): Promise<string> {
   return fetchCached("/mcp-app.html", (r) => r.text());
+}
+
+export function worldUrl(world: string): string {
+  return `${PUBLIC_ORIGIN}/world/${world}`;
 }
 
 export function ghostUrl(id: string): string {
