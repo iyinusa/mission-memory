@@ -84,12 +84,35 @@ function View() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Set before connect() so the initial tool result isn't missed.
-    app.ontoolresult = (result) => {
-      const d = result.structuredContent as Partial<TuneIn & Explore> | undefined;
+    // Which tool opened this view, and with what: lets the view ask again if the data didn't come through.
+    let args: Record<string, unknown> = {};
+    const accept = (content: unknown) => {
+      const d = content as Partial<TuneIn & Explore> | undefined;
       if (d?.world && d.ghosts && d.stories) setData({ kind: "world", world: d.world, ghosts: d.ghosts, stories: d.stories, origin: d.origin ?? "" });
       else if (d?.artifact) setData({ kind: "story", artifact: d.artifact, story: d.story ?? null, origin: d.origin ?? "" });
-      else setError("This explorer's signal could not be read.");
+      else return false;
+      return true;
+    };
+    const say = (result: { content?: { type: string; text?: string }[] }) =>
+      result.content?.find((c) => c.type === "text")?.text?.split("\n")[0] ?? "";
+    // Set before connect() so the initial tool input and result aren't missed.
+    app.ontoolinput = (p) => {
+      args = p.arguments ?? {};
+    };
+    app.ontoolresult = async (result) => {
+      if (accept(result.structuredContent)) return;
+      if (result.isError) return setError(`This explorer's signal could not be read. ${say(result)}`);
+      // A host may pass the result on without its data: ask the server for it directly.
+      const name = typeof args.world === "string" ? "explore_world" : typeof args.ghost === "string" ? "tune_in" : null;
+      if (name) {
+        try {
+          const again = await app.callServerTool({ name, arguments: args });
+          if (accept(again.structuredContent)) return;
+        } catch {
+          /* fall through to the message below */
+        }
+      }
+      setError("This explorer's signal could not be read. Try asking again.");
     };
     app.connect().catch((e: Error) => setError(e.message));
   }, []);

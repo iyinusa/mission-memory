@@ -3,7 +3,11 @@ import { McpServer } from "@modelcontextprotocol/server";
 import { z } from "zod";
 import { getArtifacts, getStory, getStoryIndex, getViewHtml, ghostUrl, PUBLIC_ORIGIN, worldUrl } from "./content.js";
 
-const VIEW_URI = "ui://mission-memory/ghost.html";
+// Hosts cache a view by its URI, so a changed view needs a new one: bump the version whenever
+// the view's data contract changes (v2: the world tuner joined the story player).
+const VIEW_URI = "ui://mission-memory/explorer-v2.html";
+// Earlier chats still point at the first URI; serve them the current view too.
+const LEGACY_VIEW_URIS = ["ui://mission-memory/ghost.html"];
 
 export function createServer(): McpServer {
   const server = new McpServer({
@@ -102,9 +106,11 @@ export function createServer(): McpServer {
     prefersBorder: true,
   };
 
-  registerAppResource(server, "Mission Memory explorer view", VIEW_URI, { mimeType: RESOURCE_MIME_TYPE, _meta: { ui } }, async () => ({
-    contents: [{ uri: VIEW_URI, mimeType: RESOURCE_MIME_TYPE, text: await getViewHtml(), _meta: { ui } }],
-  }));
+  for (const uri of [VIEW_URI, ...LEGACY_VIEW_URIS]) {
+    registerAppResource(server, uri === VIEW_URI ? "Mission Memory explorer view" : "Mission Memory explorer view (earlier chats)", uri, { mimeType: RESOURCE_MIME_TYPE, _meta: { ui } }, async () => ({
+      contents: [{ uri, mimeType: RESOURCE_MIME_TYPE, text: await getViewHtml(), _meta: { ui } }],
+    }));
+  }
 
   return server;
 }
